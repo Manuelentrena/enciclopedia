@@ -11,9 +11,9 @@ const ListResult = () => {
 
   return (
     <>
-      <h2>LISTA DE RESULTADOS:</h2>
+      <h2>LIST OF RESULTS:</h2>
       {results.map((result, index) => (
-        <Result key={index} result={result} />
+        <Result key={index} {...result} />
       ))}
     </>
   );

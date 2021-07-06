@@ -1,11 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useSearch } from "hooks/useSearch";
-import SearchContext from "provider/SearchContext";
 
 const Search = () => {
   const [text, setText] = useState("");
-  const { getPages, getDescription } = useSearch();
-  const { setResults } = useContext(SearchContext);
+  const { setState, resetState } = useSearch();
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -13,17 +11,8 @@ const Search = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setResults([]);
-    if (text) {
-      const titles = await getPages({ search: text });
-      titles.forEach(async (title) => {
-        const description = await getDescription({ search: title });
-        setResults((prevState) => [
-          ...prevState,
-          { title, description: description ?? "" },
-        ]);
-      });
-    }
+    resetState([]);
+    setState({ search: text });
   };
 
   return (
