@@ -6,7 +6,7 @@ const ListResult = () => {
   const { results } = useContext(SearchContext);
 
   useEffect(() => {
-    console.log("Render list...");
+    /*  console.log("Render list..."); */
   });
 
   return (

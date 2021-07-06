@@ -1,1 +1,9 @@
+.image {
+  width: auto;
+  height: 300px;
+}
 
+.image__img {
+  height: inherit;
+  object-fit: contain;
+}

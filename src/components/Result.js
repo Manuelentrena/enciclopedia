@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
+import { useDataPage } from "hooks/useDataPage";
 
 const Result = ({ img, description, title, id }) => {
+  const { getlistImages } = useDataPage();
+
   useEffect(() => {
-    console.log("Render item...");
+    /* console.log("Render item..."); */
   });
 
   const handleClick = (id) => {
-    console.log(id);
+    getlistImages({ id });
   };
 
   return (
