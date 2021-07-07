@@ -7,14 +7,13 @@ const ListImages = () => {
 
   useEffect(() => {
     /* console.log("Render listImages..."); */
-    console.log(images);
   });
 
   return (
     <>
       <h2>IMAGES OF ARTICLE:</h2>
       {images
-        ? images.map((url, index) => <Image key={index} url={url} />)
+        ? images.map((img, index) => <Image key={index} title={img.title} />)
         : null}
     </>
   );

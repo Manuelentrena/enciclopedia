@@ -1,11 +1,12 @@
-import { path, action, format, cors, urlImage } from "services/settings";
+import { path, action, format, cors, urlImage, size } from "services/settings";
 
-export default function getImageUrl({ search }) {
+export default function getImageUrl({ search, width }) {
   // "action=query", protocol to GET pages
   // "prop=image"; all images of page
   // "titles"; encode name img
   // "urlImage = prop=imageinfo&iiprop=url; data url img"
-  const URL = `${path}?${action[1]}&${format}&${cors}&${urlImage}&titles=${search}`;
+  // "size = iiurlwidth=size, width img"
+  const URL = `${path}?${action[1]}&${format}&${cors}&${urlImage}&${size[1]}=${width}&titles=${search}`;
 
   return fetch(URL, {
     method: "GET",
@@ -14,6 +15,13 @@ export default function getImageUrl({ search }) {
     },
   })
     .then((res) => res.json())
-    .then((data) => data)
+    .then((data) => {
+      const idPage = Object.keys(data?.query?.pages);
+      if (!idPage) return null;
+      const info = data?.query?.pages[idPage]?.imageinfo;
+      if (!info) return null;
+      const indexUrl = Object.keys(data?.query?.pages[idPage]?.imageinfo);
+      return data.query.pages[idPage].imageinfo[indexUrl].thumburl;
+    })
     .catch((err) => console.log("Error: " + err));
 }
