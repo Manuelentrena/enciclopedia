@@ -1,6 +1,6 @@
 import { path, action, format, cors, prop, size } from "services/settings";
 
-export default function getImageById({ id, large = 200 }) {
+export default function getImageById({ id, large = 200, signal }) {
   // "action=query", protocol to GET pages
   // "prop=pageimages"; propertis of img
   // "large"; dimension img
@@ -8,6 +8,7 @@ export default function getImageById({ id, large = 200 }) {
 
   return fetch(URL, {
     method: "GET",
+    signal: signal,
     headers: {
       "User-Agent": "someone",
     },

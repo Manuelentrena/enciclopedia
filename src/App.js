@@ -7,7 +7,6 @@ function App() {
     <SearchContextProvider>
       <ImagesContextProvider>
         <Search />
-        <ListResult />
         <ListImages />
       </ImagesContextProvider>
     </SearchContextProvider>

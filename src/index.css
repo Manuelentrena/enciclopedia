@@ -8,3 +8,56 @@
   object-fit: contain;
 }
  */
+
+.oneResult {
+  display: flex;
+  height: 60px;
+}
+
+.oneResult__img {
+  width: 50px;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.oneResult__url {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.oneResult__body {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.oneResult__title {
+  margin: 0;
+}
+
+.oneResult__description {
+  margin: 0;
+}
+
+.modal {
+  padding: 0rem 0rem;
+  background-color: rgba(112, 112, 112, 0.5);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  bottom: 0;
+  top: 2rem;
+  left: 0;
+  right: 0;
+}
+
+.modal__body {
+  background-color: white;
+  width: 90%;
+  max-width: 50rem;
+  padding: 2rem;
+  position: relative;
+}

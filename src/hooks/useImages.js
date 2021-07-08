@@ -2,6 +2,7 @@ import { useContext } from "react";
 import getImages from "services/getImages";
 import getImageUrl from "services/getImageUrl";
 import ImagesContext from "provider/ImagesContext";
+import getImageById from "services/getImageById";
 
 export const useImages = () => {
   const { setImages } = useContext(ImagesContext);
@@ -30,5 +31,11 @@ export const useImages = () => {
     return url;
   }
 
-  return { getlistImages, getImage };
+  function getImageHeader({ id, large, signal }) {
+    return getImageById({ id, large, signal }).then((res) => {
+      return res?.query?.pages[id]?.thumbnail?.source;
+    });
+  }
+
+  return { getlistImages, getImage, getImageHeader };
 };
