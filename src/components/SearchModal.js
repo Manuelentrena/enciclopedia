@@ -1,14 +1,20 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 const SearchModal = ({ children, onClose }) => {
   return (
-    <div className="modal">
+    <div className="modal" onClick={onClose}>
       <div className="modal__body">
-        <button onClick={onClose}>✖</button>
+        {/* <button onClick={onClose}>✖</button> */}
         {children}
       </div>
     </div>
   );
 };
 
-export default SearchModal;
+export default function SearchPortal({ children, onClose }) {
+  return ReactDOM.createPortal(
+    <SearchModal onClose={onClose}>{children}</SearchModal>,
+    document.getElementById("searching")
+  );
+}

@@ -15,5 +15,9 @@ export default function getImageById({ id, large = 200, signal }) {
   })
     .then((res) => res.json())
     .then((data) => data)
-    .catch((err) => console.log("Error: " + err));
+    .catch((error) => {
+      if (!signal?.aborted) {
+        console.log(error);
+      }
+    });
 }

@@ -13,7 +13,6 @@ export default function getlistOfSearch({ search, numPag, signal }) {
     .then((res) => res.json())
     .then((data) => {
       const newSearch = data?.query?.search;
-      /* verificamos si no hay data */
       if (!newSearch) return [];
 
       newSearch.forEach((search) => {
@@ -29,9 +28,10 @@ export default function getlistOfSearch({ search, numPag, signal }) {
 
       return newSearch;
     })
-    .catch((err) => {
+    .catch((error) => {
       if (!signal?.aborted) {
-        console.log("Error: " + err);
+        console.log(error);
       }
+      return [];
     });
 }

@@ -1,15 +1,18 @@
-import { Search, ListResult, ListImages } from "components";
-import { SearchContextProvider } from "provider/SearchContext";
+import { SearchForm, ListImages } from "components";
+import { ResultsContextProvider } from "provider/ResultsContext";
 import { ImagesContextProvider } from "provider/ImagesContext";
+import { SearchContextProvider } from "provider/SearchContext";
 
 function App() {
   return (
-    <SearchContextProvider>
+    <ResultsContextProvider>
       <ImagesContextProvider>
-        <Search />
+        <SearchContextProvider>
+          <SearchForm />
+        </SearchContextProvider>
         <ListImages />
       </ImagesContextProvider>
-    </SearchContextProvider>
+    </ResultsContextProvider>
   );
 }
 

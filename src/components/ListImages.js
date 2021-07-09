@@ -1,13 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Image from "components/Image";
 import ImagesContext from "provider/ImagesContext";
 
 const ListImages = () => {
   const { images } = useContext(ImagesContext);
-
-  useEffect(() => {
-    /* console.log("Render listImages..."); */
-  });
 
   return (
     <>

@@ -1,44 +1,35 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import getlistOfSearch from "services/getlistOfSearch";
-/* import getInfoBySearch from "services/getInfoBySearch"; */
 import SearchContext from "provider/SearchContext";
 
 export const useSearch = () => {
-  const { setResults } = useContext(SearchContext);
-
-  /*   function getMiniInfo({ search }) {
-    const searchURI = encodeURI(search);
-    return getInfoBySearch({ search: searchURI }).then((results) => {
-      const page = results.query.pages;
-      const pageid = Object.keys(page);
-      const description = page[pageid]?.pageprops?.["wikibase-shortdesc"];
-      return { pageid, description };
-    });
-  } */
-
-  /*   function actState({ id, title, description = "", img = "" }) {
-    setResults((prevState) => [...prevState, { id, title, description, img }]);
-  } */
+  const { search, setSearch, isEmpty } = useContext(SearchContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   function resetState(initialState) {
-    setResults(initialState);
+    setSearch(initialState);
   }
 
-  function setState({ search, signal }) {
+  function stopFecth() {
+    /* Creamos el abortController */
+    const abortController = new AbortController();
+    const { signal } = abortController;
+    return { signal, abortController };
+  }
+
+  async function setState({ search, signal }) {
+    setIsLoading(true);
     if (search) {
       const searchURI = encodeURI(search);
-      getlistOfSearch({ search: searchURI, numPag: 0, signal }).then(
-        (results) => setResults(results)
-      );
-      /* if (titles) {
-        titles.forEach(async (title) => {
-          const { pageid, description } = await getMiniInfo({ search: title });
-          const img = await getImage({ id: pageid[0], large: 500 });
-          actState({ id: pageid[0], title, description, img });
-        });
-      } */
+      const data = await getlistOfSearch({
+        search: searchURI,
+        numPag: 0,
+        signal,
+      });
+      setIsLoading(false);
+      setSearch(data);
     }
   }
 
-  return { setState, resetState };
+  return { setState, resetState, stopFecth, isLoading, search, isEmpty };
 };

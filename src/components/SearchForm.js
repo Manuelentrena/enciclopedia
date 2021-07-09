@@ -1,25 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useSearch } from "hooks/useSearch";
-import { SearchModal, ListResult } from "components";
+import { SearchModal, SearchList } from "components";
 
-const Search = () => {
+const SearchForm = () => {
   const [text, setText] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const { setState, resetState } = useSearch();
 
   useEffect(() => {
-    const abortController = new AbortController();
-    const { signal } = abortController;
-    if (text) {
-      setShowModal(true);
-      searching(signal);
-    } else {
-      setShowModal(false);
-    }
-    return () => {
-      abortController.abort();
-      resetState([]);
-    };
+    text ? setShowModal(true) : setShowModal(false);
   }, [text]);
 
   const handleChange = (e) => {
@@ -28,17 +15,18 @@ const Search = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    /* searching(); */
     handleClose();
   };
 
-  const handleClose = () => {
-    setShowModal(false);
+  const handleClose = (e) => {
+    e.stopPropagation();
+    console.log("padre");
   };
-
-  const searching = (signal) => {
-    setState({ search: text, signal });
-  };
+  /* 
+  const handleCloseChild = (e) => {
+    console.log("hijo");
+    e.stopPropagation();
+  }; */
 
   return (
     <>
@@ -53,11 +41,11 @@ const Search = () => {
       </form>
       {showModal && (
         <SearchModal onClose={handleClose}>
-          <ListResult />
+          <SearchList text={text} />
         </SearchModal>
       )}
     </>
   );
 };
 
-export default Search;
+export default SearchForm;

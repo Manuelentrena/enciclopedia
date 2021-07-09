@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useImages } from "hooks/useImages";
+import { useSearch } from "hooks/useSearch";
 import parse from "html-react-parser";
 import initialUrl from "assets/default.jpg";
 
-const Result = ({ description, title, id }) => {
-  const { getlistImages, getImageHeader } = useImages();
+const SearchItem = ({ description, title, id }) => {
+  const { getImageHeader } = useImages();
+  const { stopFecth } = useSearch();
   const [url, setUrl] = useState(initialUrl);
 
   useEffect(() => {
-    /* create abortController by mini-imgs of search */
-    const abortController = new AbortController();
-    const { signal } = abortController;
-
+    const { signal, abortController } = stopFecth();
     async function changeURL(signal) {
       const newUrl = await getImageHeader({ id, large: 50, signal });
       newUrl ? setUrl(newUrl) : setUrl(initialUrl);
@@ -20,10 +19,11 @@ const Result = ({ description, title, id }) => {
     return () => {
       abortController.abort();
     };
-  }, [id]);
+  }, [id, getImageHeader, stopFecth]);
 
   const handleClick = (id) => {
     /* getlistImages({ id }); */
+    console.log("item");
   };
 
   return (
@@ -39,4 +39,4 @@ const Result = ({ description, title, id }) => {
   );
 };
 
-export default React.memo(Result);
+export default React.memo(SearchItem);
