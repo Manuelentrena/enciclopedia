@@ -3,13 +3,14 @@ import parse from "html-react-parser";
 import { SearchItemImg } from "components";
 
 const SearchItem = ({ description, title, id }) => {
-  const handleClick = (id) => {
+  const handleClick = ({ e, id }) => {
     /* getlistImages({ id }); */
-    console.log("item");
+    console.log(id);
+    e.stopPropagation();
   };
 
   return (
-    <div className="oneResult" onClick={() => handleClick(id)}>
+    <div className="oneResult" onClick={(e) => handleClick({ e, id })}>
       <div className="oneResult__img">
         <SearchItemImg title={title} id={id} />
       </div>

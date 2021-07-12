@@ -3,16 +3,27 @@ import { Spinner, SearchItem } from "components";
 import { useSearch } from "hooks/useSearch";
 
 const SearchList = ({ text }) => {
-  const { isLoading, search, setState, stopFecth, isEmpty } = useSearch();
+  const {
+    isLoading,
+    search,
+    setState,
+    stopFecth,
+    isEmpty,
+    textGlobal,
+    setTextGlobal,
+  } = useSearch();
 
   useEffect(() => {
     const { signal, abortController } = stopFecth();
     let mounted = true;
-    async function searchList(text, signal, mounted) {
-      text && (await setState({ search: text, signal, mounted }));
+    if (text !== textGlobal) {
+      async function searchList(text, signal, mounted) {
+        text && (await setState({ search: text, signal, mounted }));
+        setTextGlobal(text);
+      }
+      searchList(text, signal, mounted);
     }
-    searchList(text, signal, mounted);
-    text && searchList({ text, signal, mounted });
+
     return () => {
       abortController.abort();
       mounted = false;

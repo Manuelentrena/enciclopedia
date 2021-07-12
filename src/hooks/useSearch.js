@@ -3,7 +3,8 @@ import getlistOfSearch from "services/getlistOfSearch";
 import SearchContext from "provider/SearchContext";
 
 export const useSearch = () => {
-  const { search, setSearch, isEmpty } = useContext(SearchContext);
+  const { search, setSearch, isEmpty, textGlobal, setTextGlobal } =
+    useContext(SearchContext);
   const [isLoading, setIsLoading] = useState(false);
 
   function resetState(initialState) {
@@ -26,10 +27,21 @@ export const useSearch = () => {
         numPag: 0,
         signal,
       });
-      mounted && setSearch(data);
+      if (mounted) {
+        setSearch(data);
+      }
     }
     setIsLoading(false);
   }
 
-  return { setState, resetState, stopFecth, isLoading, search, isEmpty };
+  return {
+    setState,
+    resetState,
+    stopFecth,
+    isLoading,
+    search,
+    isEmpty,
+    textGlobal,
+    setTextGlobal,
+  };
 };

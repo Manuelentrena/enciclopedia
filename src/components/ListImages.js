@@ -8,6 +8,24 @@ const ListImages = () => {
   return (
     <>
       <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2>IMAGES OF ARTICLE:</h2>
+      <h2 onClick={() => console.log("Te doy click")}>IMAGES OF ARTICLE:</h2>
       {images
         ? images.map((img, index) => <Image key={index} title={img.title} />)
         : null}

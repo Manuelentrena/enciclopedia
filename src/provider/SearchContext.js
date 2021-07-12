@@ -4,6 +4,7 @@ const SearchContext = React.createContext({});
 
 export function SearchContextProvider({ children }) {
   const [search, setSearch] = useState([]);
+  const [textGlobal, setTextGlobal] = useState("");
   const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(() => {
@@ -15,7 +16,9 @@ export function SearchContextProvider({ children }) {
   }, [search]);
 
   return (
-    <SearchContext.Provider value={{ search, setSearch, isEmpty }}>
+    <SearchContext.Provider
+      value={{ search, setSearch, isEmpty, textGlobal, setTextGlobal }}
+    >
       {children}
     </SearchContext.Provider>
   );

@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { SearchModal, SearchList } from "components";
+
 import debounce from "just-debounce-it";
 
 const SearchForm = () => {
   const [text, setText] = useState("");
   const [showModal, setShowModal] = useState(false);
 
-  /* const debounceModal = debounce(
-    () => (text ? setShowModal(true) : setShowModal(false)),
-    1000
-  ); */
-
   useEffect(() => {
-    /* debounceModal(); */
     debounce(() => (text ? setShowModal(true) : setShowModal(false)), 1000)();
   }, [text]);
 
@@ -22,12 +17,16 @@ const SearchForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleClose();
+    handleClose(e);
   };
 
   const handleClose = (e) => {
+    setShowModal(false);
     e.stopPropagation();
-    console.log("padre");
+  };
+
+  const handleFocus = () => {
+    text && setShowModal(true);
   };
 
   /* 
@@ -44,6 +43,7 @@ const SearchForm = () => {
           placeholder="Search terms here..."
           value={text}
           onChange={handleChange}
+          onFocus={handleFocus}
         ></input>
         <button type="submit">SEARCH</button>
       </form>

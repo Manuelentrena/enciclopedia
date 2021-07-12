@@ -4,10 +4,7 @@ import ReactDOM from "react-dom";
 const SearchModal = ({ children, onClose }) => {
   return (
     <div className="modal" onClick={onClose}>
-      <div className="modal__body">
-        {/* <button onClick={onClose}>✖</button> */}
-        {children}
-      </div>
+      <div className="modal__body">{children}</div>
     </div>
   );
 };
