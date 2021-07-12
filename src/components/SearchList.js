@@ -7,25 +7,23 @@ const SearchList = ({ text }) => {
 
   useEffect(() => {
     const { signal, abortController } = stopFecth();
-    if (text) {
-      async function getSearch(signal) {
-        await setState({ search: text, signal });
-      }
-      getSearch(signal);
+    let mounted = true;
+    async function searchList(text, signal, mounted) {
+      text && (await setState({ search: text, signal, mounted }));
     }
-    /* cancelamos peticion */
+    searchList(text, signal, mounted);
+    text && searchList({ text, signal, mounted });
     return () => {
       abortController.abort();
+      mounted = false;
     };
-  }, [text]);
+  }, [text]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
       {!isLoading ? (
         !isEmpty ? (
-          search.map((oneSearch) => (
-            <SearchItem key={oneSearch.id} {...oneSearch} />
-          ))
+          search.map((item) => <SearchItem key={item.id} {...item} />)
         ) : (
           <p>NO HAY RESULTADOS</p>
         )

@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { SearchModal, SearchList } from "components";
+import debounce from "just-debounce-it";
 
 const SearchForm = () => {
   const [text, setText] = useState("");
   const [showModal, setShowModal] = useState(false);
 
+  /* const debounceModal = debounce(
+    () => (text ? setShowModal(true) : setShowModal(false)),
+    1000
+  ); */
+
   useEffect(() => {
-    text ? setShowModal(true) : setShowModal(false);
+    /* debounceModal(); */
+    debounce(() => (text ? setShowModal(true) : setShowModal(false)), 1000)();
   }, [text]);
 
   const handleChange = (e) => {
@@ -22,6 +29,7 @@ const SearchForm = () => {
     e.stopPropagation();
     console.log("padre");
   };
+
   /* 
   const handleCloseChild = (e) => {
     console.log("hijo");

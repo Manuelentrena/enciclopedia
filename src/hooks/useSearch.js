@@ -17,7 +17,7 @@ export const useSearch = () => {
     return { signal, abortController };
   }
 
-  async function setState({ search, signal }) {
+  async function setState({ search, signal, mounted }) {
     setIsLoading(true);
     if (search) {
       const searchURI = encodeURI(search);
@@ -26,9 +26,9 @@ export const useSearch = () => {
         numPag: 0,
         signal,
       });
-      setIsLoading(false);
-      setSearch(data);
+      mounted && setSearch(data);
     }
+    setIsLoading(false);
   }
 
   return { setState, resetState, stopFecth, isLoading, search, isEmpty };
