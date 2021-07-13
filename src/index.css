@@ -32,6 +32,11 @@
 .oneResult__description {
   margin: 0;
 }
+/* UN RESULTADO DEL SEARCH */
+/* Item seleccionado */
+.selected {
+  background-color: lemonchiffon;
+}
 
 /* MODAL */
 

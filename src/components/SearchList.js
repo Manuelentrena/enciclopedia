@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Spinner, SearchItem } from "components";
 import { useSearch } from "hooks/useSearch";
 
-const SearchList = ({ text }) => {
+const SearchList = ({ text, selected }) => {
   const {
     isLoading,
     search,
@@ -34,7 +34,9 @@ const SearchList = ({ text }) => {
     <>
       {!isLoading ? (
         !isEmpty ? (
-          search.map((item) => <SearchItem key={item.id} {...item} />)
+          search.map((item) => (
+            <SearchItem key={item.id} selected={selected} {...item} />
+          ))
         ) : (
           <p>NO HAY RESULTADOS</p>
         )

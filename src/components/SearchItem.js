@@ -2,7 +2,7 @@ import React from "react";
 import parse from "html-react-parser";
 import { SearchItemImg } from "components";
 
-const SearchItem = ({ description, title, id }) => {
+const SearchItem = ({ description, title, id, selected }) => {
   const handleClick = ({ e, id }) => {
     /* getlistImages({ id }); */
     console.log(id);
@@ -10,7 +10,11 @@ const SearchItem = ({ description, title, id }) => {
   };
 
   return (
-    <div className="oneResult" onClick={(e) => handleClick({ e, id })}>
+    <div
+      id={id}
+      className={selected === id ? "oneResult selected" : "oneResult"}
+      onClick={(e) => handleClick({ e, id })}
+    >
       <div className="oneResult__img">
         <SearchItemImg title={title} id={id} />
       </div>

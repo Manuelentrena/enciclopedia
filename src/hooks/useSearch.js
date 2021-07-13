@@ -7,6 +7,10 @@ export const useSearch = () => {
     useContext(SearchContext);
   const [isLoading, setIsLoading] = useState(false);
 
+  function listIds() {
+    return search.map((item) => item.id);
+  }
+
   function resetState(initialState) {
     setSearch(initialState);
   }
@@ -27,9 +31,7 @@ export const useSearch = () => {
         numPag: 0,
         signal,
       });
-      if (mounted) {
-        setSearch(data);
-      }
+      mounted && setSearch(data);
     }
     setIsLoading(false);
   }
@@ -43,5 +45,6 @@ export const useSearch = () => {
     isEmpty,
     textGlobal,
     setTextGlobal,
+    listIds,
   };
 };
