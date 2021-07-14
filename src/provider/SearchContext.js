@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const SearchContext = React.createContext({});
 
 export function SearchContextProvider({ children }) {
   const [search, setSearch] = useState([]);
   const [textGlobal, setTextGlobal] = useState("");
-  const [isEmpty, setIsEmpty] = useState(true);
-
-  useEffect(() => {
-    if (search?.length === 0) {
-      setIsEmpty(true);
-    } else {
-      setIsEmpty(false);
-    }
-  }, [search]);
+  const [globalPage, setGlobalPage] = useState(0);
 
   return (
     <SearchContext.Provider
-      value={{ search, setSearch, isEmpty, textGlobal, setTextGlobal }}
+      value={{
+        search,
+        setSearch,
+        textGlobal,
+        setTextGlobal,
+        globalPage,
+        setGlobalPage,
+      }}
     >
       {children}
     </SearchContext.Provider>

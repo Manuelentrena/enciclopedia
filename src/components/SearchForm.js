@@ -5,8 +5,9 @@ import { useSearch } from "hooks/useSearch";
 import debounce from "just-debounce-it";
 
 const SearchForm = () => {
-  const { search } = useSearch();
+  const { search, setTextGlobal, textGlobal } = useSearch();
   const [text, setText] = useState("");
+  const [page, setPage] = useState(0);
   const [ids, setIds] = useState([]);
   const [selected, setSelected] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -19,6 +20,10 @@ const SearchForm = () => {
   useEffect(() => {
     debounce(() => (text ? setShowModal(true) : setShowModal(false)), 500)();
   }, [text]);
+
+  useEffect(() => {
+    text === "" && setTextGlobal("");
+  }, [textGlobal, text, setTextGlobal]);
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -68,6 +73,8 @@ const SearchForm = () => {
           <SearchList
             text={text}
             selected={selected > 0 ? ids[selected - 1] : null}
+            page={page}
+            setPage={setPage}
           />
         </SearchModal>
       )}

@@ -3,9 +3,23 @@ import getlistOfSearch from "services/getlistOfSearch";
 import SearchContext from "provider/SearchContext";
 
 export const useSearch = () => {
-  const { search, setSearch, isEmpty, textGlobal, setTextGlobal } =
-    useContext(SearchContext);
+  const {
+    search,
+    setSearch,
+    textGlobal,
+    setTextGlobal,
+    globalPage,
+    setGlobalPage,
+  } = useContext(SearchContext);
   const [isLoading, setIsLoading] = useState(false);
+
+  function isEmpty() {
+    if (search?.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   function listIds() {
     return search.map((item) => item.id);
@@ -22,13 +36,13 @@ export const useSearch = () => {
     return { signal, abortController };
   }
 
-  async function setState({ search, signal, mounted }) {
+  async function setState({ search, signal, mounted, page }) {
     setIsLoading(true);
     if (search) {
       const searchURI = encodeURI(search);
       const data = await getlistOfSearch({
         search: searchURI,
-        numPag: 0,
+        page,
         signal,
       });
       mounted && setSearch(data);
@@ -46,5 +60,7 @@ export const useSearch = () => {
     textGlobal,
     setTextGlobal,
     listIds,
+    setGlobalPage,
+    globalPage,
   };
 };
