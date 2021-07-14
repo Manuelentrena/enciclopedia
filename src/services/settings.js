@@ -1,4 +1,4 @@
-export const path = "https://en.wikipedia.org/w/api.php";
+export const path = "https://es.wikipedia.org/w/api.php";
 export const action = ["action=opensearch", "action=query"];
 export const format = "format=json";
 export const cors = "origin=*";
