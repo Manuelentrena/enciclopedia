@@ -1,13 +1,21 @@
-import { path, action, format, cors, urlImage, size } from "services/settings";
+import {
+  prot,
+  path,
+  action,
+  format,
+  cors,
+  urlImage,
+  size,
+} from "services/settings";
 
-export default function getImageUrl({ search, width }) {
+export default function getImageUrl({ search, width, language }) {
   // "action=query", protocol to GET pages
   // "prop=image"; all images of page
   // "titles"; encode name img
   // "urlImage = prop=imageinfo&iiprop=url; data url img"
   // "size = iiurlwidth=size, width img"
-  const URL = `${path}?${action[1]}&${format}&${cors}&${urlImage}&${size[1]}=${width}&titles=${search}`;
-
+  const URL = `${prot}://${language}.${path}?${action[1]}&${format}&${cors}&${urlImage}&${size[1]}=${width}&titles=${search}`;
+  console.log(URL);
   return fetch(URL, {
     method: "GET",
     headers: {

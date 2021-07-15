@@ -12,7 +12,7 @@ export const globalReducer = (state, action) => {
 };
 
 export const inicialState = {
-  language: "en",
+  language: "es",
   theme: "light",
   lastSearch: "",
   token: null,

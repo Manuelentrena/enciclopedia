@@ -1,9 +1,9 @@
-import { path, action, format, cors, pag, find } from "services/settings";
+import { prot, path, action, format, cors, pag, find } from "services/settings";
 
-export default function getlistOfSearch({ search, signal, page }) {
+export default function getlistOfSearch({ search, signal, page, language }) {
   // "action=opensearch", protocol to GET search
-  const URL = `${path}?${cors}&${format}&${action[1]}&${find}&srsearch=${search}&${pag}=${page}`;
-
+  const URL = `${prot}://${language}.${path}?${cors}&${format}&${action[1]}&${find}&srsearch=${search}&${pag}=${page}`;
+  console.log(URL);
   return fetch(URL, {
     method: "GET",
     signal: signal,

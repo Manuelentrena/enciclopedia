@@ -2,10 +2,14 @@ import { useContext } from "react";
 import getImages from "services/getImages";
 import getImageUrl from "services/getImageUrl";
 import ImagesContext from "provider/ImagesContext";
+import GlobalContext from "provider/global/globalContext";
 import getImageById from "services/getImageById";
 
 export const useImages = () => {
+  /* Context Images */
   const { setImages } = useContext(ImagesContext);
+  /* Context Global */
+  const { language } = useContext(GlobalContext);
 
   async function getlistImages({ id, limit }) {
     setImages([]);
@@ -27,12 +31,12 @@ export const useImages = () => {
 
   async function getImage({ title, size }) {
     const search = encodeURI(title);
-    const url = await getImageUrl({ search, width: size });
+    const url = await getImageUrl({ search, width: size, language });
     return url;
   }
 
   function getImageHeader({ id, large, signal }) {
-    return getImageById({ id, large, signal }).then((res) => {
+    return getImageById({ id, large, signal, language }).then((res) => {
       return res?.query?.pages[id]?.thumbnail?.source;
     });
   }

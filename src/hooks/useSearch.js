@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import getlistOfSearch from "services/getlistOfSearch";
 import SearchContext from "provider/SearchContext";
+import GlobalContext from "provider/global/globalContext";
 
 export const useSearch = () => {
+  /* Context Search */
   const {
     search,
     setSearch,
@@ -11,6 +13,9 @@ export const useSearch = () => {
     globalPage,
     setGlobalPage,
   } = useContext(SearchContext);
+  /* Context Global */
+  const { language } = useContext(GlobalContext);
+  /* State useSearch */
   const [isLoading, setIsLoading] = useState(false);
 
   function isEmpty() {
@@ -44,6 +49,7 @@ export const useSearch = () => {
         search: searchURI,
         page,
         signal,
+        language,
       });
       mounted && setSearch(data);
     }
