@@ -3,7 +3,6 @@ import { Spinner, SearchItem } from "components";
 import { useSearch } from "hooks/useSearch";
 
 const SearchList = ({ text, selected, page, setPage }) => {
-  /* const [page, setPage] = useState(0); */
   const {
     isLoading,
     search,
@@ -20,7 +19,6 @@ const SearchList = ({ text, selected, page, setPage }) => {
     const { signal, abortController } = stopFecth();
     let mounted = true;
     if (page !== 0 && page !== globalPage) {
-      console.log("estoy dentro");
       setState({ search: text, signal, mounted, page });
       setGlobalPage((prev) => prev + 10);
     }
@@ -48,7 +46,6 @@ const SearchList = ({ text, selected, page, setPage }) => {
     return () => {
       abortController.abort();
       mounted = false;
-      /* setPage(0); */
     };
   }, [text]); // eslint-disable-line react-hooks/exhaustive-deps
 

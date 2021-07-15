@@ -1,3 +1,30 @@
+/* HTML & BODY & ROOT*/
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#root,
+body {
+  margin: 0;
+}
+
+/* HEADER */
+.header {
+  background-color: lightsalmon;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+/* SEARCH */
+#form {
+  background-color: lightsalmon;
+  padding: 0.5rem;
+}
 /* UN RESULTADO DEL SEARCH */
 .oneResult {
   display: flex;
@@ -40,7 +67,7 @@
 /* UN RESULTADO DEL SEARCH */
 /* Item seleccionado */
 .selected {
-  background-color: lemonchiffon;
+  background-color: rgb(255, 190, 165);
 }
 
 /* MODAL */
@@ -51,7 +78,7 @@
   backdrop-filter: blur(1px);
   position: fixed;
   bottom: 0;
-  top: 2rem;
+  top: 5.7rem;
   left: 0;
   right: 0;
   /* max-height: 15rem; */
@@ -68,7 +95,7 @@
   /* z-index: 1; */
   /* margin: 0.2rem; */
   overflow-y: auto;
-  max-height: calc(100vh - 99px);
+  max-height: calc(100vh - 95px);
 }
 
 /* SPINNER */
