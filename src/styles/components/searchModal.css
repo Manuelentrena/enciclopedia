@@ -1,0 +1,21 @@
+.modal {
+  padding: 0rem 0rem;
+  background-color: rgba(112, 112, 112, 0.5);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  bottom: 0;
+  top: 5.7rem;
+  left: 0;
+  right: 0;
+}
+
+.modal__body {
+  background-color: white;
+  max-width: 50rem;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(100vh - 95px);
+}

@@ -1,0 +1,10 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: var(--fs-base);
+  box-sizing: border-box;
+}

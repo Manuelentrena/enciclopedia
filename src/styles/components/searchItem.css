@@ -1,0 +1,43 @@
+.oneResult {
+  display: flex;
+  height: 60px;
+  margin-bottom: 0.2rem;
+}
+
+.oneResult__img {
+  width: 50px;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.oneResult__url {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.oneResult__body {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  width: 100%;
+  max-height: 6rem;
+}
+
+.oneResult__title {
+  margin: 0;
+}
+
+.oneResult__description {
+  margin: 0;
+  max-height: 3.6rem;
+  overflow-y: hidden;
+}
+/* UN RESULTADO DEL SEARCH */
+/* Item seleccionado */
+.selected {
+  background-color: rgb(255, 190, 165);
+}

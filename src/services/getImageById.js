@@ -13,7 +13,7 @@ export default function getImageById({ id, large = 200, signal, language }) {
   // "prop=pageimages"; propertis of img
   // "large"; dimension img
   const URL = `${prot}://${language}.${path}?${action[1]}&${format}&${cors}&${prop[1]}&pageids=${id}&${size[0]}=${large}`;
-  console.log(URL);
+
   return fetch(URL, {
     method: "GET",
     signal: signal,

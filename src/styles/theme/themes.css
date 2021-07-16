@@ -1,0 +1,22 @@
+:root {
+  --ON: initial;
+  --OFF: ;
+}
+
+.theme-default,
+.theme-light {
+  --light: var(--ON);
+  --dark: var(--OFF);
+}
+
+.theme-dark {
+  --light: var(--OFF);
+  --dark: var(--ON);
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-default {
+    --light: var(--OFF);
+    --dark: var(--ON);
+  }
+}
