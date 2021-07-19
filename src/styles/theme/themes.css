@@ -4,12 +4,12 @@
 }
 
 .theme-default,
-.theme-light {
+.light {
   --light: var(--ON);
   --dark: var(--OFF);
 }
 
-.theme-dark {
+.dark {
   --light: var(--OFF);
   --dark: var(--ON);
 }

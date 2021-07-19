@@ -5,3 +5,6 @@ export { default as SearchModal } from "components/SearchModal";
 export { default as Spinner } from "components/Spinner";
 export { default as SearchItem } from "components/SearchItem";
 export { default as SearchItemImg } from "components/SearchItemImg";
+export { default as Header } from "components/Header";
+export { default as Logo } from "components/Logo";
+export { default as Togle } from "components/Togle";

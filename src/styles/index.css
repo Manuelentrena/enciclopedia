@@ -1,5 +1,5 @@
 /* Settings */
-/* @import "../styles/settings/typography.css"; */
+@import "../styles/settings/colors.css";
 
 /* Global */
 @import "../styles/global/box-sizing.css";
@@ -22,6 +22,8 @@
 @import "../styles/components/searchItem.css";
 @import "../styles/components/searchModal.css";
 @import "../styles/components/spinner.css";
+@import "../styles/components/logo.css";
+@import "../styles/components/toggle.css";
 
 /* utils */
 /* @import "../styles/utils/center.css"; */

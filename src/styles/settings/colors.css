@@ -1,0 +1,44 @@
+:root {
+  /* COLORS */
+  --blue10: #1a2d49;
+  --blue9: #03045e;
+  --blue8: #023e8a;
+  --blue7: #0077b6;
+  --blue6: #0096c7;
+  --blue5: #00b4d8;
+  --blue4: #48cae4;
+  --blue3: #90e0ef;
+  --blue2: #ade8f4;
+  --blue1: #caf0f8;
+  --white: #ffffff;
+
+  /* primary */
+  --c-primary: var(--light, var(--blue8)) var(--dark, var(--blue3));
+  --c-second: var(--light, var(--blue7)) var(--dark, var(--white));
+  --c-background: var(--light, var(--white)) var(--dark, var(--blue10));
+
+  /* LOGO */
+  --cLogo-gradient1: var(--light, var(--blue9)) var(--dark, var(--blue3));
+  --cLogo-gradient2: var(--light, var(--blue6)) var(--dark, var(--white));
+  --cLogo-text1: var(--light, var(--blue8)) var(--dark, var(--blue3));
+  --cLogo-text2: var(--light, var(--blue7)) var(--dark, var(--white));
+
+  /* TOGLE */
+  --cTogle-bg: var(--light, var(--blue9)) var(--dark, var(--white));
+  --cTogle-bg-hover: var(--light, var(--blue7)) var(--dark, var(--blue1));
+  --cTogle-circle: var(--light, var(--white)) var(--dark, var(--blue10));
+
+  /* LAYOUT */
+  /*   --c-bg-body: var(--bg-up);
+  --c-bg-hero: var(--bg-down); */
+
+  /* HEADER */
+
+  /* TOGLE */
+
+  /* TITLES */
+  /*   --c-h1: var(--text-primary);
+  --c-h2: var(--text-primary);
+  --c-p: var(--text-primary);
+  --c-small: var(--text-secundary); */
+}

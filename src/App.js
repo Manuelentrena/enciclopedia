@@ -1,14 +1,12 @@
-import { SearchForm, ListImages } from "components";
-/* import { ResultsContextProvider } from "provider/ResultsContext";
-import { ImagesContextProvider } from "provider/ImagesContext"; */
+import { SearchForm, ListImages, Header } from "components";
 import { SearchContextProvider } from "provider/SearchContext";
 import { GlobalStateProvider } from "provider/global/globalContext";
 
 function App() {
   return (
     <GlobalStateProvider>
+      <Header />
       <SearchContextProvider>
-        <h1 className="header">ENCICLOPEDIA</h1>
         <SearchForm />
       </SearchContextProvider>
       <ListImages />

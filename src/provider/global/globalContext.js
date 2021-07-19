@@ -9,20 +9,10 @@ export function GlobalStateProvider({ children }) {
 
   const { language, theme, lastSearch, token, userName } = globalState;
 
-  const setThemeDark = useCallback(
+  const setTheme = useCallback(
     (theme) => {
       globalDispatch({
-        type: GLOBAL_ACTIONS.CHANGE_DARK,
-        payload: theme,
-      });
-    },
-    [globalDispatch]
-  );
-
-  const setThemeLight = useCallback(
-    (theme) => {
-      globalDispatch({
-        type: GLOBAL_ACTIONS.CHANGE_LIGHT,
+        type: GLOBAL_ACTIONS.CHANGE_THEME,
         payload: theme,
       });
     },
@@ -37,8 +27,7 @@ export function GlobalStateProvider({ children }) {
         lastSearch,
         token,
         userName,
-        setThemeDark,
-        setThemeLight,
+        setTheme,
       }}
     >
       {children}

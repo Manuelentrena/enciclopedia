@@ -1,0 +1,16 @@
+.logo__principal {
+  fill: var(--cLogo-text1);
+}
+
+.logo__secundario {
+  fill: var(--cLogo-text2);
+}
+
+.logo__gradient {
+  fill: url(#gradientLogo);
+}
+
+#gradientLogo {
+  --cLogo-primary: var(--cLogo-gradient1);
+  --cLogo-second: var(--cLogo-gradient2);
+}
