@@ -28,9 +28,11 @@
   --cTogle-bg-hover: var(--light, var(--blue7)) var(--dark, var(--blue1));
   --cTogle-circle: var(--light, var(--white)) var(--dark, var(--blue10));
 
-  /* LAYOUT */
-  /*   --c-bg-body: var(--bg-up);
-  --c-bg-hero: var(--bg-down); */
+  /* LANGUAGE */
+  --cLang-bg: var(--light, var(--blue9)) var(--dark, var(--white));
+  --cLang-bg-hover: var(--light, var(--blue7)) var(--dark, var(--blue1));
+  --cLang-text: var(--light, var(--white)) var(--dark, var(--blue10));
+  --cLang-option-bg: var(--light, var(--blue10)) var(--dark, var(--white));
 
   /* HEADER */
 

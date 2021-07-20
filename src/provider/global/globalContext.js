@@ -7,7 +7,8 @@ const GlobalContext = createContext({});
 export function GlobalStateProvider({ children }) {
   const [globalState, globalDispatch] = useReducer(globalReducer, inicialState);
 
-  const { language, theme, lastSearch, token, userName } = globalState;
+  const { language, theme, lastSearch, token, userName, switchLanguage } =
+    globalState;
 
   const setTheme = useCallback(
     (theme) => {
@@ -19,15 +20,27 @@ export function GlobalStateProvider({ children }) {
     [globalDispatch]
   );
 
+  const setLanguage = useCallback(
+    (language) => {
+      globalDispatch({
+        type: GLOBAL_ACTIONS.CHANGE_LANGUAGE,
+        payload: language,
+      });
+    },
+    [globalDispatch]
+  );
+
   return (
     <GlobalContext.Provider
       value={{
         language,
+        setLanguage,
+        switchLanguage,
         theme,
+        setTheme,
         lastSearch,
         token,
         userName,
-        setTheme,
       }}
     >
       {children}

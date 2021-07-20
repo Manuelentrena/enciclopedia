@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  justify-content: space-between;
   background-color: var(--c-background);
   padding: 0.5rem;
   width: 100%;
@@ -8,4 +9,9 @@
 .header__picture {
   display: block;
   width: fit-content;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
 }

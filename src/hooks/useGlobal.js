@@ -3,7 +3,8 @@ import GlobalContext from "provider/global/globalContext";
 
 export const useGlobal = () => {
   /* Context Global */
-  const { theme, setTheme } = useContext(GlobalContext);
+  const { theme, setTheme, language, setLanguage, switchLanguage } =
+    useContext(GlobalContext);
 
   function changeTheme() {
     const tagHtml = document.getElementsByTagName("html")[0];
@@ -15,5 +16,8 @@ export const useGlobal = () => {
     theme,
     setTheme,
     changeTheme,
+    language,
+    setLanguage,
+    switchLanguage,
   };
 };

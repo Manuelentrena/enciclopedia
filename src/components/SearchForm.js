@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { SearchModal, SearchList } from "components";
 import { useSearch } from "hooks/useSearch";
+import Lang from "Translations";
 
 import debounce from "just-debounce-it";
+import { useGlobal } from "hooks/useGlobal";
 
 const SearchForm = () => {
+  const { language: fx } = useGlobal();
   const { search, setTextGlobal, textGlobal } = useSearch();
   const [text, setText] = useState("");
   const [page, setPage] = useState(0);
@@ -60,13 +63,13 @@ const SearchForm = () => {
       <form id="form" onSubmit={handleSubmit}>
         <input
           id="search"
-          placeholder="Search terms here..."
+          placeholder={Lang[fx].search.searchInput}
           value={text}
           onChange={handleChange}
           onFocus={handleFocus}
           onKeyDown={handleDown}
         ></input>
-        <button type="submit">SEARCH</button>
+        <button type="submit">{Lang[fx].search.searchButton}</button>
       </form>
       {showModal && (
         <SearchModal onClose={handleClose}>

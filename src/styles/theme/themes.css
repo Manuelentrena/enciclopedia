@@ -3,7 +3,6 @@
   --OFF: ;
 }
 
-.theme-default,
 .light {
   --light: var(--ON);
   --dark: var(--OFF);
@@ -12,11 +11,4 @@
 .dark {
   --light: var(--OFF);
   --dark: var(--ON);
-}
-
-@media (prefers-color-scheme: dark) {
-  .theme-default {
-    --light: var(--OFF);
-    --dark: var(--ON);
-  }
 }

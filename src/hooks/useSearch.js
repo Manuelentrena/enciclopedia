@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import getlistOfSearch from "services/getlistOfSearch";
 import SearchContext from "provider/SearchContext";
-import GlobalContext from "provider/global/globalContext";
 
 export const useSearch = () => {
   /* Context Search */
@@ -13,8 +12,6 @@ export const useSearch = () => {
     globalPage,
     setGlobalPage,
   } = useContext(SearchContext);
-  /* Context Global */
-  const { language } = useContext(GlobalContext);
   /* State useSearch */
   const [isLoading, setIsLoading] = useState(false);
 
@@ -41,7 +38,7 @@ export const useSearch = () => {
     return { signal, abortController };
   }
 
-  async function setState({ search, signal, mounted, page }) {
+  async function setState({ search, signal, mounted, page, language }) {
     setIsLoading(true);
     if (search) {
       const searchURI = encodeURI(search);

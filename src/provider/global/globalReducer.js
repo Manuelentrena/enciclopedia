@@ -4,9 +4,15 @@ export const globalReducer = (state, action) => {
   switch (action.type) {
     case GLOBAL_ACTIONS.CHANGE_THEME:
       return { ...state, theme: action.payload };
+    case GLOBAL_ACTIONS.CHANGE_LANGUAGE:
+      return { ...state, language: action.payload, switchLanguage: true };
     default:
       return state;
   }
+};
+
+const languageSystem = () => {
+  return navigator.language?.substr(0, 2) ?? "en";
 };
 
 const colorSchemeSystem = () => {
@@ -19,7 +25,8 @@ const colorSchemeSystem = () => {
 };
 
 export const inicialState = {
-  language: "es",
+  language: languageSystem(),
+  switchLanguage: false,
   theme: colorSchemeSystem(),
   lastSearch: "",
   token: null,

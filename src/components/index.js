@@ -8,3 +8,4 @@ export { default as SearchItemImg } from "components/SearchItemImg";
 export { default as Header } from "components/Header";
 export { default as Logo } from "components/Logo";
 export { default as Togle } from "components/Togle";
+export { default as Language } from "components/Language";

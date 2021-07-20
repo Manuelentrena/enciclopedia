@@ -1,0 +1,20 @@
+.language {
+  margin-left: 1rem;
+  height: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--cLang-bg);
+  color: var(--cLang-text);
+}
+
+.language:focus {
+  outline: none;
+}
+
+.language:hover {
+  background-color: var(--cLang-bg-hover);
+}
+
+.language option {
+  background-color: var(--cLang-option-bg);
+}

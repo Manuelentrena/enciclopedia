@@ -1,4 +1,5 @@
 //Events of proyect
 export const GLOBAL_ACTIONS = {
   CHANGE_THEME: "CHANGE_THEME",
+  CHANGE_LANGUAGE: "CHANGE_LANGUAGE",
 };

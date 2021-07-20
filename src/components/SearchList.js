@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { Spinner, SearchItem } from "components";
 import { useSearch } from "hooks/useSearch";
+import { useGlobal } from "hooks/useGlobal";
+import Lang from "Translations";
 
 const SearchList = ({ text, selected, page, setPage }) => {
+  const { language: fx, switchLanguage } = useGlobal();
   const {
     isLoading,
     search,
@@ -19,7 +22,7 @@ const SearchList = ({ text, selected, page, setPage }) => {
     const { signal, abortController } = stopFecth();
     let mounted = true;
     if (page !== 0 && page !== globalPage) {
-      setState({ search: text, signal, mounted, page });
+      setState({ search: text, signal, mounted, page, language: fx });
       setGlobalPage((prev) => prev + 10);
     }
 
@@ -35,7 +38,14 @@ const SearchList = ({ text, selected, page, setPage }) => {
 
     if (text !== textGlobal) {
       async function searchList(text, signal, mounted) {
-        text && (await setState({ search: text, signal, mounted, page: 0 }));
+        text &&
+          (await setState({
+            search: text,
+            signal,
+            mounted,
+            page: 0,
+            language: fx,
+          }));
         setTextGlobal(text);
       }
       searchList(text, signal, mounted);
@@ -49,6 +59,29 @@ const SearchList = ({ text, selected, page, setPage }) => {
     };
   }, [text]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    const { signal, abortController } = stopFecth();
+    let mounted = true;
+    async function searchList(signal, mounted) {
+      switchLanguage &&
+        (await setState({
+          search: textGlobal,
+          signal,
+          mounted,
+          page: 0,
+          language: fx,
+        }));
+      setPage(0);
+      setGlobalPage(0);
+    }
+    searchList(signal, mounted);
+
+    return () => {
+      abortController.abort();
+      mounted = false;
+    };
+  }, [fx]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const handleClick = (e) => {
     setPage((prev) => prev + 10);
     e.stopPropagation();
@@ -57,14 +90,14 @@ const SearchList = ({ text, selected, page, setPage }) => {
   return isLoading ? (
     <Spinner />
   ) : isEmpty() ? (
-    <p>NO HAY RESULTADOS</p>
+    <p>{Lang[fx].search.results}</p>
   ) : (
     <>
       {search.map((item) => (
         <SearchItem key={item.id} selected={selected} {...item} />
       ))}
       <button onClick={(e) => handleClick(e)}>
-        More Results for "{textGlobal}"
+        {Lang[fx].search.moreResultsButton} "{textGlobal}"
       </button>
     </>
   );

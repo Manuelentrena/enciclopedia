@@ -1,16 +1,14 @@
-import { SearchForm, ListImages, Header } from "components";
-import { SearchContextProvider } from "provider/SearchContext";
-import { GlobalStateProvider } from "provider/global/globalContext";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Home, Init } from "pages";
 
 function App() {
   return (
-    <GlobalStateProvider>
-      <Header />
-      <SearchContextProvider>
-        <SearchForm />
-      </SearchContextProvider>
-      <ListImages />
-    </GlobalStateProvider>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Init}></Route>
+        <Route path="/home" exact component={Home}></Route>
+      </Switch>
+    </Router>
   );
 }
 
