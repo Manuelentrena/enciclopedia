@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .togle__icon {
   display: flex;
   justify-content: flex-start;
@@ -14,10 +15,6 @@
   cursor: pointer;
 }
 
-.togle__icon:hover {
-  background: var(--cTogle-bg-hover);
-}
-
 .togle__subicon {
   width: 1.5rem;
   height: 1.5rem;
@@ -25,6 +22,10 @@
   cursor: pointer;
   background-color: var(--cTogle-circle);
   transition: all ease 0.5s;
+}
+
+.togle:hover .togle__subicon {
+  background: var(--cTogle-circle-hover);
 }
 
 .iconMove {

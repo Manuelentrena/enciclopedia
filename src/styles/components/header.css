@@ -1,4 +1,5 @@
 .header {
+  overflow-x: hidden;
   display: flex;
   justify-content: space-between;
   background-color: var(--c-background);

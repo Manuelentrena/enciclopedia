@@ -1,18 +1,18 @@
 .modal {
   padding: 0rem 0rem;
-  background-color: rgba(112, 112, 112, 0.5);
+  background-color: var(--cModal-bg-ext);
   backdrop-filter: blur(1px);
   position: fixed;
   bottom: 0;
-  top: 5.7rem;
+  top: 8.3rem;
   left: 0;
   right: 0;
 }
 
 .modal__body {
-  background-color: white;
+  background-color: var(--cModal-bg-int);
   max-width: 50rem;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;

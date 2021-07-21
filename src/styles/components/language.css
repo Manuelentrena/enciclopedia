@@ -12,7 +12,7 @@
 }
 
 .language:hover {
-  background-color: var(--cLang-bg-hover);
+  color: var(--cLang-text-hover);
 }
 
 .language option {

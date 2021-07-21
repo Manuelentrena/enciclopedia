@@ -60,16 +60,21 @@ const SearchForm = () => {
 
   return (
     <>
-      <form id="form" onSubmit={handleSubmit}>
-        <input
-          id="search"
-          placeholder={Lang[fx].search.searchInput}
-          value={text}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onKeyDown={handleDown}
-        ></input>
-        <button type="submit">{Lang[fx].search.searchButton}</button>
+      <form className="searchForm" id="form" onSubmit={handleSubmit}>
+        <div className="searchBody">
+          <input
+            className="searchForm__input"
+            id="search"
+            placeholder={Lang[fx].search.searchInput}
+            value={text}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onKeyDown={handleDown}
+          ></input>
+          <button className="searchForm__button" type="submit">
+            {Lang[fx].search.searchButton}
+          </button>
+        </div>
       </form>
       {showModal && (
         <SearchModal onClose={handleClose}>

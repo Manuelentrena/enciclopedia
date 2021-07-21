@@ -1,5 +1,9 @@
 :root {
   /* COLORS */
+  --blue13: #343e55;
+  --blue12: #334f79;
+  --blue11: rgb(16, 32, 54);
+  --blue11Opa: rgba(16, 32, 54, 0.2);
   --blue10: #1a2d49;
   --blue9: #03045e;
   --blue8: #023e8a;
@@ -11,32 +15,48 @@
   --blue2: #ade8f4;
   --blue1: #caf0f8;
   --white: #ffffff;
+  --whiteOpa: rgba(255, 255, 255, 0.2);
 
   /* primary */
   --c-primary: var(--light, var(--blue8)) var(--dark, var(--blue3));
   --c-second: var(--light, var(--blue7)) var(--dark, var(--white));
-  --c-background: var(--light, var(--white)) var(--dark, var(--blue10));
+  --c-background: var(--light, var(--white)) var(--dark, var(--blue11));
 
   /* LOGO */
-  --cLogo-gradient1: var(--light, var(--blue9)) var(--dark, var(--blue3));
+  --cLogo-gradient1: var(--light, var(--blue9)) var(--dark, var(--blue12));
   --cLogo-gradient2: var(--light, var(--blue6)) var(--dark, var(--white));
-  --cLogo-text1: var(--light, var(--blue8)) var(--dark, var(--blue3));
+  --cLogo-text1: var(--light, var(--blue8)) var(--dark, var(--blue12));
   --cLogo-text2: var(--light, var(--blue7)) var(--dark, var(--white));
 
   /* TOGLE */
   --cTogle-bg: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cTogle-bg-hover: var(--light, var(--blue7)) var(--dark, var(--blue1));
-  --cTogle-circle: var(--light, var(--white)) var(--dark, var(--blue10));
+  --cTogle-circle-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
+  --cTogle-circle: var(--light, var(--blue6)) var(--dark, var(--blue12));
 
   /* LANGUAGE */
   --cLang-bg: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cLang-bg-hover: var(--light, var(--blue7)) var(--dark, var(--blue1));
-  --cLang-text: var(--light, var(--white)) var(--dark, var(--blue10));
+  --cLang-text-hover: var(--light, var(--white)) var(--dark, var(--blue12));
+  --cLang-text: var(--light, var(--white)) var(--dark, var(--blue12));
   --cLang-option-bg: var(--light, var(--blue10)) var(--dark, var(--white));
 
-  /* HEADER */
+  /* SEARCHFORM */
+  --cSearch-bg: var(--light, var(--blue9)) var(--dark, var(--blue10));
+  --cSearch-input-bg: var(--light, var(--white)) var(--dark, var(--white));
+  --cSearch-input-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
+  --cSearch-input-text: var(--light, var(--blue8)) var(--dark, var(--blue11));
+  --cSearch-button-bg: var(--light, var(--blue6)) var(--dark, var(--blue12));
+  --cSearch-button-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
+  --cSearch-button-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
+  --cSearch-button-text: var(--light, var(--white)) var(--dark, var(--white));
 
-  /* TOGLE */
+  /* MODAL */
+  --cModal-bg-int: var(--light, var(--blue1)) var(--dark, var(--blue13));
+  --cModal-bg-ext: var(--light, var(--whiteOpa)) var(--dark, var(--blue11Opa));
+
+  /* MODAL ITEM */
+  --cModalIten-gb-hover: var(--light, var(--blue3)) var(--dark, var(--blue12));
+  --cModalIten-title: var(--light, var(--blue9)) var(--dark, var(--white));
+  --cModalIten-desc: var(--light, var(--blue9)) var(--dark, var(--white));
 
   /* TITLES */
   /*   --c-h1: var(--text-primary);

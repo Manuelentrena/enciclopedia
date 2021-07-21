@@ -1,4 +1,39 @@
-#form {
-  background-color: lightsalmon;
+.searchForm {
+  width: 100%;
+  background-color: var(--cSearch-bg);
   padding: 0.5rem;
+}
+
+.searchBody {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchForm__input {
+  background-color: var(--cSearch-input-bg);
+  border: 3px solid var(--cSearch-input-border);
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--cSearch-input-text);
+  width: 100%;
+}
+
+.searchForm__input:focus {
+  outline: none;
+}
+.searchForm__input::placeholder {
+  color: var(--cSearch-input-text);
+}
+
+.searchForm__button {
+  background-color: var(--cSearch-button-bg);
+  border: 3px solid var(--cSearch-button-border);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--cSearch-button-text);
+  cursor: pointer;
+}
+.searchForm__button:hover {
+  background-color: var(--cSearch-button-hover);
 }
