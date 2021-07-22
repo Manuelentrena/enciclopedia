@@ -9,3 +9,5 @@ export { default as Header } from "components/Header";
 export { default as Logo } from "components/Logo";
 export { default as Togle } from "components/Togle";
 export { default as Language } from "components/Language";
+export { default as Button } from "components/Button";
+export { default as SearchSvg } from "components/SearchSvg";

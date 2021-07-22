@@ -13,7 +13,8 @@
   --blue4: #48cae4;
   --blue3: #90e0ef;
   --blue2: #ade8f4;
-  --blue1: #caf0f8;
+  /* --blue1: #caf0f8; */
+  --blue1: #e1faff;
   --white: #ffffff;
   --whiteOpa: rgba(255, 255, 255, 0.2);
 
@@ -21,6 +22,11 @@
   --c-primary: var(--light, var(--blue8)) var(--dark, var(--blue3));
   --c-second: var(--light, var(--blue7)) var(--dark, var(--white));
   --c-background: var(--light, var(--white)) var(--dark, var(--blue11));
+
+  /* H3 */
+  --c-H3: var(--light, var(--blue9)) var(--dark, var(--white));
+  --c-p: var(--light, var(--blue9)) var(--dark, var(--white));
+  --c-hr: var(--light, var(--blue9)) var(--dark, var(--white));
 
   /* LOGO */
   --cLogo-gradient1: var(--light, var(--blue9)) var(--dark, var(--blue12));
@@ -41,13 +47,24 @@
 
   /* SEARCHFORM */
   --cSearch-bg: var(--light, var(--blue9)) var(--dark, var(--blue10));
-  --cSearch-input-bg: var(--light, var(--white)) var(--dark, var(--white));
-  --cSearch-input-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
-  --cSearch-input-text: var(--light, var(--blue8)) var(--dark, var(--blue11));
-  --cSearch-button-bg: var(--light, var(--blue6)) var(--dark, var(--blue12));
-  --cSearch-button-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
-  --cSearch-button-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
-  --cSearch-button-text: var(--light, var(--white)) var(--dark, var(--white));
+  --cSearch-svg: var(--light, var(--blue8)) var(--dark, var(--white));
+
+  /* BUTTON PRIMARY */
+  --cbutton-bg: var(--light, var(--blue6)) var(--dark, var(--blue12));
+  --cbutton-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
+  --cbutton-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
+  --cbutton-text: var(--light, var(--white)) var(--dark, var(--white));
+
+  /* BUTTON SECOND */
+  --cbutton2-bg: var(--light, var(--white)) var(--dark, var(--white));
+  --cbutton2-hover: var(--light, var(--blue3)) var(--dark, var(--blue1));
+  --cbutton2-border: var(--light, var(--blue9)) var(--dark, var(--blue12));
+  --cbutton2-text: var(--light, var(--blue9)) var(--dark, var(--blue12));
+
+  /* INPUT */
+  --cInput-bg: var(--light, var(--white)) var(--dark, var(--white));
+  --cInput-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
+  --cInput-text: var(--light, var(--blue8)) var(--dark, var(--blue11));
 
   /* MODAL */
   --cModal-bg-int: var(--light, var(--blue1)) var(--dark, var(--blue13));
@@ -55,8 +72,9 @@
 
   /* MODAL ITEM */
   --cModalIten-gb-hover: var(--light, var(--blue3)) var(--dark, var(--blue12));
-  --cModalIten-title: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cModalIten-desc: var(--light, var(--blue9)) var(--dark, var(--white));
+  --cModalIten-title: var(--light, var(--blue8)) var(--dark, var(--white));
+  --cModalIten-desc: var(--light, var(--blue12)) var(--dark, var(--white));
+  --cModalIten-border: var(--light, var(--blue12)) var(--dark, var(--white));
 
   /* TITLES */
   /*   --c-h1: var(--text-primary);

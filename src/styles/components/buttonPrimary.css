@@ -1,0 +1,14 @@
+.buttonPrimary {
+  background-color: var(--cbutton-bg);
+  border: 3px solid var(--cbutton-border);
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  font-family: "Myriad Bold", sans-serif;
+  font-weight: bold;
+  color: var(--cbutton-text);
+  cursor: pointer;
+}
+.buttonPrimary:hover {
+  background-color: var(--cbutton-hover);
+}

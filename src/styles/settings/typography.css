@@ -1,0 +1,27 @@
+:root {
+  /* ESCALA */
+  --fs-base: 62.5%;
+
+  /* TAMAÑOS */
+  --fs-higher: 3.8rem;
+  --fs-high: 3.3rem;
+  --fs-midhigh: 1.8rem;
+  --fs-medium: 1.5rem;
+  --fs-small: 1.3rem;
+
+  /* HEADINGS */
+  /*     --fs-h1: var(--fs-higher);
+  --fs-h2: var(--fs-high);
+  --fs-cite: var(--fs-medium); */
+  --fs-input: var(--fs-medium);
+  --fs-h3: var(--fs-medium);
+  --fs-p: var(--fs-small);
+
+  /* PESOS */
+  --bold: 700;
+  --semiBold: 600;
+  --medium: 400;
+
+  /* Altura de linea */
+  --line-height: 1.5;
+}

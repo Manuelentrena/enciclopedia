@@ -1,0 +1,17 @@
+.buttonSecond {
+  margin: 1.5rem auto 0;
+  width: fit-content;
+  background-color: var(--cbutton2-bg);
+  border: 1px solid var(--cbutton2-border);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  font-family: "Myriad Bold", sans-serif;
+  font-weight: bold;
+  color: var(--cbutton2-text);
+  cursor: pointer;
+}
+
+.buttonSecond:hover {
+  background-color: var(--cbutton2-hover);
+}

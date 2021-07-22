@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SearchModal, SearchList } from "components";
+import { SearchModal, SearchList, Button } from "components";
 import { useSearch } from "hooks/useSearch";
 import Lang from "Translations";
 
@@ -71,9 +71,11 @@ const SearchForm = () => {
             onFocus={handleFocus}
             onKeyDown={handleDown}
           ></input>
-          <button className="searchForm__button" type="submit">
-            {Lang[fx].search.searchButton}
-          </button>
+          <Button
+            className="buttonPrimary"
+            text={Lang[fx].search.searchButton}
+            type="submit"
+          />
         </div>
       </form>
       {showModal && (

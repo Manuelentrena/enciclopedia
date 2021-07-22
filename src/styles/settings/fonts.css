@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Myriad Bold", sans-serif;
+  src: url(../../assets/fonts/MYRIAD-BOLD.OTF);
+}
+
+@font-face {
+  font-family: "Myriad Regular", sans-serif;
+  src: url(../../assets/fonts/MYRIAD-REGULAR.OTF);
+}
+
+@font-face {
+  font-family: "Myriad Light", sans-serif;
+  src: url(../../assets/fonts/MYRIAD-LIGHT.otf);
+}

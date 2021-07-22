@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Spinner, SearchItem } from "components";
+import { Spinner, SearchItem, Button } from "components";
 import { useSearch } from "hooks/useSearch";
 import { useGlobal } from "hooks/useGlobal";
 import Lang from "Translations";
@@ -96,9 +96,14 @@ const SearchList = ({ text, selected, page, setPage }) => {
       {search.map((item) => (
         <SearchItem key={item.id} selected={selected} {...item} />
       ))}
-      <button onClick={(e) => handleClick(e)}>
+      {/* <button onClick={(e) => handleClick(e)}>
         {Lang[fx].search.moreResultsButton} "{textGlobal}"
-      </button>
+      </button> */}
+      <Button
+        className="buttonSecond"
+        text={Lang[fx].search.moreResultsButton + " '" + textGlobal + "'"}
+        action={handleClick}
+      />
     </>
   );
 };

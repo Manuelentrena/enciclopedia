@@ -1,5 +1,7 @@
 /* Settings */
 @import "../styles/settings/colors.css";
+@import "../styles/settings/fonts.css";
+@import "../styles/settings/typography.css";
 
 /* Global */
 @import "../styles/global/box-sizing.css";
@@ -8,7 +10,7 @@
 /* Theme */
 @import "../styles/theme/themes.css";
 @import "../styles/theme/body.css";
-/* @import "../styles/theme/headings.css"; */
+@import "../styles/theme/headings.css";
 
 /* Layouts */
 /* @import "../styles/layouts/container.css"; */
@@ -25,6 +27,9 @@
 @import "../styles/components/logo.css";
 @import "../styles/components/toggle.css";
 @import "../styles/components/language.css";
+@import "../styles/components/buttonPrimary.css";
+@import "../styles/components/buttonSecond.css";
+@import "../styles/components/searchSvg.css";
 
 /* utils */
 /* @import "../styles/utils/center.css"; */

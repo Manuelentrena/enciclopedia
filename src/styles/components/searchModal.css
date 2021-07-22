@@ -1,21 +1,21 @@
 .modal {
-  padding: 0rem 0rem;
+  padding: 0;
   background-color: var(--cModal-bg-ext);
   backdrop-filter: blur(1px);
   position: fixed;
   bottom: 0;
-  top: 8.3rem;
+  top: 12.8rem;
   left: 0;
   right: 0;
 }
 
 .modal__body {
   background-color: var(--cModal-bg-int);
-  max-width: 50rem;
-  padding: 1rem;
+  max-width: 55rem;
+  padding: 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  max-height: calc(100vh - 95px);
+  max-height: calc(100vh - 13rem); /* Menos header entero */
 }

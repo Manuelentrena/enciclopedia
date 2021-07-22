@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useImages } from "hooks/useImages";
 import { useSearch } from "hooks/useSearch";
-import initialUrl from "assets/default.jpg";
+import { SearchSvg } from "components";
 
 const SearchItemImg = ({ id, title }) => {
   const { getImageHeader } = useImages();
   const { stopFecth } = useSearch();
-  const [url, setUrl] = useState(initialUrl);
+  const [url, setUrl] = useState(null);
 
   useEffect(() => {
     let mounted = true;
     const { signal, abortController } = stopFecth();
     async function getImg(signal) {
       const newUrl = await getImageHeader({ id, large: 50, signal });
-      newUrl && mounted ? setUrl(newUrl) : setUrl(initialUrl);
+      newUrl && mounted ? setUrl(newUrl) : setUrl(null);
     }
     getImg(signal);
     return () => {
@@ -24,7 +24,11 @@ const SearchItemImg = ({ id, title }) => {
 
   return (
     <>
-      <img className="oneResult__url" src={url} alt={title} />
+      {url ? (
+        <img className="oneResult__url" src={url} alt={title} />
+      ) : (
+        <SearchSvg />
+      )}
     </>
   );
 };
