@@ -5,6 +5,7 @@
   background-color: var(--c-background);
   padding: 0.5rem;
   width: 100%;
+  padding: 0.5rem 1rem;
 }
 
 .header__picture {
@@ -14,5 +15,35 @@
 
 .header__menu {
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.header__nav {
+  display: flex;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .header__menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 7rem;
+    background-color: rgb(87, 136, 87);
+    /* padding: 1rem; */
+    min-height: calc(100vh - 7rem);
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .header__nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.show__menuBurguer {
+  display: flex;
 }

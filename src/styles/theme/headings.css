@@ -26,6 +26,13 @@ p {
   margin: 1rem 0rem;
 }
 
+li {
+  color: var(--c-li);
+  font: normal var(--medium) var(--fs-li) / var(--line-height) "Myriad Light",
+    sans-serif;
+  margin: 0rem;
+}
+
 input {
   background-color: var(--cInput-bg);
   border: 3px solid var(--cInput-border);

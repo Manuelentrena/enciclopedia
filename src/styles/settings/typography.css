@@ -16,6 +16,7 @@
   --fs-input: var(--fs-medium);
   --fs-h3: var(--fs-medium);
   --fs-p: var(--fs-small);
+  --fs-li: var(--fs-small);
 
   /* PESOS */
   --bold: 700;

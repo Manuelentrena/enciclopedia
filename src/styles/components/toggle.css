@@ -10,14 +10,14 @@
   align-items: center;
   padding: 0.2rem;
   border-radius: 2rem;
-  width: 3.7rem;
+  width: 4.2rem;
   background: var(--cTogle-bg);
   cursor: pointer;
 }
 
 .togle__subicon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   cursor: pointer;
   background-color: var(--cTogle-circle);

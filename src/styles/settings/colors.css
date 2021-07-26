@@ -27,6 +27,7 @@
   --c-H3: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-p: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-hr: var(--light, var(--blue9)) var(--dark, var(--white));
+  --c-li: var(--light, var(--blue9)) var(--dark, var(--white));
 
   /* LOGO */
   --cLogo-gradient1: var(--light, var(--blue9)) var(--dark, var(--blue12));

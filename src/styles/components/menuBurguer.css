@@ -1,3 +1,10 @@
+.burguer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
 .burguer {
   cursor: pointer;
 }
@@ -10,6 +17,7 @@
   background-color: var(--c-icon-burguer);
   margin: 0.75rem 0;
   transition: 0.4s;
+  border-radius: 5px;
 }
 
 .activeMenu.burguer__bar1 {
@@ -24,4 +32,10 @@
 .activeMenu.burguer__bar3 {
   -webkit-transform: rotate(45deg) translate(-0.8rem, -0.8rem);
   transform: rotate(45deg) translate(-0.8rem, -0.8rem);
+}
+
+@media (max-width: 768px) {
+  .burguer__container {
+    display: flex;
+  }
 }

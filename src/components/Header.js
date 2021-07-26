@@ -1,16 +1,19 @@
-import React from "react";
-import { Logo, Togle, Language, MenuBurguer } from "components";
+import React, { useState } from "react";
+import { Logo, Menu, MenuBurguer } from "components";
 const Header = () => {
+  const [isActiveMenu, setIsActiveMenu] = useState(false);
+
   return (
     <div className="header">
       <picture className="header__picture">
         <Logo />
       </picture>
-      <div className="header__menu">
-        <Togle />
-        <Language />
-        <MenuBurguer />
-      </div>
+      {/* Crear componenete HeaderMenu y paasarle la prop isActiveMenu */}
+      <Menu isActiveMenu={isActiveMenu} />
+      <MenuBurguer
+        isActiveMenu={isActiveMenu}
+        setIsActiveMenu={setIsActiveMenu}
+      />
     </div>
   );
 };
