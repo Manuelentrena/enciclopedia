@@ -5,8 +5,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Init}></Route>
-        <Route path="/home" exact component={Home}></Route>
+        <Route path="/:lng(en|es)?" exact component={Init}></Route>
+        <Route path="/:lng(en|es)?/home" exact component={Home}></Route>
       </Switch>
     </Router>
   );

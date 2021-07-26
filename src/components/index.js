@@ -11,3 +11,4 @@ export { default as Togle } from "components/Togle";
 export { default as Language } from "components/Language";
 export { default as Button } from "components/Button";
 export { default as SearchSvg } from "components/SearchSvg";
+export { default as MenuBurguer } from "components/MenuBurguer";

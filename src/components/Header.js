@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo, Togle, Language } from "components";
+import { Logo, Togle, Language, MenuBurguer } from "components";
 const Header = () => {
   return (
     <div className="header">
@@ -9,6 +9,7 @@ const Header = () => {
       <div className="header__menu">
         <Togle />
         <Language />
+        <MenuBurguer />
       </div>
     </div>
   );
