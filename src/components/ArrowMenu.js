@@ -12,4 +12,4 @@ const ArrowMenu = ({ arrowOn }) => {
   );
 };
 
-export default ArrowMenu;
+export default React.memo(ArrowMenu);

@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useGlobal } from "hooks/useGlobal";
 import { useParams, useLocation, useHistory } from "react-router";
 import debounce from "just-debounce-it";
-import { ArrowMenu } from "components";
-
-const languages = ["en", "es"];
+import { ArrowMenu, LanguageTypes } from "components";
+import Lang from "Translations";
 
 const Language = () => {
   const { lng } = useParams();
   const { pathname } = useLocation();
   const history = useHistory();
-  const { language, setLanguage } = useGlobal();
+  const { language: fx } = useGlobal();
   const [width, setWidth] = useState(window.innerWidth);
   const [arrowOn, setArrowOn] = useState(false);
 
@@ -26,10 +25,6 @@ const Language = () => {
     };
   });
 
-  useEffect(() => {
-    lng && setLanguage(lng);
-  }, [lng, setLanguage]);
-
   const handleChange = (e) => {
     let value = "";
     if (e.target.value) {
@@ -38,13 +33,15 @@ const Language = () => {
       value = e.target.id;
     }
 
+    if (lng === value) return false;
+
     let newPath = "";
     if (lng) {
       newPath = pathname.replace(pathname.slice(1, 3), value);
     } else {
       newPath = `/${value}${pathname}`;
     }
-    history.push(newPath);
+    history.push({ pathname: newPath });
   };
 
   const handleClick = () => {
@@ -57,36 +54,21 @@ const Language = () => {
         <select
           name="language"
           className="language__select"
-          value={language}
+          value={fx}
           onChange={handleChange}
         >
-          {languages.map((oneLanguage) => (
-            <option key={oneLanguage} value={oneLanguage}>
-              {oneLanguage.toUpperCase()}
-            </option>
-          ))}
+          <LanguageTypes type="select" />
         </select>
       );
     } else {
       return (
         <>
           <div className="language__container" onClick={handleClick}>
-            <p>Language</p>
+            <p>{Lang[fx].menu.language}</p>
             <ArrowMenu arrowOn={arrowOn} />
           </div>
           <ul className="language__list">
-            {arrowOn
-              ? languages.map((oneLanguage) => (
-                  <li
-                    className="language__item"
-                    key={oneLanguage}
-                    id={oneLanguage}
-                    onClick={handleChange}
-                  >
-                    {oneLanguage.toUpperCase()}
-                  </li>
-                ))
-              : null}
+            <LanguageTypes arrowOn={arrowOn} handleChange={handleChange} />
           </ul>
         </>
       );

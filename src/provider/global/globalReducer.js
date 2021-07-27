@@ -11,7 +11,7 @@ export const globalReducer = (state, action) => {
   }
 };
 
-const languageSystem = () => {
+const LanguageSystem = () => {
   return navigator.language?.substr(0, 2) ?? "en";
 };
 
@@ -25,7 +25,7 @@ const colorSchemeSystem = () => {
 };
 
 export const inicialState = {
-  language: languageSystem(),
+  language: LanguageSystem(),
   switchLanguage: false,
   theme: colorSchemeSystem(),
   lastSearch: "",

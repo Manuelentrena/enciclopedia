@@ -14,3 +14,4 @@ export { default as SearchSvg } from "components/SearchSvg";
 export { default as MenuBurguer } from "components/MenuBurguer";
 export { default as Menu } from "components/Menu";
 export { default as ArrowMenu } from "components/ArrowMenu";
+export { default as LanguageTypes } from "components/LanguageTypes";

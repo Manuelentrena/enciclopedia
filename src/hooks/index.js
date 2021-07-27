@@ -1,3 +1,3 @@
-export { default as useGlobal } from "hooks/useGlobal";
-export { default as useImages } from "hooks/useImages";
-export { default as useSearch } from "hooks/useSearch";
+export { useGlobal } from "hooks/useGlobal";
+export { useImages } from "hooks/useImages";
+export { useSearch } from "hooks/useSearch";

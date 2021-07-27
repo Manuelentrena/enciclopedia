@@ -6,6 +6,10 @@ const Lang = {
       results: "No Results",
       moreResultsButton: "More Results for",
     },
+    menu: {
+      language: "Language",
+      typeLang: { es: "Spanish", en: "English" },
+    },
   },
   es: {
     search: {
@@ -13,6 +17,10 @@ const Lang = {
       searchButton: "BUSCAR",
       results: "Sin Resultados",
       moreResultsButton: "Más Resultados para",
+    },
+    menu: {
+      language: "Lenguage",
+      typeLang: { es: "Español", en: "Inglés" },
     },
   },
 };
