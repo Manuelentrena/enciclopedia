@@ -15,7 +15,7 @@
   --blue2: #ade8f4;
   /* --blue1: #caf0f8; */
   --blue1-1: #d8f9ff;
-  --blue1: #e1faff;
+  --blue1: #e8fbff;
   --white: #ffffff;
   --whiteOpa: rgba(255, 255, 255, 0.2);
 
@@ -94,7 +94,7 @@
   --cMenuMobil-border: var(--light, var(--blue3)) var(--dark, var(--blue10));
   --cMenuMobil-check: var(--light, var(--check)) var(--dark, var(--check));
   --cMenuMobil-nocheck: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cMenuMobil-top: var(--light, var(--blue8)) var(--dark, var(--blue13));
+  --cMenuMobil-top: var(--light, var(--blue1-1)) var(--dark, var(--blue13));
 
   /* TITLES */
   /*   --c-h1: var(--text-primary);
