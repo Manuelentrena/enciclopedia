@@ -14,9 +14,13 @@
   --blue3: #90e0ef;
   --blue2: #ade8f4;
   /* --blue1: #caf0f8; */
+  --blue1-1: #d8f9ff;
   --blue1: #e1faff;
   --white: #ffffff;
   --whiteOpa: rgba(255, 255, 255, 0.2);
+
+  /* CHECK */
+  --check: #00ffff;
 
   /* primary */
   --c-primary: var(--light, var(--blue8)) var(--dark, var(--blue3));
@@ -79,6 +83,18 @@
   --cModalIten-title: var(--light, var(--blue8)) var(--dark, var(--white));
   --cModalIten-desc: var(--light, var(--blue12)) var(--dark, var(--white));
   --cModalIten-border: var(--light, var(--blue12)) var(--dark, var(--white));
+
+  /* MENU MOBIL */
+  --cMenuMobil-bg: var(--light, var(--blue1)) var(--dark, var(--blue13));
+  --cMenuMobil-list: var(--light, var(--blue9)) var(--dark, var(--blue10));
+  --cMenuMobil-arrow: var(--light, var(--white)) var(--dark, var(--white));
+  --cMenuMobil-title: var(--light, var(--white)) var(--dark, var(--white));
+  --cMenuMobil-item: var(--light, var(--blue1)) var(--dark, var(--blue13));
+  --cMenuMobil-selected: var(--light, var(--blue1-1)) var(--dark, var(--blue12));
+  --cMenuMobil-border: var(--light, var(--blue3)) var(--dark, var(--blue10));
+  --cMenuMobil-check: var(--light, var(--check)) var(--dark, var(--check));
+  --cMenuMobil-nocheck: var(--light, var(--blue9)) var(--dark, var(--white));
+  --cMenuMobil-top: var(--light, var(--blue8)) var(--dark, var(--blue13));
 
   /* TITLES */
   /*   --c-h1: var(--text-primary);

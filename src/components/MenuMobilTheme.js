@@ -1,39 +1,51 @@
 import React, { useState } from "react";
 import Lang from "Translations";
-import { ArrowMenu } from "components";
+import { ArrowMenu, MenuNoCheck, MenuCheck } from "components";
 import { useGlobal } from "hooks/useGlobal";
 
 const themes = ["dark", "light"];
 
 const MenuMobilTheme = () => {
-  const { language: fx, setTheme, theme } = useGlobal();
+  const { language: fx, setTheme, theme: globalTheme } = useGlobal();
   const [arrowOn, setArrowOn] = useState(false);
 
   const handleClick = () => {
     setArrowOn((prev) => !prev);
   };
 
-  const handleChange = (e) => {
-    if (theme === e.target.id) return false;
-    e.target.id === "dark" ? setTheme("dark") : setTheme("light");
+  const handleChange = (theme) => {
+    if (globalTheme === theme) return false;
+    theme === "dark" ? setTheme("dark") : setTheme("light");
   };
 
   return (
     <>
       <div className="menuMobil__container" onClick={handleClick}>
-        <p>{Lang[fx].menu.theme}</p>
+        <p className="menuMobil__title">{Lang[fx].menu.theme}</p>
         <ArrowMenu arrowOn={arrowOn} />
       </div>
       <ul className="menuMobil__list">
         {arrowOn
           ? themes.map((theme) => (
               <li
-                className="menuMobil__item"
-                key={theme}
-                id={theme}
-                onClick={handleChange}
+                className={
+                  theme === globalTheme
+                    ? "menuMobil__item menuMobil__item--selected"
+                    : "menuMobil__item"
+                }
+                key={theme + "li"}
+                onClick={(e) => handleChange(e.target.id)}
               >
-                {Lang[fx].menu.typeTheme[theme]}
+                {theme === globalTheme ? <MenuCheck /> : <MenuNoCheck />}
+                <p className="menuMobil__text">
+                  {Lang[fx].menu.typeTheme[theme]}
+                </p>
+                <div
+                  id={theme}
+                  key={theme}
+                  className="menuMobil__click"
+                  onClick={() => handleChange(theme)}
+                ></div>
               </li>
             ))
           : null}

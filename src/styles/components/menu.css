@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
   top: 7rem;
-  background-color: rgb(87, 136, 87);
+  background-color: var(--cMenuMobil-bg);
   min-height: calc(100vh - 7rem);
   justify-content: flex-start;
   align-items: flex-start;
@@ -41,13 +41,18 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  padding: 0 2rem;
-  background-color: greenyellow;
+  padding: 2.5rem 2rem;
+  background-color: var(--cMenuMobil-list);
+  border-top: 1px solid var(--cMenuMobil-top);
 }
 
 .menuMobil__container p {
   margin: 0;
   font-size: 2rem;
+}
+
+.menuMobil__title {
+  color: var(--cMenuMobil-title);
 }
 
 .menuMobil__list {
@@ -62,9 +67,37 @@
   width: 100%;
   height: 4rem;
   text-align: left;
-  background-color: rgb(47, 68, 255);
-  padding: 0 2rem;
+  background-color: var(--cMenuMobil-item);
+  padding: 1rem 0.5rem 1rem 3rem;
   cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid var(--cMenuMobil-border);
+}
+
+.menuMobil__item--selected {
+  background-color: var(--cMenuMobil-selected);
+}
+
+.menuMobil__text {
+  margin: 0;
+  margin-left: 1rem;
+  margin-top: 5px;
+  height: 20px;
+}
+
+.menuMobil__click {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.menuMobil__check {
+  fill: var(--cMenuMobil-check);
+}
+.menuMobil__nocheck {
+  fill: var(--cMenuMobil-nocheck);
 }
 
 /* OCULTAR / MOSTRAR CADA UNO */

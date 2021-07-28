@@ -15,6 +15,8 @@ export { default as Menu } from "components/Menu";
 export { default as MenuDesktop } from "components/MenuDesktop";
 export { default as MenuMobil } from "components/MenuMobil";
 export { default as ArrowMenu } from "components/ArrowMenu";
+export { default as MenuCheck } from "components/MenuCheck";
+export { default as MenuNoCheck } from "components/MenuNoCheck";
 export { default as MenuMobilLanguage } from "components/MenuMobilLanguage";
 export { default as MenuMobilTheme } from "components/MenuMobilTheme";
 export { default as LanguageSelect } from "components/LanguageSelect";

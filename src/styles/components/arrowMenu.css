@@ -1,5 +1,5 @@
 .arrowMenu {
-  fill: #ca2020;
+  fill: var(--cMenuMobil-arrow);
   transform: rotate(0deg);
   animation: rotateDown 0.5s ease-out;
 }

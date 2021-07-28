@@ -16,7 +16,7 @@ const FixRoute = (props) => {
 
   useEffect(() => {
     changeTheme();
-  }, [theme]);
+  }, [theme, changeTheme]);
 
   return <Route {...props} />;
 };

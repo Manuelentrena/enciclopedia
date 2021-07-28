@@ -20,9 +20,20 @@
   border-radius: 5px;
 }
 
+.burguer__bar1 {
+  width: 3rem;
+  margin-left: 0.5rem;
+}
+.burguer__bar2 {
+  width: 3.25rem;
+  margin-left: 0.25rem;
+}
+
 .activeMenu.burguer__bar1 {
   -webkit-transform: rotate(-45deg) translate(-0.8rem, 0.8rem);
   transform: rotate(-45deg) translate(-0.8rem, 0.8rem);
+  margin: 0.75rem 0;
+  width: 3.5rem;
 }
 
 .activeMenu.burguer__bar2 {
@@ -32,6 +43,8 @@
 .activeMenu.burguer__bar3 {
   -webkit-transform: rotate(45deg) translate(-0.8rem, -0.8rem);
   transform: rotate(45deg) translate(-0.8rem, -0.8rem);
+  margin: 0.75rem 0;
+  width: 3.5rem;
 }
 
 @media (max-width: 768px) {
