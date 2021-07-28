@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Logo, Menu, MenuBurguer } from "components";
+import { Logo, Menu, IconBurguer } from "components";
 const Header = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
 
@@ -8,9 +8,8 @@ const Header = () => {
       <picture className="header__picture">
         <Logo />
       </picture>
-      {/* Crear componenete HeaderMenu y paasarle la prop isActiveMenu */}
       <Menu isActiveMenu={isActiveMenu} />
-      <MenuBurguer
+      <IconBurguer
         isActiveMenu={isActiveMenu}
         setIsActiveMenu={setIsActiveMenu}
       />

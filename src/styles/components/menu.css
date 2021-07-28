@@ -1,0 +1,79 @@
+.menuDesktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuDesktop__nav {
+  display: flex;
+  width: 100%;
+}
+
+.menuDesktop__item {
+  width: 100%;
+}
+
+/* VERSION MENU MOBILE */
+
+.menuMobil {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 7rem;
+  background-color: rgb(87, 136, 87);
+  min-height: calc(100vh - 7rem);
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.menuMobil__nav {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.menuMobil__container {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0 2rem;
+  background-color: greenyellow;
+}
+
+.menuMobil__container p {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.menuMobil__list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menuMobil__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  text-align: left;
+  background-color: rgb(47, 68, 255);
+  padding: 0 2rem;
+  cursor: pointer;
+}
+
+/* OCULTAR / MOSTRAR CADA UNO */
+
+@media (max-width: 768px) {
+  .menuDesktop {
+    display: none;
+  }
+  .menuMobil {
+    display: flex;
+  }
+}

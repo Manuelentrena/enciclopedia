@@ -9,6 +9,8 @@ const Lang = {
     menu: {
       language: "Language",
       typeLang: { es: "Spanish", en: "English" },
+      theme: "Theme",
+      typeTheme: { dark: "Dark", light: "Light" },
     },
   },
   es: {
@@ -19,8 +21,10 @@ const Lang = {
       moreResultsButton: "Más Resultados para",
     },
     menu: {
-      language: "Lenguage",
+      theme: "Tema",
       typeLang: { es: "Español", en: "Inglés" },
+      language: "Lenguage",
+      typeTheme: { dark: "Oscuro", light: "Claro" },
     },
   },
 };

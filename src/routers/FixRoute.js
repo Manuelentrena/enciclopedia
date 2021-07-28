@@ -4,7 +4,7 @@ import { useGlobal } from "hooks";
 import { useHistory, useLocation } from "react-router-dom";
 
 const FixRoute = (props) => {
-  const { language: fx, setLanguage } = useGlobal();
+  const { language: fx, setLanguage, changeTheme, theme } = useGlobal();
   const history = useHistory();
   const { pathname } = useLocation();
   const lng = pathname.slice(1, 3);
@@ -13,6 +13,10 @@ const FixRoute = (props) => {
     lng && lng !== fx && setLanguage(lng);
     !lng && history.push({ pathname: `/${fx}${pathname}` });
   }, [fx, lng, setLanguage, pathname, history]);
+
+  useEffect(() => {
+    changeTheme();
+  }, [theme]);
 
   return <Route {...props} />;
 };
