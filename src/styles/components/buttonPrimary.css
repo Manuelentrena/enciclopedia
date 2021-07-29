@@ -1,13 +1,14 @@
 .buttonPrimary {
   background-color: var(--cbutton-bg);
   border: 3px solid var(--cbutton-border);
-  padding: 1rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   border-radius: 1rem;
   font-size: 1.8rem;
   font-family: "Myriad Bold", sans-serif;
   font-weight: bold;
   color: var(--cbutton-text);
   cursor: pointer;
+  height: 4.2rem;
 }
 .buttonPrimary:hover {
   background-color: var(--cbutton-hover);
@@ -16,14 +17,15 @@
 /* SUBTYPES BUTTON PRIMARY */
 
 .buttonLens {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   fill: white;
   display: none;
 }
 
 @media (max-width: 768px) {
   .buttonLens {
+    margin-left: 0.5rem;
     display: block;
   }
   .buttonSearch {

@@ -33,12 +33,5 @@
 }
 
 .closeFormIcon {
-  /* position: absolute; */
-  /* transform: translate(-50%, -50%); */
-  /* right: 0;
-  top: 50%; */
-  /* opacity: 0.5; */
   fill: var(--cSearch-close);
-  /* z-index: 2; */
-  /* cursor: pointer; */
 }

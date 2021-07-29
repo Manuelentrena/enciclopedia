@@ -1,10 +1,12 @@
 :root {
   /* COLORS */
-  --blue13: #343e55;
-  --blue12: #334f79;
-  --blue11: rgb(16, 32, 54);
+  --blue14: #0077c721;
+  --blue13: #282d38;
+  --blue12: #0096c7;
+  --blue11: #1a212a;
   --blue11Opa: rgba(16, 32, 54, 0.2);
-  --blue10: #1a2d49;
+  --blue10: #445268;
+  /* -------------- */
   --blue9: #03045e;
   --blue8: #023e8a;
   --blue7: #0077b6;
@@ -41,14 +43,14 @@
 
   /* TOGLE */
   --cTogle-bg: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cTogle-circle-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
-  --cTogle-circle: var(--light, var(--blue6)) var(--dark, var(--blue12));
+  --cTogle-circle-hover: var(--light, var(--blue5)) var(--dark, var(--blue12));
+  --cTogle-circle: var(--light, var(--blue6)) var(--dark, var(--blue10));
 
   /* LANGUAGE */
   --cLang-bg: var(--light, var(--blue9)) var(--dark, var(--white));
   --cLang-text-hover: var(--light, var(--white)) var(--dark, var(--blue12));
-  --cLang-text: var(--light, var(--white)) var(--dark, var(--blue12));
-  --cLang-option-bg: var(--light, var(--blue10)) var(--dark, var(--white));
+  --cLang-text: var(--light, var(--white)) var(--dark, var(--blue10));
+  --cLang-option-bg: var(--light, var(--blue9)) var(--dark, var(--white));
 
   /* MENUBURGUER */
   --c-icon-burguer: var(--light, var(--blue9)) var(--dark, var(--white));
@@ -67,8 +69,8 @@
   /* BUTTON SECOND */
   --cbutton2-bg: var(--light, var(--white)) var(--dark, var(--white));
   --cbutton2-hover: var(--light, var(--blue3)) var(--dark, var(--blue1));
-  --cbutton2-border: var(--light, var(--blue9)) var(--dark, var(--blue12));
-  --cbutton2-text: var(--light, var(--blue9)) var(--dark, var(--blue12));
+  --cbutton2-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
+  --cbutton2-text: var(--light, var(--blue8)) var(--dark, var(--blue10));
 
   /* INPUT */
   --cInput-bg: var(--light, var(--white)) var(--dark, var(--white));
@@ -80,7 +82,7 @@
   --cModal-bg-ext: var(--light, var(--whiteOpa)) var(--dark, var(--blue11Opa));
 
   /* MODAL ITEM */
-  --cModalIten-gb-hover: var(--light, var(--blue3)) var(--dark, var(--blue12));
+  --cModalIten-gb-hover: var(--light, var(--blue3)) var(--dark, var(--blue10));
   --cModalIten-title: var(--light, var(--blue8)) var(--dark, var(--white));
   --cModalIten-desc: var(--light, var(--blue12)) var(--dark, var(--white));
   --cModalIten-border: var(--light, var(--blue12)) var(--dark, var(--white));
@@ -91,9 +93,9 @@
   --cMenuMobil-arrow: var(--light, var(--white)) var(--dark, var(--white));
   --cMenuMobil-title: var(--light, var(--white)) var(--dark, var(--white));
   --cMenuMobil-item: var(--light, var(--blue1)) var(--dark, var(--blue13));
-  --cMenuMobil-selected: var(--light, var(--blue1-1)) var(--dark, var(--blue12));
+  --cMenuMobil-selected: var(--light, var(--blue1-1)) var(--dark, var(--blue14));
   --cMenuMobil-border: var(--light, var(--blue3)) var(--dark, var(--blue10));
-  --cMenuMobil-check: var(--light, var(--check)) var(--dark, var(--check));
+  --cMenuMobil-check: var(--light, var(--check)) var(--dark, var(--blue12));
   --cMenuMobil-nocheck: var(--light, var(--blue9)) var(--dark, var(--white));
   --cMenuMobil-top: var(--light, var(--blue1-1)) var(--dark, var(--blue13));
 
