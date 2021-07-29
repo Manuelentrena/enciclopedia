@@ -1,5 +1,8 @@
 export const prot = "https";
-export const path = "wikipedia.org/w/api.php";
+export const path = [
+  "wikipedia.org/w/api.php",
+  "wikimedia.org/api/rest_v1/metrics/pageviews/top",
+];
 export const action = ["action=opensearch", "action=query"];
 export const format = "format=json";
 export const cors = "origin=*";
@@ -9,5 +12,24 @@ export const urlImage = "prop=imageinfo&iiprop=url";
 export const pag = "sroffset";
 export const limit = "srlimit=100";
 export const find = "list=search";
+export const year = new Date().getFullYear();
+export const month = calcMonth();
+export const day = calcDay();
 
-/* https://en.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&search=${search}&prop=pageprops */
+function fechaDeAyer() {
+  let hoy = new Date();
+  let DIA_EN_MILISEGUNDOS = 24 * 60 * 60 * 1000;
+  let manana = new Date(hoy.getTime() - DIA_EN_MILISEGUNDOS);
+  return manana;
+}
+
+function calcMonth() {
+  const month = "0" + (fechaDeAyer().getMonth() + 1).toString();
+  return month.substr(month.length - 2);
+}
+
+function calcDay() {
+  const day = fechaDeAyer().getDate();
+  console.log(day);
+  return day;
+}

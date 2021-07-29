@@ -14,7 +14,7 @@ export default function getImageUrl({ search, width, language }) {
   // "titles"; encode name img
   // "urlImage = prop=imageinfo&iiprop=url; data url img"
   // "size = iiurlwidth=size, width img"
-  const URL = `${prot}://${language}.${path}?${action[1]}&${format}&${cors}&${urlImage}&${size[1]}=${width}&titles=${search}`;
+  const URL = `${prot}://${language}.${path[0]}?${action[1]}&${format}&${cors}&${urlImage}&${size[1]}=${width}&titles=${search}`;
 
   return fetch(URL, {
     method: "GET",
