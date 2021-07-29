@@ -23,6 +23,10 @@ export const useSearch = () => {
     }
   }
 
+  function numIds() {
+    return search?.length;
+  }
+
   function listIds() {
     return search.map((item) => item.id);
   }
@@ -65,5 +69,6 @@ export const useSearch = () => {
     listIds,
     setGlobalPage,
     globalPage,
+    numIds,
   };
 };

@@ -16,6 +16,7 @@ const SearchList = ({ text, selected, page, setPage }) => {
     setTextGlobal,
     globalPage,
     setGlobalPage,
+    numIds,
   } = useSearch();
 
   useEffect(() => {
@@ -94,11 +95,13 @@ const SearchList = ({ text, selected, page, setPage }) => {
       {search.map((item) => (
         <SearchItem key={item.id} selected={selected} {...item} />
       ))}
-      <Button
-        className="buttonSecond"
-        text={Lang[fx].search.moreResultsButton + " '" + textGlobal + "'"}
-        action={handleClick}
-      />
+      {numIds() === 10 ? (
+        <Button
+          className="buttonSecond"
+          text={Lang[fx].search.moreResultsButton + " '" + textGlobal + "'"}
+          action={handleClick}
+        />
+      ) : null}
     </>
   ) : null;
 };
