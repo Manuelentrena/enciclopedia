@@ -56,6 +56,7 @@
   /* SEARCHFORM */
   --cSearch-bg: var(--light, var(--blue9)) var(--dark, var(--blue10));
   --cSearch-svg: var(--light, var(--blue8)) var(--dark, var(--white));
+  --cSearch-close: var(--light, var(--blue9)) var(--dark, var(--blue13));
 
   /* BUTTON PRIMARY */
   --cbutton-bg: var(--light, var(--blue6)) var(--dark, var(--blue12));

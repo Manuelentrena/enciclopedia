@@ -35,12 +35,14 @@ li {
 
 input {
   background-color: var(--cInput-bg);
-  border: 3px solid var(--cInput-border);
   color: var(--cInput-text);
   font: normal var(--bold) var(--fs-input) / var(--line-height) "Myriad Regular",
     sans-serif;
-  border-radius: 1rem;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin: 3px 0 3px 3px;
 }
 
 input:focus {

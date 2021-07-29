@@ -2,7 +2,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <svg width="230" height="57.4" overflow="visible">
+    <svg width="230" height="57.4" overflow="visible" className="logo">
       <defs>
         <linearGradient
           id="gradientLogo"

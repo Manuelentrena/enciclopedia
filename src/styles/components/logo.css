@@ -1,3 +1,7 @@
+.miniLogo {
+  display: none;
+}
+
 .logo__principal {
   fill: var(--cLogo-text1);
 }
@@ -9,8 +13,31 @@
 .logo__gradient {
   fill: url(#gradientLogo);
 }
+.logo__gradient1 {
+  fill: url(#gradientLogo1);
+}
+.logo__gradient2 {
+  fill: url(#gradientLogo2);
+}
 
 #gradientLogo {
   --cLogo-primary: var(--cLogo-gradient1);
   --cLogo-second: var(--cLogo-gradient2);
+}
+#gradientLogo1 {
+  --cLogo-primary: var(--cLogo-gradient1);
+  --cLogo-second: var(--cLogo-gradient2);
+}
+#gradientLogo2 {
+  --cLogo-primary: var(--cLogo-gradient1);
+  --cLogo-second: var(--cLogo-gradient2);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+  .miniLogo {
+    display: block;
+  }
 }

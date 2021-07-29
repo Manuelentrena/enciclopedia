@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Logo, Menu, IconBurguer } from "components";
+import { Logo, MiniLogo, Menu, IconBurguer } from "components";
 const Header = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
 
@@ -7,6 +7,7 @@ const Header = () => {
     <div className="header">
       <picture className="header__picture">
         <Logo />
+        <MiniLogo />
       </picture>
       <Menu isActiveMenu={isActiveMenu} />
       <IconBurguer

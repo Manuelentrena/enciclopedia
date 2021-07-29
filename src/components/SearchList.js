@@ -89,23 +89,18 @@ const SearchList = ({ text, selected, page, setPage }) => {
 
   return isLoading ? (
     <Spinner />
-  ) : isEmpty() ? (
-    <p>{Lang[fx].search.results}</p>
-  ) : (
+  ) : !isEmpty() ? (
     <>
       {search.map((item) => (
         <SearchItem key={item.id} selected={selected} {...item} />
       ))}
-      {/* <button onClick={(e) => handleClick(e)}>
-        {Lang[fx].search.moreResultsButton} "{textGlobal}"
-      </button> */}
       <Button
         className="buttonSecond"
         text={Lang[fx].search.moreResultsButton + " '" + textGlobal + "'"}
         action={handleClick}
       />
     </>
-  );
+  ) : null;
 };
 
 export default SearchList;

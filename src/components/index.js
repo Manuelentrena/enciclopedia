@@ -7,6 +7,7 @@ export { default as SearchItem } from "components/SearchItem";
 export { default as SearchItemImg } from "components/SearchItemImg";
 export { default as Header } from "components/Header";
 export { default as Logo } from "components/Logo";
+export { default as MiniLogo } from "components/MiniLogo";
 export { default as Togle } from "components/Togle";
 export { default as Button } from "components/Button";
 export { default as SearchSvg } from "components/SearchSvg";

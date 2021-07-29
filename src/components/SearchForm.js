@@ -43,7 +43,7 @@ const SearchForm = () => {
     e.stopPropagation();
   };
 
-  const handleFocus = () => {
+  const handleFocus = (e) => {
     text && setShowModal(true);
   };
 
@@ -71,10 +71,31 @@ const SearchForm = () => {
             onFocus={handleFocus}
             onKeyDown={handleDown}
           ></input>
+          <div className="searchClose">
+            <svg
+              viewBox="-6 -6 24 24"
+              width="32"
+              height="32"
+              className="closeFormIcon"
+              onClickCapture={handleClose}
+            >
+              <path d="M7.314 5.9l3.535-3.536A1 1 0 109.435.95L5.899 4.485 2.364.95A1 1 0 10.95 2.364l3.535 3.535L.95 9.435a1 1 0 101.414 1.414l3.535-3.535 3.536 3.535a1 1 0 101.414-1.414L7.314 5.899z" />
+            </svg>
+          </div>
+
           <Button
-            className="buttonPrimary"
+            className="buttonPrimary buttonSearch"
             text={Lang[fx].search.searchButton}
             type="submit"
+          />
+          <Button
+            className="buttonPrimary buttonLens"
+            type="submit"
+            text={
+              <svg width="24.3" height="24.3">
+                <path d="M10.7 18.7c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.5 8 8 8zm8.4-1.5l4.8 4.8c.5.5.5 1.4 0 1.9s-1.4.5-1.9 0l-4.8-4.8c-4.7 3.6-11.4 2.8-15-1.9S-.6 5.8 4.1 2.2s11.4-2.8 15 1.9c3 3.9 3 9.3 0 13.1z" />
+              </svg>
+            }
           />
         </div>
       </form>

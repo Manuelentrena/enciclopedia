@@ -12,3 +12,21 @@
 .buttonPrimary:hover {
   background-color: var(--cbutton-hover);
 }
+
+/* SUBTYPES BUTTON PRIMARY */
+
+.buttonLens {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  fill: white;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .buttonLens {
+    display: block;
+  }
+  .buttonSearch {
+    display: none;
+  }
+}

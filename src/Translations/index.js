@@ -3,7 +3,6 @@ const Lang = {
     search: {
       searchInput: "Search in Quickpedia...",
       searchButton: "SEARCH",
-      results: "No Results",
       moreResultsButton: "More Results for",
     },
     menu: {
@@ -17,7 +16,6 @@ const Lang = {
     search: {
       searchInput: "Busca en Quickpedia...",
       searchButton: "BUSCAR",
-      results: "Sin Resultados",
       moreResultsButton: "Más Resultados para",
     },
     menu: {
