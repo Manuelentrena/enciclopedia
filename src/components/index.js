@@ -21,3 +21,5 @@ export { default as MenuNoCheck } from "components/MenuNoCheck";
 export { default as MenuMobilLanguage } from "components/MenuMobilLanguage";
 export { default as MenuMobilTheme } from "components/MenuMobilTheme";
 export { default as LanguageSelect } from "components/LanguageSelect";
+export { default as TrendingPanel } from "components/TrendingPanel";
+export { default as TrendingCard } from "components/TrendingCard";

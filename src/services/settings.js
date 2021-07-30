@@ -2,6 +2,7 @@ export const prot = "https";
 export const path = [
   "wikipedia.org/w/api.php",
   "wikimedia.org/api/rest_v1/metrics/pageviews/top",
+  "wikipedia.org/api/rest_v1/page/summary",
 ];
 export const action = ["action=opensearch", "action=query"];
 export const format = "format=json";
@@ -30,6 +31,5 @@ function calcMonth() {
 
 function calcDay() {
   const day = fechaDeAyer().getDate();
-  console.log(day);
   return day;
 }

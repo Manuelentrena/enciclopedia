@@ -43,8 +43,8 @@
 
   /* TOGLE */
   --cTogle-bg: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cTogle-circle-hover: var(--light, var(--blue5)) var(--dark, var(--blue12));
-  --cTogle-circle: var(--light, var(--blue6)) var(--dark, var(--blue10));
+  --cTogle-circle-hover: var(--light, var(--blue5)) var(--dark, var(--blue6));
+  --cTogle-circle: var(--light, var(--blue6)) var(--dark, var(--blue5));
 
   /* LANGUAGE */
   --cLang-bg: var(--light, var(--blue9)) var(--dark, var(--white));

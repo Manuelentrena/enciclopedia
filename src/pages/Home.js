@@ -1,5 +1,6 @@
-import { SearchForm, Header } from "components";
+import { SearchForm, Header, TrendingPanel } from "components";
 import { SearchContextProvider } from "provider/SearchContext";
+import { TrendingStateProvider } from "provider/Trendings/trendingContext";
 
 const Home = () => {
   return (
@@ -8,6 +9,9 @@ const Home = () => {
       <SearchContextProvider>
         <SearchForm />
       </SearchContextProvider>
+      <TrendingStateProvider>
+        <TrendingPanel />
+      </TrendingStateProvider>
     </>
   );
 };
