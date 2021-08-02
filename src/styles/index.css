@@ -33,6 +33,12 @@
 @import "../styles/components/menuBurguer.css";
 @import "../styles/components/arrowMenu.css";
 @import "../styles/components/menu.css";
+@import "../styles/components/startFav.css";
+@import "../styles/components/viewsIcon.css";
+@import "../styles/components/moreIcon.css";
+@import "../styles/components/trendingCard.css";
+@import "../styles/components/trendingPanel.css";
 
 /* utils */
 @import "../styles/utils/relative.css";
+@import "../styles/utils/noScroll.css";

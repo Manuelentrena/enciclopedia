@@ -12,6 +12,12 @@ export const useGlobal = () => {
     tagHtml.classList.add(theme);
   }
 
+  function noScroll(scrollStop) {
+    scrollStop
+      ? document.getElementById("body").classList.add("noScroll")
+      : document.getElementById("body").classList.remove("noScroll");
+  }
+
   return {
     theme,
     setTheme,
@@ -19,5 +25,6 @@ export const useGlobal = () => {
     language,
     setLanguage,
     switchLanguage,
+    noScroll,
   };
 };

@@ -7,13 +7,17 @@ import debounce from "just-debounce-it";
 import { useGlobal } from "hooks/useGlobal";
 
 const SearchForm = () => {
-  const { language: fx } = useGlobal();
+  const { language: fx, noScroll } = useGlobal();
   const { search, setTextGlobal, textGlobal } = useSearch();
   const [text, setText] = useState("");
   const [page, setPage] = useState(0);
   const [ids, setIds] = useState([]);
   const [selected, setSelected] = useState(0);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    noScroll(showModal);
+  }, [showModal, noScroll]);
 
   useEffect(() => {
     setIds(search.map((item) => item.id));

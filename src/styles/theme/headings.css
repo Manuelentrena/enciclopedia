@@ -14,21 +14,22 @@
 
 h3 {
   color: var(--c-H3);
-  font: normal var(--bold) var(--fs-h3) / var(--line-height) "Myriad Bold",
+  font: normal var(--bold) var(--fs-h3) / var(--line-height) "Myriad Pro Bold",
     sans-serif;
   margin: 1rem 0rem;
 }
 
 p {
   color: var(--c-p);
-  font: normal var(--medium) var(--fs-p) / var(--line-height) "Myriad Light",
+  font: normal var(--medium) var(--fs-p) / var(--line-height) "Myriad Pro Light",
     sans-serif;
   margin: 1rem 0rem;
 }
 
 li {
   color: var(--c-li);
-  font: normal var(--medium) var(--fs-li) / var(--line-height) "Myriad Light",
+  font: normal var(--medium) var(--fs-li) / var(--line-height)
+      "Myriad Pro Light",
     sans-serif;
   margin: 0rem;
 }
@@ -36,7 +37,8 @@ li {
 input {
   background-color: var(--cInput-bg);
   color: var(--cInput-text);
-  font: normal var(--bold) var(--fs-input) / var(--line-height) "Myriad Regular",
+  font: normal var(--bold) var(--fs-input) / var(--line-height)
+      "Myriad Pro Regular",
     sans-serif;
   padding: 0.5rem 0 0.5rem 1.5rem;
   border: 0;

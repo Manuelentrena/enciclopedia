@@ -23,3 +23,6 @@ export { default as MenuMobilTheme } from "components/MenuMobilTheme";
 export { default as LanguageSelect } from "components/LanguageSelect";
 export { default as TrendingPanel } from "components/TrendingPanel";
 export { default as TrendingCard } from "components/TrendingCard";
+export { default as StartIcon } from "components/StartIcon";
+export { default as ViewsIcon } from "components/ViewsIcon";
+export { default as MoreIcon } from "components/MoreIcon";

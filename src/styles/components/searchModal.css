@@ -1,12 +1,13 @@
 .modal {
   padding: 0;
   background-color: var(--cModal-bg-ext);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(3px);
   position: fixed;
   bottom: 0;
   top: 12.2rem;
   left: 0;
   right: 0;
+  z-index: 2;
 }
 
 .modal__body {

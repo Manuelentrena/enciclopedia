@@ -26,6 +26,7 @@
   min-height: calc(100vh - 7rem);
   justify-content: flex-start;
   align-items: flex-start;
+  z-index: 2;
 }
 
 .menuMobil__nav {

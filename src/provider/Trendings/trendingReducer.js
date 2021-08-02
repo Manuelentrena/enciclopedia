@@ -1,13 +1,10 @@
 import { TRENDING_ACTIONS } from "events/index";
-/* import { useGlobal } from "hooks"; */
 
 export const trendingReducer = (state, action) => {
   switch (action.type) {
     case TRENDING_ACTIONS.ADD_TRENDINGS:
       return { ...state, newTrendings: action.payload };
     case TRENDING_ACTIONS.ADD_INFO:
-      console.log(action.payload);
-      /* return state; */
       return {
         ...state,
         listTrendings: state.listTrendings.map((card) =>
@@ -58,7 +55,7 @@ function createNewBlock(
   language
 ) {
   let newBlock = [];
-  console.log(language);
+
   for (let i = initialPosition; i < numArticlesByBlock + initialPosition; i++) {
     if (
       newTrendings[i].article !== especialArticles[language][0] &&

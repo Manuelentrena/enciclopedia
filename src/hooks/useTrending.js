@@ -22,7 +22,6 @@ export const useTrending = () => {
   async function addNewTrendings() {
     cleanListTrendings();
     const dataTrendings = await getTrendings({ language });
-    console.log(dataTrendings);
     setSearchTrending(dataTrendings);
     addBlockTrending(language);
     return true;
@@ -30,7 +29,6 @@ export const useTrending = () => {
 
   async function addInfo({ canonical, views }) {
     const newCard = await getInfoTrendings({ language, canonical, views });
-    /* console.log(newCard); */
     newCard && addInfoCard(newCard);
     return newCard;
   }

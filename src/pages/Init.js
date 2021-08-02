@@ -9,9 +9,11 @@ const Init = () => {
       <SearchContextProvider>
         <SearchForm />
       </SearchContextProvider>
-      <TrendingStateProvider>
-        <TrendingPanel />
-      </TrendingStateProvider>
+      <div className="quickpedia__body">
+        <TrendingStateProvider>
+          <TrendingPanel />
+        </TrendingStateProvider>
+      </div>
     </>
   );
 };

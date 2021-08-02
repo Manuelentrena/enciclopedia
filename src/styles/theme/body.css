@@ -3,4 +3,12 @@ body {
   background-color: var(--c-background);
   cursor: default;
   position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.quickpedia__body {
+  padding: 1rem;
 }
