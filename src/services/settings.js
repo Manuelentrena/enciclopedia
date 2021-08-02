@@ -30,6 +30,6 @@ function calcMonth() {
 }
 
 function calcDay() {
-  const day = fechaDeAyer().getDate();
-  return day;
+  const day = "0" + fechaDeAyer().getDate().toString();
+  return day.substr(day.length - 2);
 }

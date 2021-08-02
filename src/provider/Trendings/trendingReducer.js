@@ -1,4 +1,5 @@
 import { TRENDING_ACTIONS } from "events/index";
+/* import { useGlobal } from "hooks"; */
 
 export const trendingReducer = (state, action) => {
   switch (action.type) {
@@ -6,13 +7,20 @@ export const trendingReducer = (state, action) => {
       return { ...state, newTrendings: action.payload };
     case TRENDING_ACTIONS.ADD_INFO:
       console.log(action.payload);
-    /* return { ...state, newTrendings: action.payload }; */
+      /* return state; */
+      return {
+        ...state,
+        listTrendings: state.listTrendings.map((card) =>
+          card.canonical === action.payload.canonical ? action.payload : card
+        ),
+      };
     case TRENDING_ACTIONS.ADD_BLOCK:
       const { newTrendings, initialPosition, numArticlesByBlock } = state;
       const block = createNewBlock(
         newTrendings,
         initialPosition,
-        numArticlesByBlock
+        numArticlesByBlock,
+        action.payload
       );
       return {
         ...state,
@@ -23,7 +31,8 @@ export const trendingReducer = (state, action) => {
       return {
         ...state,
         listTrendings: [],
-        initialPosition: 2,
+        newTrendings: [],
+        initialPosition: 0,
       };
     default:
       return state;
@@ -32,21 +41,34 @@ export const trendingReducer = (state, action) => {
 
 export const inicialState = {
   newTrendings: [],
-  initialPosition: 2,
+  initialPosition: 0,
   numArticlesByBlock: 15,
   listTrendings: [],
 };
 
-function createNewBlock(newTrendings, initialPosition, numArticlesByBlock) {
+const especialArticles = {
+  en: ["Main_Page", "Special:Search"],
+  es: ["Wikipedia:Portada", "Especial:Buscar"],
+};
+
+function createNewBlock(
+  newTrendings,
+  initialPosition,
+  numArticlesByBlock,
+  language
+) {
   let newBlock = [];
+  console.log(language);
   for (let i = initialPosition; i < numArticlesByBlock + initialPosition; i++) {
-    newBlock.push({
-      id: "",
-      title: newTrendings[i].article.replace(/_/g, " "),
-      views: newTrendings[i].views,
-      img: "",
-      description: "",
-    });
+    if (
+      newTrendings[i].article !== especialArticles[language][0] &&
+      newTrendings[i].article !== especialArticles[language][1]
+    ) {
+      newBlock.push({
+        canonical: newTrendings[i].article,
+        views: newTrendings[i].views,
+      });
+    }
   }
   return newBlock;
 }

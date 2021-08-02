@@ -24,7 +24,7 @@ const TrendingPanel = () => {
     <>
       <p>TRENDINGS</p>
       {listTrendings.map((oneTrend) => (
-        <TrendingCard key={oneTrend.title} {...oneTrend} />
+        <TrendingCard key={oneTrend.canonical} {...oneTrend} />
       ))}
     </>
   );

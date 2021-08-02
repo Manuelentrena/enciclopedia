@@ -22,14 +22,17 @@ export const useTrending = () => {
   async function addNewTrendings() {
     cleanListTrendings();
     const dataTrendings = await getTrendings({ language });
+    console.log(dataTrendings);
     setSearchTrending(dataTrendings);
-    addBlockTrending();
+    addBlockTrending(language);
     return true;
   }
 
-  async function addInfo({ title, views }) {
-    const newCard = await getInfoTrendings({ language, title, views });
-    addInfoCard(newCard);
+  async function addInfo({ canonical, views }) {
+    const newCard = await getInfoTrendings({ language, canonical, views });
+    /* console.log(newCard); */
+    newCard && addInfoCard(newCard);
+    return newCard;
   }
 
   return {

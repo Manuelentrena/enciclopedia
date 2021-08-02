@@ -1,17 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTrending } from "hooks";
 
 const TrendingCard = (oneTrend) => {
-  const { /* description, id, img, */ views, title } = oneTrend;
+  const { views, canonical } = oneTrend;
   const { addInfo } = useTrending();
+  const [infoCard, setInfoCard] = useState({});
 
   useEffect(() => {
-    addInfo({ title, views });
-  }, [title]);
+    async function getData() {
+      const newInfo = await addInfo({
+        canonical,
+        views,
+      });
+      newInfo && setInfoCard(newInfo);
+    }
+    getData();
+  }, []);
+
   return (
     <>
-      <p>{title}</p>
-      <p>{views}</p>
+      <p>{infoCard.title}</p>
+      <p>{infoCard.description}</p>
+      <p> VISTAS: {infoCard.views}</p>
+      <img src={infoCard.img} atl={infoCard.title}></img>
     </>
   );
 };
