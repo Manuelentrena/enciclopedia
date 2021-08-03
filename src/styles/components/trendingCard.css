@@ -1,20 +1,18 @@
 .cardTrend {
-  width: 85%;
-  min-width: 300px;
-  height: 320px;
-  max-width: 300px;
+  min-width: 250px;
+  height: 290px;
   position: relative;
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
-  margin-right: 3rem;
+  margin-right: 1rem;
   box-shadow: var(--box-shadow);
 }
 
 .cardTrend__picture {
   display: block;
   width: 100%;
-  height: 320px;
+  height: auto;
 }
 
 .cardTrend__img {
@@ -100,7 +98,7 @@
   background: var(--cCardTrend-degr);
 }
 .cardTrend__bodyRel {
-  height: 320px;
+  height: 290px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -126,7 +124,7 @@
 }
 
 .cardTrend:hover .cardTrend__body {
-  height: 320px;
+  height: 290px;
   padding-top: 3.8rem;
   transition: all 0.5s ease-out;
 }

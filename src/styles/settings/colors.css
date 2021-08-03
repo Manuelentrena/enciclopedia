@@ -130,6 +130,9 @@
   --cCardTrend-btnSvg: var(--light, var(--blue6)) var(--dark, var(--blue12));
   --cCardTrend-btnBg: var(--light, var(--white)) var(--dark, var(--white));
 
+  /* CATEGORY */
+  --cCategory-link-hover: var(--light, var(--blue3)) var(--dark, var(--blue12));
+
   /* TITLES */
   /*   --c-h1: var(--text-primary);
   --c-h2: var(--text-primary);

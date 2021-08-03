@@ -11,6 +11,10 @@ const Lang = {
       theme: "Theme",
       typeTheme: { dark: "Dark", light: "Light" },
     },
+    category: {
+      tendencies: "TRENDINGS",
+      link: "See All >",
+    },
   },
   es: {
     search: {
@@ -23,6 +27,10 @@ const Lang = {
       typeLang: { es: "Español", en: "Inglés" },
       language: "Lenguaje",
       typeTheme: { dark: "Oscuro", light: "Claro" },
+    },
+    category: {
+      tendencies: "TENDENCIAS",
+      link: "Ver Todo >",
     },
   },
 };

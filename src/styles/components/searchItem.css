@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 6rem;
+  max-height: 7rem;
 }
 
 .oneResult__url {
@@ -33,17 +33,19 @@
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  max-height: 6rem;
+  max-height: 7rem;
 }
 
 .oneResult__title {
   margin: 0;
   color: var(--cModalIten-title);
+  font-size: 1.8rem;
 }
 
 .oneResult__description {
   margin: 0;
   overflow-y: hidden;
+  font-size: 1.4rem;
 }
 
 .oneResult__line {

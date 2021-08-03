@@ -8,11 +8,15 @@ const FixRoute = (props) => {
   const history = useHistory();
   const { pathname } = useLocation();
   const lng = pathname.slice(1, 3);
+  const withLng = pathname.slice(3, 4);
 
   useEffect(() => {
-    lng && lng !== fx && setLanguage(lng);
-    !lng && history.push({ pathname: `/${fx}${pathname}` });
-  }, [fx, lng, setLanguage, pathname, history]);
+    if (withLng === "/") {
+      lng !== fx && setLanguage(lng);
+    } else {
+      history.push({ pathname: `/${fx}${pathname}` });
+    }
+  }, [fx, lng, setLanguage, pathname, history, withLng]);
 
   useEffect(() => {
     changeTheme();

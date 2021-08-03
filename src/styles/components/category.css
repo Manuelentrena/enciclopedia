@@ -8,6 +8,10 @@
   margin: 0;
 }
 
+.category__see:hover {
+  color: var(--cCategory-link-hover);
+}
+
 .category {
   display: flex;
   justify-content: space-between;

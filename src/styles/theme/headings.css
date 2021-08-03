@@ -76,13 +76,9 @@ input::placeholder {
 }
 
 @media screen and (max-width: 769px) {
-  /* h1 {
-    font-size: calc((var(--fs-h1) * 75) / 100);
+  h2 {
+    font-size: calc((var(--fs-h2) * 75) / 100);
   }
-  p,
-  small {
-    font-size: calc((var(--fs-p) * 95) / 100);
-  } */
 }
 
 @media screen and (max-width: 375px) {
