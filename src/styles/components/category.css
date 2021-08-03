@@ -1,0 +1,17 @@
+.category__title {
+  font-family: "Myriad Pro Bold";
+  margin: 0;
+}
+
+.category__see {
+  font-family: "Myriad Pro Bold";
+  margin: 0;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}

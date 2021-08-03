@@ -4,7 +4,7 @@ const Header = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
 
   return (
-    <div className="header">
+    <div className="header quickpedia__header">
       <picture className="header__picture">
         <Logo />
         <MiniLogo />

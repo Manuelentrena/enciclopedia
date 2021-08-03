@@ -64,7 +64,11 @@ const SearchForm = () => {
 
   return (
     <>
-      <form className="searchForm" id="form" onSubmit={handleSubmit}>
+      <form
+        className="searchForm quickpedia__header"
+        id="form"
+        onSubmit={handleSubmit}
+      >
         <div className="searchBody">
           <input
             className="searchForm__input"

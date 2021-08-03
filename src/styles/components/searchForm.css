@@ -1,7 +1,6 @@
 .searchForm {
   width: 100%;
   background-color: var(--cSearch-bg);
-  padding: 0.5rem 1rem;
 }
 
 .searchBody {

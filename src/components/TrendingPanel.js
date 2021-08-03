@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useGlobal, useTrending } from "hooks";
-import { TrendingCard } from "components";
+import { TrendingCard, Category } from "components";
 
 const TrendingPanel = () => {
   const { addNewTrendings, listTrendings, newTrendings } = useTrending();
@@ -22,7 +22,7 @@ const TrendingPanel = () => {
 
   return (
     <>
-      <p className="Trending__title">TRENDINGS</p>
+      <Category />
       <div className="Trending__container">
         {listTrendings.map((oneTrend) => (
           <TrendingCard key={oneTrend.canonical} {...oneTrend} />

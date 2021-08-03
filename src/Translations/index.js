@@ -21,7 +21,7 @@ const Lang = {
     menu: {
       theme: "Tema",
       typeLang: { es: "Español", en: "Inglés" },
-      language: "Lenguage",
+      language: "Lenguaje",
       typeTheme: { dark: "Oscuro", light: "Claro" },
     },
   },

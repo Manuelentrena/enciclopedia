@@ -1,5 +1,12 @@
 :root {
   /* COLORS */
+  --blueDegr: linear-gradient(
+    180deg,
+    rgba(68, 82, 104, 0) 0%,
+    rgba(68, 82, 104, 1) 85%,
+    rgba(68, 82, 104, 1) 100%
+  );
+  --blue15Opa: rgba(45, 77, 87, 0.5);
   --blue14: #0077c721;
   --blue13: #282d38;
   --blue12: #0096c7;
@@ -7,6 +14,13 @@
   --blue11Opa: rgba(16, 32, 54, 0.2);
   --blue10: #445268;
   /* -------------- */
+  --blue9Degr: linear-gradient(
+    180deg,
+    rgba(68, 82, 104, 0) 0%,
+    rgba(3, 4, 94, 0.75) 85%,
+    rgba(3, 4, 94, 0.75) 100%
+  );
+  --blue9Opa: rgba(3, 4, 94, 0.75);
   --blue9: #03045e;
   --blue8: #023e8a;
   --blue7: #0077b6;
@@ -15,11 +29,15 @@
   --blue4: #48cae4;
   --blue3: #90e0ef;
   --blue2: #ade8f4;
-  /* --blue1: #caf0f8; */
   --blue1-1: #d8f9ff;
   --blue1: #f0fcff;
   --white: #ffffff;
   --whiteOpa: rgba(255, 255, 255, 0.2);
+  /* --- */
+  --box-shadow: var(--light, var(--box-shadow-white))
+    var(--dark, var(--box-shadow-black));
+  --box-shadow-white: 1px 1px 5px #aaaedd;
+  --box-shadow-black: 1px 1px 5px #777880;
 
   /* CHECK */
   --check: #00ffff;
@@ -30,6 +48,8 @@
   --c-background: var(--light, var(--white)) var(--dark, var(--blue11));
 
   /* H3 */
+  --c-a: var(--light, var(--blue9)) var(--dark, var(--white));
+  --c-H2: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-H3: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-p: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-hr: var(--light, var(--blue9)) var(--dark, var(--white));
@@ -98,6 +118,17 @@
   --cMenuMobil-check: var(--light, var(--check)) var(--dark, var(--blue12));
   --cMenuMobil-nocheck: var(--light, var(--blue9)) var(--dark, var(--white));
   --cMenuMobil-top: var(--light, var(--blue1-1)) var(--dark, var(--blue13));
+
+  /* CARD TRENDINGS */
+  --cCardTrend-title: var(--light, var(--white)) var(--dark, var(--white));
+  --cCardTrend-desc: var(--light, var(--white)) var(--dark, var(--white));
+  --cCardTrend-bg: var(--light, var(--blue15Opa)) var(--dark, var(--blue15Opa));
+  --cCardTrend-body: var(--light, var(--blue9Opa)) var(--dark, var(--blue10));
+  --cCardTrend-degr: var(--light, var(--blue9Degr)) var(--dark, var(--blueDegr));
+  --cCardTrend-header: var(--light, var(--white)) var(--dark, var(--white));
+  --cCardTrend-scroll: var(--light, var(--blue9Opa)) var(--dark, var(--blue10));
+  --cCardTrend-btnSvg: var(--light, var(--blue6)) var(--dark, var(--blue12));
+  --cCardTrend-btnBg: var(--light, var(--white)) var(--dark, var(--white));
 
   /* TITLES */
   /*   --c-h1: var(--text-primary);

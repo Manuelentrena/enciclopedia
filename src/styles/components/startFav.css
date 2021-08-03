@@ -1,5 +1,5 @@
 .starFav__ext {
-  fill: white;
+  fill: var(--cCardTrend-header);
 }
 
 .starFav__int {
@@ -7,5 +7,5 @@
 }
 
 .startFav__click {
-  fill: white;
+  fill: var(--cCardTrend-header);
 }

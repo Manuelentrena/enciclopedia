@@ -38,6 +38,7 @@
 @import "../styles/components/moreIcon.css";
 @import "../styles/components/trendingCard.css";
 @import "../styles/components/trendingPanel.css";
+@import "../styles/components/category.css";
 
 /* utils */
 @import "../styles/utils/relative.css";

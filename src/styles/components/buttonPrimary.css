@@ -8,7 +8,7 @@
   font-weight: bold;
   color: var(--cbutton-text);
   cursor: pointer;
-  height: 4.2rem;
+  height: auto;
 }
 .buttonPrimary:hover {
   background-color: var(--cbutton-hover);
@@ -16,16 +16,24 @@
 
 /* SUBTYPES BUTTON PRIMARY */
 
+.buttonSearch {
+  margin-left: 0.5rem;
+}
+
 .buttonLens {
+  margin-left: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
   fill: white;
   display: none;
 }
 
+.buttonLens svg {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .buttonLens {
-    margin-left: 0.5rem;
     display: block;
   }
   .buttonSearch {

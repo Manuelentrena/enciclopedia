@@ -5,15 +5,17 @@
   /* TAMAÑOS */
   --fs-higher: 3.8rem;
   --fs-high: 3.3rem;
-  --fs-midhigh: 1.8rem;
-  --fs-medium: 1.5rem;
-  --fs-small: 1.3rem;
+  --fs-midhigh: 3rem;
+  --fs-medium: 2rem;
+  --fs-small: 1.5rem;
 
   /* HEADINGS */
   /*     --fs-h1: var(--fs-higher);
   --fs-h2: var(--fs-high);
   --fs-cite: var(--fs-medium); */
   --fs-input: var(--fs-medium);
+  --fs-a: var(--fs-small);
+  --fs-h2: var(--fs-midhigh);
   --fs-h3: var(--fs-medium);
   --fs-p: var(--fs-small);
   --fs-li: var(--fs-small);

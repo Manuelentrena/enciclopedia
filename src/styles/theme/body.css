@@ -10,5 +10,18 @@ body {
 }
 
 .quickpedia__body {
-  padding: 1rem;
+  padding: 2rem;
+}
+
+.quickpedia__header {
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .quickpedia__body {
+    padding: 1rem;
+  }
+  .quickpedia__header {
+    padding: 0.5rem 1rem;
+  }
 }

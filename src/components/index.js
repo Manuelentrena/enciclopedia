@@ -26,3 +26,4 @@ export { default as TrendingCard } from "components/TrendingCard";
 export { default as StartIcon } from "components/StartIcon";
 export { default as ViewsIcon } from "components/ViewsIcon";
 export { default as MoreIcon } from "components/MoreIcon";
+export { default as Category } from "components/Category";
