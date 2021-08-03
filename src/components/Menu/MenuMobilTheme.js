@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Lang from "Translations";
-import { ArrowMenu, MenuNoCheck, MenuCheck } from "components";
+import { IconArrow, IconNoCheck, IconCheck } from "components";
 import { useGlobal } from "hooks/useGlobal";
 
 const themes = ["dark", "light"];
@@ -22,7 +22,7 @@ const MenuMobilTheme = () => {
     <>
       <div className="menuMobil__container" onClick={handleClick}>
         <p className="menuMobil__title">{Lang[fx].menu.theme}</p>
-        <ArrowMenu arrowOn={arrowOn} />
+        <IconArrow arrowOn={arrowOn} />
       </div>
       <ul className="menuMobil__list">
         {arrowOn
@@ -36,7 +36,7 @@ const MenuMobilTheme = () => {
                 key={theme + "li"}
                 onClick={(e) => handleChange(e.target.id)}
               >
-                {theme === globalTheme ? <MenuCheck /> : <MenuNoCheck />}
+                {theme === globalTheme ? <IconCheck /> : <IconNoCheck />}
                 <p className="menuMobil__text">
                   {Lang[fx].menu.typeTheme[theme]}
                 </p>

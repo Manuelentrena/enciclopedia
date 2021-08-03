@@ -23,10 +23,11 @@
   bottom: 0;
   top: 5.3rem;
   background-color: var(--cMenuMobil-bg);
-  min-height: calc(100vh - 7rem);
+  /* min-height: calc(100vh - 5.3rem); */
   justify-content: flex-start;
   align-items: flex-start;
   z-index: 2;
+  height: 100vh;
 }
 
 .menuMobil__nav {

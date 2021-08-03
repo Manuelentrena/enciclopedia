@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useImages } from "hooks/useImages";
 import { useSearch } from "hooks/useSearch";
-import { SearchSvg } from "components";
+import { IconImageNotFound } from "components";
 
 const SearchItemImg = ({ id, title }) => {
   const { getImageHeader } = useImages();
@@ -27,7 +27,7 @@ const SearchItemImg = ({ id, title }) => {
       {url ? (
         <img className="oneResult__url" src={url} alt={title} />
       ) : (
-        <SearchSvg />
+        <IconImageNotFound />
       )}
     </>
   );

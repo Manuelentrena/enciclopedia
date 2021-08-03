@@ -1,29 +1,45 @@
-export { default as SearchForm } from "components/SearchForm";
-export { default as SearchList } from "components/SearchList";
-export { default as ListImages } from "components/ListImages";
-export { default as SearchModal } from "components/SearchModal";
-export { default as Spinner } from "components/Spinner";
-export { default as SearchItem } from "components/SearchItem";
-export { default as SearchItemImg } from "components/SearchItemImg";
-export { default as Header } from "components/Header";
-export { default as Logo } from "components/Logo";
-export { default as MiniLogo } from "components/MiniLogo";
-export { default as Togle } from "components/Togle";
-export { default as Button } from "components/Button";
-export { default as SearchSvg } from "components/SearchSvg";
-export { default as IconBurguer } from "components/IconBurguer";
-export { default as Menu } from "components/Menu";
-export { default as MenuDesktop } from "components/MenuDesktop";
-export { default as MenuMobil } from "components/MenuMobil";
-export { default as ArrowMenu } from "components/ArrowMenu";
-export { default as MenuCheck } from "components/MenuCheck";
-export { default as MenuNoCheck } from "components/MenuNoCheck";
-export { default as MenuMobilLanguage } from "components/MenuMobilLanguage";
-export { default as MenuMobilTheme } from "components/MenuMobilTheme";
-export { default as LanguageSelect } from "components/LanguageSelect";
-export { default as TrendingPanel } from "components/TrendingPanel";
-export { default as TrendingCard } from "components/TrendingCard";
-export { default as StartIcon } from "components/StartIcon";
-export { default as ViewsIcon } from "components/ViewsIcon";
-export { default as MoreIcon } from "components/MoreIcon";
-export { default as Category } from "components/Category";
+/* TRENDING */
+export { default as TrendingPanel } from "components/Trending/TrendingPanel";
+export { default as TrendingCard } from "components/Trending/TrendingCard";
+
+/* CATEGORY */
+export { default as Category } from "components/Category/Category";
+
+/* ICONS */
+export { default as IconStart } from "components/Icons/IconStart";
+export { default as IconView } from "components/Icons/IconView";
+export { default as IconMore } from "components/Icons/IconMore";
+export { default as IconArrow } from "components/Icons/IconArrow";
+export { default as IconCheck } from "components/Icons/IconCheck";
+export { default as IconNoCheck } from "components/Icons/IconNoCheck";
+export { default as IconImageNotFound } from "components/Icons/IconImageNotFound";
+export { default as IconBurguer } from "components/Icons/IconBurguer";
+export { default as IconClose } from "components/Icons/IconClose";
+export { default as IconLens } from "components/Icons/IconLens";
+
+/* RESOURCES */
+export { default as LanguageSelect } from "components/resources/LanguageSelect";
+export { default as Logo } from "components/resources/Logo";
+export { default as MiniLogo } from "components/resources/MiniLogo";
+export { default as Togle } from "components/resources/Togle";
+export { default as Spinner } from "components/resources/Spinner";
+
+/* HEADER */
+export { default as Header } from "components/Header/Header";
+
+/* SEARCHER */
+export { default as SearchForm } from "components/Searcher/SearchForm";
+export { default as SearchList } from "components/Searcher/SearchList";
+export { default as SearchModal } from "components/Searcher/SearchModal";
+export { default as SearchItem } from "components/Searcher/SearchItem";
+export { default as SearchItemImg } from "components/Searcher/SearchItemImg";
+
+/* MENU */
+export { default as Menu } from "components/Menu/Menu";
+export { default as MenuDesktop } from "components/Menu/MenuDesktop";
+export { default as MenuMobil } from "components/Menu/MenuMobil";
+export { default as MenuMobilLanguage } from "components/Menu/MenuMobilLanguage";
+export { default as MenuMobilTheme } from "components/Menu/MenuMobilTheme";
+
+/* BUTTON */
+export { default as Button } from "components/Button/Button";

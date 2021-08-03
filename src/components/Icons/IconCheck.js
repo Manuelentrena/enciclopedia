@@ -1,6 +1,6 @@
 import React from "react";
 
-const MenuCheck = () => {
+const IconCheck = () => {
   return (
     <svg x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20">
       <path
@@ -15,4 +15,4 @@ const MenuCheck = () => {
   );
 };
 
-export default MenuCheck;
+export default IconCheck;

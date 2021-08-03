@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Lang from "Translations";
 import { useParams, useLocation, useHistory } from "react-router";
-import { ArrowMenu, MenuCheck, MenuNoCheck } from "components";
+import { IconArrow, IconCheck, IconNoCheck } from "components";
 import { useGlobal } from "hooks/useGlobal";
 
 const languages = ["en", "es"];
@@ -27,7 +27,7 @@ const MenuMobilLanguage = () => {
     <>
       <div className="menuMobil__container" onClick={handleClick}>
         <p className="menuMobil__title">{Lang[fx].menu.language}</p>
-        <ArrowMenu arrowOn={arrowOn} />
+        <IconArrow arrowOn={arrowOn} />
       </div>
       <ul className="menuMobil__list">
         {arrowOn
@@ -40,7 +40,7 @@ const MenuMobilLanguage = () => {
                 }
                 key={language + "li"}
               >
-                {language === fx ? <MenuCheck /> : <MenuNoCheck />}
+                {language === fx ? <IconCheck /> : <IconNoCheck />}
                 <p className="menuMobil__text">
                   {" "}
                   {language.toUpperCase() +

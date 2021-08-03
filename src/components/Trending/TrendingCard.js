@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTrending } from "hooks";
-import { StartIcon, ViewsIcon, MoreIcon } from "components";
+import { IconStart, IconView, IconMore } from "components";
 
 const TrendingCard = (oneTrend) => {
   const { views, canonical } = oneTrend;
@@ -33,16 +33,16 @@ const TrendingCard = (oneTrend) => {
         <div className="cardTrend__content">
           <div className="cardTrend__header">
             <div className="cardTrend__views">
-              <ViewsIcon />
+              <IconView />
               <p className="cardTrend__counter">{infoCard.views}</p>
             </div>
-            <StartIcon />
+            <IconStart />
           </div>
           <div className="cardTrend__body">
             <p className="cardTrend__title">{infoCard.title}</p>
             <p className="cardTrend__desc">{infoCard.description}</p>
             <div className="cardTrend__bodyRel">
-              <MoreIcon />
+              <IconMore />
             </div>
             <div className="cardTrend__opacityEnd"></div>
           </div>

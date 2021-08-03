@@ -1,5 +1,5 @@
 import React from "react";
-const ArrowMenu = ({ arrowOn }) => {
+const IconArrow = ({ arrowOn }) => {
   return (
     <svg
       width="10.2"
@@ -12,4 +12,4 @@ const ArrowMenu = ({ arrowOn }) => {
   );
 };
 
-export default React.memo(ArrowMenu);
+export default React.memo(IconArrow);
