@@ -1,0 +1,44 @@
+.iconBurguer {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  display: none;
+}
+
+.iconBurguer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.iconBurguer__bar1,
+.iconBurguer__bar2,
+.iconBurguer__bar3 {
+  width: 3.5rem;
+  height: 0.4rem;
+  background-color: var(--c-icon-burguer);
+  margin: 0.4rem 0;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+
+.activeMenu.iconBurguer__bar1 {
+  -webkit-transform: rotate(-45deg) translate(-0.9rem, 0.9rem);
+  transform: rotate(-45deg) translate(-0.9rem, 0.9rem);
+}
+
+.activeMenu.iconBurguer__bar2 {
+  opacity: 0;
+}
+
+.activeMenu.iconBurguer__bar3 {
+  -webkit-transform: rotate(45deg) translate(-0.8rem, -0.8rem);
+  transform: rotate(45deg) translate(-0.8rem, -0.8rem);
+}
+
+@media (max-width: 768px) {
+  .iconBurguer {
+    display: flex;
+  }
+}

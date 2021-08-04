@@ -1,0 +1,20 @@
+.iconMore__svg {
+  fill: var(--cCardTrend-btnSvg);
+}
+
+.iconMore {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 2rem;
+  background-color: var(--cCardTrend-btnBg);
+  border-radius: 50%;
+  border: 3px solid var(--cCardTrend-btnBg);
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  opacity: 1;
+}
+
+.iconMore:hover {
+  transform: scale(1.2);
+}

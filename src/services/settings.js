@@ -33,3 +33,5 @@ function calcDay() {
   const day = "0" + fechaDeAyer().getDate().toString();
   return day.substr(day.length - 2);
 }
+
+/* https://es.wikipedia.org/api/rest_v1/feed/onthisday/events/03/08 */

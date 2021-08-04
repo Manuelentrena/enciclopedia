@@ -19,26 +19,37 @@
 /* @import "../styles/container/follow/follow.css"; */
 
 /* Components */
-@import "../styles/components/header.css";
-@import "../styles/components/searchForm.css";
-@import "../styles/components/searchItem.css";
-@import "../styles/components/searchModal.css";
-@import "../styles/components/spinner.css";
-@import "../styles/components/logo.css";
-@import "../styles/components/toggle.css";
-@import "../styles/components/language.css";
-@import "../styles/components/buttonPrimary.css";
-@import "../styles/components/buttonSecond.css";
-@import "../styles/components/searchSvg.css";
-@import "../styles/components/menuBurguer.css";
-@import "../styles/components/arrowMenu.css";
-@import "../styles/components/menu.css";
-@import "../styles/components/startFav.css";
-@import "../styles/components/viewsIcon.css";
-@import "../styles/components/moreIcon.css";
-@import "../styles/components/trendingCard.css";
-@import "../styles/components/trendingPanel.css";
-@import "../styles/components/category.css";
+@import "../styles/components/Icons/iconArrow.css";
+@import "../styles/components/Icons/iconBurguer.css";
+@import "../styles/components/Icons/iconCheck.css";
+@import "../styles/components/Icons/iconNoCheck.css";
+@import "../styles/components/Icons/iconMore.css";
+@import "../styles/components/Icons/iconClose.css";
+@import "../styles/components/Icons/iconImageNotFound.css";
+@import "../styles/components/Icons/iconLens.css";
+@import "../styles/components/Icons/iconStar.css";
+@import "../styles/components/Icons/iconView.css";
+
+@import "../styles/components/Header/header.css";
+
+@import "../styles/components/Menu/menuDesktop.css";
+@import "../styles/components/Menu/menuMobil.css";
+
+@import "../styles/components/resources/languageSelect.css";
+@import "../styles/components/resources/logos.css";
+@import "../styles/components/resources/spinner.css";
+@import "../styles/components/resources/toggle.css";
+
+@import "../styles/components/Search/searchForm.css";
+@import "../styles/components/Search/searchItem.css";
+@import "../styles/components/Search/searchModal.css";
+
+@import "../styles/components/Button/button.css";
+
+@import "../styles/components/Trending/trendingCard.css";
+@import "../styles/components/Trending/trendingPanel.css";
+
+@import "../styles/components/Category/category.css";
 
 /* utils */
 @import "../styles/utils/relative.css";

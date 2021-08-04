@@ -23,7 +23,7 @@ const TrendingPanel = () => {
   return (
     <>
       <Category />
-      <div className="Trending__container">
+      <div className="trendingPanel">
         {listTrendings.map((oneTrend) => (
           <TrendingCard key={oneTrend.canonical} {...oneTrend} />
         ))}

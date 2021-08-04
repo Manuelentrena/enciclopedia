@@ -1,0 +1,4 @@
+.iconClose {
+  fill: var(--cSearch-close);
+  display: block;
+}

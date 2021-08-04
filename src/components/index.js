@@ -6,7 +6,7 @@ export { default as TrendingCard } from "components/Trending/TrendingCard";
 export { default as Category } from "components/Category/Category";
 
 /* ICONS */
-export { default as IconStart } from "components/Icons/IconStart";
+export { default as IconStart } from "components/Icons/IconStar";
 export { default as IconView } from "components/Icons/IconView";
 export { default as IconMore } from "components/Icons/IconMore";
 export { default as IconArrow } from "components/Icons/IconArrow";

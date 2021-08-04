@@ -1,15 +1,15 @@
-.Trending__container {
+.trendingPanel {
   display: flex;
   overflow-x: scroll;
   padding-left: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-.Trending__container::-webkit-scrollbar {
+.trendingPanel::-webkit-scrollbar {
   height: 10px;
 }
 
-.Trending__container::-webkit-scrollbar-thumb {
+.trendingPanel::-webkit-scrollbar-thumb {
   background: var(--cCardTrend-scroll);
   border-radius: 5px;
   box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
@@ -17,7 +17,7 @@
 }
 
 @media screen and (max-width: 769px) {
-  .Trending__container::-webkit-scrollbar {
+  .trendingPanel::-webkit-scrollbar {
     height: 2px;
   }
 }

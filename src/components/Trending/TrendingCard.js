@@ -20,31 +20,31 @@ const TrendingCard = (oneTrend) => {
 
   return (
     <>
-      <div className="cardTrend">
-        <picture className="cardTrend__picture">
+      <div className="trendingCard">
+        <picture className="trendingCard__picture">
           <img
-            className="cardTrend__img"
+            className="trendingCard__img"
             src={infoCard.img}
             alt={infoCard.title}
           />
         </picture>
-        <div className="cardTrend__opacity"></div>
+        <div className="trendingCard__opacity"></div>
 
-        <div className="cardTrend__content">
-          <div className="cardTrend__header">
-            <div className="cardTrend__views">
+        <div className="trendingCard__content">
+          <div className="trendingCard__header">
+            <div className="trendingCard__views">
               <IconView />
-              <p className="cardTrend__counter">{infoCard.views}</p>
+              <p className="trendingCard__counter">{infoCard.views}</p>
             </div>
             <IconStart />
           </div>
-          <div className="cardTrend__body">
-            <p className="cardTrend__title">{infoCard.title}</p>
-            <p className="cardTrend__desc">{infoCard.description}</p>
-            <div className="cardTrend__bodyRel">
+          <div className="trendingCard__body">
+            <p className="trendingCard__title">{infoCard.title}</p>
+            <p className="trendingCard__desc">{infoCard.description}</p>
+            <div className="trendingCard__bodyRel">
               <IconMore />
             </div>
-            <div className="cardTrend__opacityEnd"></div>
+            <div className="trendingCard__opacityEnd"></div>
           </div>
         </div>
       </div>

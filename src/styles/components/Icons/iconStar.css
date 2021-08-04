@@ -1,11 +1,11 @@
-.starFav__ext {
+.iconStar__ext {
   fill: var(--cCardTrend-header);
 }
 
-.starFav__int {
+.iconStar__int {
   fill: transparent;
 }
 
-.startFav__click {
+.iconStar__click {
   fill: var(--cCardTrend-header);
 }

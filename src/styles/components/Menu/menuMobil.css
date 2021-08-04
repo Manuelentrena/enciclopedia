@@ -1,20 +1,3 @@
-.menuDesktop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menuDesktop__nav {
-  display: flex;
-  width: 100%;
-}
-
-.menuDesktop__item {
-  width: 100%;
-}
-
-/* VERSION MENU MOBILE */
-
 .menuMobil {
   display: none;
   position: absolute;
@@ -97,19 +80,7 @@
   left: 0;
 }
 
-.menuMobil__check {
-  fill: var(--cMenuMobil-check);
-}
-.menuMobil__nocheck {
-  fill: var(--cMenuMobil-nocheck);
-}
-
-/* OCULTAR / MOSTRAR CADA UNO */
-
 @media (max-width: 768px) {
-  .menuDesktop {
-    display: none;
-  }
   .menuMobil {
     display: flex;
   }
