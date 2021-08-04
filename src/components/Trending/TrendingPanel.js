@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useGlobal, useTrending } from "hooks";
 import { TrendingCard, Category } from "components";
+import Lang from "Translations";
 
 const TrendingPanel = () => {
   const { addNewTrendings, listTrendings, newTrendings } = useTrending();
-  const { language } = useGlobal();
+  const { language: fx } = useGlobal();
 
   async function addTrendings() {
     await addNewTrendings();
@@ -18,11 +19,16 @@ const TrendingPanel = () => {
     if (Array.isArray(listTrendings) && listTrendings.length !== 0) {
       addTrendings();
     }
-  }, [language]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [fx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
-      <Category />
+      <Category
+        title={Lang[fx].category.top_tendencies}
+        link={Lang[fx].category.link}
+        showLink={true}
+        language={fx}
+      />
       <div className="trendingPanel">
         {listTrendings.map((oneTrend) => (
           <TrendingCard key={oneTrend.canonical} {...oneTrend} />

@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useGlobal } from "hooks";
-import Lang from "Translations";
 
-const Category = () => {
-  const { language: fx } = useGlobal();
+const Category = ({ title, link, showLink, language: fx }) => {
   return (
     <div className="category">
-      <h2 className="category__title ">{Lang[fx].category.tendencies}</h2>
-      <Link to={`/${fx}/trendings`} className="category__see">
-        {Lang[fx].category.link}
-      </Link>
+      <h2 className="category__title ">{title}</h2>
+      {showLink && (
+        <Link to={`/${fx}/trendings`} className="category__see">
+          {link}
+        </Link>
+      )}
     </div>
   );
 };

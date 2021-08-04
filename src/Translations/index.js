@@ -12,7 +12,7 @@ const Lang = {
       typeTheme: { dark: "Dark", light: "Light" },
     },
     category: {
-      tendencies: "TRENDINGS",
+      top_tendencies: "TOP TRENDINGS",
       link: "See All >",
     },
   },
@@ -29,7 +29,7 @@ const Lang = {
       typeTheme: { dark: "Oscuro", light: "Claro" },
     },
     category: {
-      tendencies: "TENDENCIAS",
+      top_tendencies: "TOP TENDENCIAS",
       link: "Ver Todo >",
     },
   },
