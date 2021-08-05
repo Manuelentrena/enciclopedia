@@ -1,28 +1,35 @@
 import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import { useGlobal } from "hooks";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
-const FixRoute = (props) => {
-  const { language: fx, setLanguage, changeTheme, theme } = useGlobal();
-  const history = useHistory();
+const FixRoute = ({ component: Component, ...rest }) => {
+  const { language: fx } = useGlobal();
   const { pathname } = useLocation();
-  const lng = pathname.slice(1, 3);
+
+  let history = useHistory();
+  const Lng = pathname.slice(1, 3);
   const withLng = pathname.slice(3, 4);
 
   useEffect(() => {
-    if (withLng === "/") {
-      lng !== fx && setLanguage(lng);
-    } else {
-      history.push({ pathname: `/${fx}${pathname}` });
+    if (Lng !== fx) {
+      if (withLng !== "/") {
+        if (withLng === "") {
+          history.push(`/${fx}${pathname.substr(3)}`);
+        } else {
+          history.push(`/${fx}${pathname}`);
+        }
+      } else {
+        history.push(pathname.replace(pathname.slice(1, 3), fx));
+      }
     }
-  }, [fx, lng, setLanguage, pathname, history, withLng]);
+  }, [fx, Lng, history, pathname, withLng]);
 
-  useEffect(() => {
-    changeTheme();
-  }, [theme, changeTheme]);
-
-  return <Route {...props} />;
+  return (
+    <Route {...rest}>
+      <Component />
+    </Route>
+  );
 };
 
 export default FixRoute;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Lang from "Translations";
-import { useParams, useLocation, useHistory } from "react-router";
+import { useParams } from "react-router";
 import { IconArrow, IconCheck, IconNoCheck } from "components";
 import { useGlobal } from "hooks/useGlobal";
 
@@ -8,9 +8,7 @@ const languages = ["en", "es"];
 
 const MenuMobilLanguage = () => {
   const { lng } = useParams();
-  const { pathname } = useLocation();
-  const history = useHistory();
-  const { language: fx } = useGlobal();
+  const { language: fx, setLanguage, setTrending } = useGlobal();
   const [arrowOn, setArrowOn] = useState(false);
 
   const handleClick = () => {
@@ -19,8 +17,8 @@ const MenuMobilLanguage = () => {
 
   const handleChange = (value) => {
     if (lng === value) return false;
-    const newPath = pathname.replace(pathname.slice(1, 3), value);
-    history.push({ pathname: newPath });
+    setLanguage(value);
+    setTrending(true);
   };
 
   return (

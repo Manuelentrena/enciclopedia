@@ -1,10 +1,14 @@
+import { useEffect } from "react";
 import { useReducer, createContext, useCallback } from "react";
 import { TRENDING_ACTIONS } from "events/index";
 import { trendingReducer, inicialState } from "./trendingReducer";
+import { useGlobal } from "hooks";
+import getTrendings from "services/getTrendings";
 
 const TrendingContext = createContext({});
 
 export function TrendingStateProvider({ children }) {
+  const { trending, setTrending, language: fx } = useGlobal();
   const [trendingState, trendingDispatch] = useReducer(
     trendingReducer,
     inicialState
@@ -12,6 +16,21 @@ export function TrendingStateProvider({ children }) {
 
   const { newTrendings, initialPosition, numArticlesByBlock, listTrendings } =
     trendingState;
+
+  /* CARGAR TRENDINGS */
+  useEffect(() => {
+    if (trending) {
+      async function loadData() {
+        cleanListTrendings();
+        const dataTrendings = await getTrendings({ language: fx });
+        setSearchTrending(dataTrendings);
+        addBlockTrending(fx);
+        setTrending(false);
+        return true;
+      }
+      loadData();
+    }
+  }, [trending]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const setSearchTrending = useCallback(
     (dataTrendings) => {

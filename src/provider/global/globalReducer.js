@@ -6,20 +6,31 @@ export const globalReducer = (state, action) => {
       return { ...state, theme: action.payload };
     case GLOBAL_ACTIONS.CHANGE_LANGUAGE:
       return { ...state, language: action.payload, switchLanguage: true };
+    case GLOBAL_ACTIONS.CHANGE_TRENDING:
+      return { ...state, trending: action.payload };
     default:
       return state;
   }
 };
 
 const LanguageSystem = () => {
+  const { pathname } = window.location;
+  const Lng = pathname.slice(1, 3);
+  if (Lng === "es" || Lng === "en") {
+    return pathname.slice(1, 3);
+  }
   return navigator.language?.substr(0, 2) ?? "en";
 };
 
 const colorSchemeSystem = () => {
+  const tagHtml = document.getElementsByTagName("html")[0];
   const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
   if (isDark) {
+    tagHtml.classList.add("dark");
     return "dark";
   } else {
+    tagHtml.classList.add("light");
     return "light";
   }
 };
@@ -31,4 +42,5 @@ export const inicialState = {
   lastSearch: "",
   token: null,
   userName: "userName",
+  trending: true,
 };

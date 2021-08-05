@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useGlobal } from "hooks/useGlobal";
 
 const Togle = () => {
-  const { theme, setTheme } = useGlobal();
+  const { theme, setTheme, changeTheme } = useGlobal();
   const [togle, setTogle] = useState(theme);
 
   useEffect(() => {
     setTogle(theme);
-  }, [theme]);
+    changeTheme(theme);
+  }, [theme, changeTheme]);
 
   const handleClick = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark");

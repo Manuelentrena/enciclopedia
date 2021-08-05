@@ -8,8 +8,8 @@ import FixRoute from "routers/FixRoute";
 function App() {
   return (
     <GlobalStateProvider>
-      <SearchContextProvider>
-        <TrendingStateProvider>
+      <TrendingStateProvider>
+        <SearchContextProvider>
           <Router>
             <Switch>
               <FixRoute path="/:lng(en|es)?" exact component={Init}></FixRoute>
@@ -25,8 +25,8 @@ function App() {
               ></FixRoute>
             </Switch>
           </Router>
-        </TrendingStateProvider>
-      </SearchContextProvider>
+        </SearchContextProvider>
+      </TrendingStateProvider>
     </GlobalStateProvider>
   );
 }

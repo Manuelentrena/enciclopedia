@@ -7,8 +7,15 @@ const GlobalContext = createContext({});
 export function GlobalStateProvider({ children }) {
   const [globalState, globalDispatch] = useReducer(globalReducer, inicialState);
 
-  const { language, theme, lastSearch, token, userName, switchLanguage } =
-    globalState;
+  const {
+    language,
+    theme,
+    lastSearch,
+    token,
+    userName,
+    switchLanguage,
+    trending,
+  } = globalState;
 
   const setTheme = useCallback(
     (theme) => {
@@ -30,6 +37,16 @@ export function GlobalStateProvider({ children }) {
     [globalDispatch]
   );
 
+  const setTrending = useCallback(
+    (value) => {
+      globalDispatch({
+        type: GLOBAL_ACTIONS.CHANGE_TRENDING,
+        payload: value,
+      });
+    },
+    [globalDispatch]
+  );
+
   return (
     <GlobalContext.Provider
       value={{
@@ -41,6 +58,8 @@ export function GlobalStateProvider({ children }) {
         lastSearch,
         token,
         userName,
+        trending,
+        setTrending,
       }}
     >
       {children}

@@ -1,10 +1,10 @@
 import { SearchForm, Header, Category, TrendingLayout } from "components";
-
 import { useGlobal } from "hooks";
 import Lang from "Translations";
 
 const Trendings = () => {
   const { language: fx } = useGlobal();
+
   return (
     <>
       <Header />
