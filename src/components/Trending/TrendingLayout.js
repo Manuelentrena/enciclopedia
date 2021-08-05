@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useGlobal, useTrending } from "hooks";
+import { TrendingCard } from "components";
 
 const TrendingLayout = () => {
   const { addNewTrendings, listTrendings, newTrendings } = useTrending();
@@ -22,7 +23,13 @@ const TrendingLayout = () => {
     }
     console.log("useEffect del Layout");
   }, [fx]); // eslint-disable-line react-hooks/exhaustive-deps
-  return <div className="trendingLayout">HOLA</div>;
+  return (
+    <div className="trendingLayout">
+      {listTrendings.map((trendingCard) => (
+        <TrendingCard key={trendingCard.canonical} {...trendingCard} />
+      ))}
+    </div>
+  );
 };
 
 export default TrendingLayout;

@@ -42,7 +42,8 @@
   font-size: 1.8rem;
 }
 
-.oneResult__description {
+.oneResult__description,
+.oneResult__description span {
   margin: 0;
   overflow-y: hidden;
   font-size: 1.4rem;

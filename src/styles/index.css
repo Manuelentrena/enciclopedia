@@ -48,6 +48,7 @@
 
 @import "../styles/components/Trending/trendingCard.css";
 @import "../styles/components/Trending/trendingPanel.css";
+@import "../styles/components/Trending/trendingLayout.css";
 
 @import "../styles/components/Category/category.css";
 
