@@ -1,6 +1,7 @@
 /* TRENDING */
 export { default as TrendingPanel } from "components/Trending/TrendingPanel";
 export { default as TrendingCard } from "components/Trending/TrendingCard";
+export { default as TrendingLayout } from "components/Trending/TrendingLayout";
 
 /* CATEGORY */
 export { default as Category } from "components/Category/Category";

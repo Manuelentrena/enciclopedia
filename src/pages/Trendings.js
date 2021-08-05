@@ -1,18 +1,21 @@
-import { SearchForm, Header } from "components";
-import { SearchContextProvider } from "provider/SearchContext";
-import { TrendingStateProvider } from "provider/Trendings/trendingContext";
+import { SearchForm, Header, Category, TrendingLayout } from "components";
+
+import { useGlobal } from "hooks";
+import Lang from "Translations";
 
 const Trendings = () => {
+  const { language: fx } = useGlobal();
   return (
     <>
       <Header />
-      <SearchContextProvider>
-        <SearchForm />
-      </SearchContextProvider>
+      <SearchForm />
       <div className="quickpedia__body">
-        <TrendingStateProvider>
-          <h1>PAGINA NUEVA</h1>
-        </TrendingStateProvider>
+        <Category
+          title={Lang[fx].category.tendencies}
+          date={new Date().toLocaleDateString()}
+          showLink={false}
+        />
+        <TrendingLayout />
       </div>
     </>
   );

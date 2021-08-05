@@ -16,6 +16,7 @@
   --fs-input: var(--fs-medium);
   --fs-a: var(--fs-small);
   --fs-h2: var(--fs-midhigh);
+  --fs-span: var(--fs-midhigh);
   --fs-h3: var(--fs-medium);
   --fs-p: var(--fs-small);
   --fs-li: var(--fs-small);

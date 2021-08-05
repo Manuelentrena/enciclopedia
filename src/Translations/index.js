@@ -13,6 +13,7 @@ const Lang = {
     },
     category: {
       top_tendencies: "TOP TRENDINGS",
+      tendencies: "TRENDINGS",
       link: "See All >",
     },
   },
@@ -30,6 +31,7 @@ const Lang = {
     },
     category: {
       top_tendencies: "TOP TENDENCIAS",
+      tendencies: "TENDENCIAS",
       link: "Ver Todo >",
     },
   },

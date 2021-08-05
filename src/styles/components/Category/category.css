@@ -1,6 +1,15 @@
-.category__title {
-  font-family: "Myriad Pro Bold";
-  margin: 0;
+.category__header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* .category__title {
+  
+} */
+
+.category__subTitle {
+  margin-left: 1rem;
 }
 
 .category__see {

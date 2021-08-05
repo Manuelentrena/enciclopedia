@@ -26,6 +26,15 @@ h3 {
   margin: 0rem;
 }
 
+span {
+  color: var(--c-span);
+  font: normal var(--medium) var(--fs-span) / var(--line-height)
+      "Myriad Pro Light",
+    sans-serif;
+  margin: 0rem;
+  display: block;
+}
+
 p {
   color: var(--c-p);
   font: normal var(--medium) var(--fs-p) / var(--line-height) "Myriad Pro Light",
@@ -76,7 +85,8 @@ input::placeholder {
 }
 
 @media screen and (max-width: 769px) {
-  h2 {
+  h2,
+  span {
     font-size: calc((var(--fs-h2) * 75) / 100);
   }
 }
