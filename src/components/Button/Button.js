@@ -7,8 +7,6 @@ const Button = ({ type = "", className = "", text = "", action = null }) => {
     handleClick = (e) => {
       action(e);
     };
-  } else {
-    handleClick = (e) => {};
   }
 
   return (

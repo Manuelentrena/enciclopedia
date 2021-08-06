@@ -4,10 +4,20 @@ import { IconStart, IconView, IconMore } from "components";
 
 const TrendingCard = (oneTrend) => {
   const { views, canonical } = oneTrend;
-  const { addInfo } = useTrending();
+  const { addInfo, listTrendings } = useTrending();
   const [infoCard, setInfoCard] = useState({});
 
   useEffect(() => {
+    listTrendings.forEach((oneTrend) => {
+      if (canonical === oneTrend.canonical) {
+        if (oneTrend.id !== undefined) {
+          setInfoCard(oneTrend);
+        } else {
+          getData();
+        }
+      }
+    });
+
     async function getData() {
       const newInfo = await addInfo({
         canonical,
@@ -15,8 +25,7 @@ const TrendingCard = (oneTrend) => {
       });
       newInfo && setInfoCard(newInfo);
     }
-    getData();
-  }, [canonical, views]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
