@@ -1,4 +1,5 @@
-import { SearchForm, Header, TrendingPanel, Category } from "components";
+import React from "react";
+import { SearchForm, Header, Category, TrendingLazy } from "components";
 import { useGlobal } from "hooks";
 import Lang from "Translations";
 
@@ -15,7 +16,7 @@ const Init = () => {
         showLink={true}
       />
       <div className="quickpedia__body">
-        <TrendingPanel />
+        <TrendingLazy />
       </div>
     </>
   );

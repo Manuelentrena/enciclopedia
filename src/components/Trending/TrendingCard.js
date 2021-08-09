@@ -3,29 +3,22 @@ import { useTrending } from "hooks";
 import { IconStart, IconView, IconMore } from "components";
 
 const TrendingCard = (oneTrend) => {
-  const { views, canonical } = oneTrend;
-  const { addInfo, listTrendings } = useTrending();
+  const { canonical, views } = oneTrend;
+  const { addInfo, existsCard } = useTrending();
   const [infoCard, setInfoCard] = useState({});
 
-  useEffect(() => {
-    listTrendings.forEach((oneTrend) => {
-      if (canonical === oneTrend.canonical) {
-        if (oneTrend.id !== undefined) {
-          setInfoCard(oneTrend);
-        } else {
-          getData();
-        }
-      }
+  async function getData() {
+    const newInfo = await addInfo({
+      canonical,
+      views,
     });
+    newInfo && setInfoCard(newInfo);
+  }
 
-    async function getData() {
-      const newInfo = await addInfo({
-        canonical,
-        views,
-      });
-      newInfo && setInfoCard(newInfo);
-    }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const dataCard = existsCard({ canonical });
+    dataCard ? setInfoCard(dataCard) : getData();
+  }, [canonical]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

@@ -1,10 +1,9 @@
-import React from "react";
 import { useTrending } from "hooks";
 import { TrendingCard } from "components";
-import { Button } from "components";
+import { Button, Spinner } from "components";
 
 const TrendingLayout = () => {
-  const { listTrendings, addBlock } = useTrending();
+  const { listTrendings, addBlock, loading } = useTrending();
 
   const nextPage = (e) => {
     console.log(e.target);
@@ -13,11 +12,15 @@ const TrendingLayout = () => {
 
   return (
     <>
-      <div className="trendingLayout">
-        {listTrendings.map((trendingCard) => (
-          <TrendingCard key={trendingCard.canonical} {...trendingCard} />
-        ))}
-      </div>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className="trendingLayout">
+          {listTrendings.map((trendingCard) => (
+            <TrendingCard key={trendingCard.canonical} {...trendingCard} />
+          ))}
+        </div>
+      )}
       <Button
         className="buttonPrimary center"
         type="button"

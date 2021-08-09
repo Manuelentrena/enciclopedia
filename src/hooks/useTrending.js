@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import TrendingContext from "provider/Trendings/trendingContext";
 /* import getTrendings from "services/getTrendings"; */
 import getInfoTrendings from "services/getInfoTrendings";
@@ -17,6 +17,7 @@ export const useTrending = () => {
     listTrendings,
     /* cleanListTrendings, */
     addInfoCard,
+    loadingTrending: loading,
   } = useContext(TrendingContext);
 
   /*   async function addNewTrendings() {
@@ -28,6 +29,7 @@ export const useTrending = () => {
   } */
 
   function addBlock() {
+    console.log("LOADING...");
     addBlockTrending(language);
   }
 
@@ -37,6 +39,26 @@ export const useTrending = () => {
     return newCard;
   }
 
+  function getFirstBlock() {
+    let block = [];
+    for (let i = 0; i < numArticlesByBlock - 2; i++) {
+      listTrendings[i] && block.push(listTrendings[i]);
+    }
+    return block;
+  }
+
+  function existsCard({ canonical }) {
+    listTrendings.forEach((card) => {
+      if (canonical === card.canonical) {
+        if (card.id !== undefined) {
+          return card;
+        } else {
+          return false;
+        }
+      }
+    });
+  }
+
   return {
     newTrendings,
     initialPosition,
@@ -44,5 +66,8 @@ export const useTrending = () => {
     listTrendings,
     addBlock,
     addInfo,
+    getFirstBlock,
+    existsCard,
+    loading,
   };
 };

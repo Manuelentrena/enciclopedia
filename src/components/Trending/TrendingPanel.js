@@ -1,17 +1,20 @@
-import React from "react";
 import { useTrending } from "hooks";
-import { TrendingCard } from "components";
+import { TrendingCard, Spinner } from "components";
 
-const TrendingPanel = () => {
-  const { listTrendings } = useTrending();
+export default function TrendingPanel() {
+  const { getFirstBlock, loading } = useTrending();
 
   return (
-    <div className="trendingPanel">
-      {listTrendings.map((oneTrend) => (
-        <TrendingCard key={oneTrend.canonical} {...oneTrend} />
-      ))}
-    </div>
+    <>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className="trendingPanel">
+          {getFirstBlock().map((oneTrend) => (
+            <TrendingCard key={oneTrend.canonical} {...oneTrend} />
+          ))}
+        </div>
+      )}
+    </>
   );
-};
-
-export default TrendingPanel;
+}
