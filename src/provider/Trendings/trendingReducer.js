@@ -16,8 +16,7 @@ export const trendingReducer = (state, action) => {
       const block = createNewBlock(
         newTrendings,
         initialPosition,
-        numArticlesByBlock,
-        action.payload
+        numArticlesByBlock
       );
       return {
         ...state,
@@ -43,29 +42,24 @@ export const inicialState = {
   listTrendings: [],
 };
 
-const especialArticles = {
+/* const especialArticles = {
   en: ["Main_Page", "Special:Search"],
   es: ["Wikipedia:Portada", "Especial:Buscar"],
-};
+}; */
 
-function createNewBlock(
-  newTrendings,
-  initialPosition,
-  numArticlesByBlock,
-  language
-) {
+function createNewBlock(newTrendings, initialPosition, numArticlesByBlock) {
   let newBlock = [];
 
   for (let i = initialPosition; i < numArticlesByBlock + initialPosition; i++) {
-    if (
+    /* if (
       newTrendings[i].article !== especialArticles[language][0] &&
       newTrendings[i].article !== especialArticles[language][1]
-    ) {
-      newBlock.push({
-        canonical: newTrendings[i].article,
-        views: newTrendings[i].views,
-      });
-    }
+    ) { */
+    newBlock.push({
+      canonical: newTrendings[i].article,
+      views: newTrendings[i].views,
+    });
+    /* } */
   }
   return newBlock;
 }

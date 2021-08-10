@@ -43,10 +43,16 @@ export const useTrending = () => {
   useEffect(() => {
     let listPromise = [];
     if (loadCards) {
-      listTrendings.forEach((trendingCard) => {
-        const { canonical, views } = trendingCard;
+      for (
+        let i = initialPosition - numArticlesByBlock;
+        i < listTrendings.length;
+        i++
+      ) {
+        const canonical = listTrendings[i].canonical;
+        const views = listTrendings[i].views;
+        console.log({ canonical });
         listPromise.push(getInfoTrendings({ language, canonical, views }));
-      });
+      }
 
       Promise.all(listPromise).then((res) => {
         res.forEach((newCard) => {
@@ -59,15 +65,9 @@ export const useTrending = () => {
   }, [loadCards]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function addBlock() {
-    console.log("LLAMANDO A NUEVO BLOQUE");
-    addBlockTrending(language);
+    addBlockTrending();
+    setLoadCards(true);
   }
-
-  /*   async function addInfo({ canonical, views }) {
-    const newCard = await getInfoTrendings({ language, canonical, views });
-    newCard && addInfoCard(newCard);
-    return newCard;
-  } */
 
   function getFirstBlock() {
     let block = [];
@@ -76,18 +76,6 @@ export const useTrending = () => {
     }
     return block;
   }
-  /* 
-  function existsCard({ canonical }) {
-    listTrendings.forEach((card) => {
-      if (canonical === card.canonical) {
-        if (card.id !== undefined) {
-          return card;
-        } else {
-          return false;
-        }
-      }
-    });
-  } */
 
   return {
     newTrendings,
@@ -95,7 +83,6 @@ export const useTrending = () => {
     numArticlesByBlock,
     listTrendings,
     addBlock,
-    /*     addInfo, */
     getFirstBlock,
     loading: loadingTrending,
   };

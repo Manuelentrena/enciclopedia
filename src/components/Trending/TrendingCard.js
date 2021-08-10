@@ -35,4 +35,5 @@ const TrendingCard = ({ description, img = "", views, title }) => {
 /* export default React.memo(TrendingCard, (prevProps, nextProps) => {
   return prevProps.id === nextProps.id;
 }); */
-export default TrendingCard;
+
+export default React.memo(TrendingCard);

@@ -5,14 +5,14 @@ import { Spinner } from "components";
 import debounce from "just-debounce-it";
 
 const TrendingLayout = () => {
-  const { listTrendings, /* addBlock, */ loading } = useTrending();
+  const { listTrendings, addBlock, loading } = useTrending();
   const { isNearScreen, fromRef } = useNearScreen({
     keepWatch: true,
     distance: "220px",
   });
 
   const debounceNextPage = useCallback(
-    debounce(() => console.log("NEXT BLOCK"), 300),
+    debounce(() => addBlock(), 300),
     []
   );
 
@@ -29,7 +29,7 @@ const TrendingLayout = () => {
           <div className="trendingLayout">
             {listTrendings.map((trendingCard) => (
               <TrendingCard
-                key={trendingCard.id}
+                key={trendingCard.canonical}
                 description={trendingCard.description}
                 img={trendingCard.img}
                 views={trendingCard.views}
