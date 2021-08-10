@@ -6,7 +6,7 @@
 
 .trendingLayout {
   display: grid;
-  /* min-height: 100vh; */
+  min-height: 200vh;
   grid-template-columns: repeat(auto-fill, minmax(var(--Layout-column), 1fr));
   grid-auto-rows: var(--Layout-rows);
   grid-auto-flow: dense;

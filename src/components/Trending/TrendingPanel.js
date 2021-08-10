@@ -10,8 +10,13 @@ export default function TrendingPanel() {
         <Spinner />
       ) : (
         <div className="trendingPanel">
-          {getFirstBlock().map((oneTrend) => (
-            <TrendingCard key={oneTrend.canonical} {...oneTrend} />
+          {getFirstBlock().map((trendingCard) => (
+            <TrendingCard
+              key={trendingCard.id}
+              description={trendingCard.description}
+              views={trendingCard.views}
+              img={trendingCard.img}
+            />
           ))}
         </div>
       )}

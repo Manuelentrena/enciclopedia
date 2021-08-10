@@ -5,20 +5,20 @@ import { Spinner } from "components";
 import debounce from "just-debounce-it";
 
 const TrendingLayout = () => {
-  const { listTrendings, addBlock, loading } = useTrending();
+  const { listTrendings, /* addBlock, */ loading } = useTrending();
   const { isNearScreen, fromRef } = useNearScreen({
     keepWatch: true,
     distance: "220px",
   });
 
   const debounceNextPage = useCallback(
-    debounce(() => addBlock(), 200),
-    [addBlock]
+    debounce(() => console.log("NEXT BLOCK"), 300),
+    []
   );
 
   useEffect(() => {
     isNearScreen && debounceNextPage();
-  }, [isNearScreen]);
+  }, [isNearScreen, debounceNextPage]);
 
   return (
     <>
@@ -28,7 +28,13 @@ const TrendingLayout = () => {
         <>
           <div className="trendingLayout">
             {listTrendings.map((trendingCard) => (
-              <TrendingCard key={trendingCard.canonical} {...trendingCard} />
+              <TrendingCard
+                key={trendingCard.id}
+                description={trendingCard.description}
+                img={trendingCard.img}
+                views={trendingCard.views}
+                title={trendingCard.title}
+              />
             ))}
           </div>
           <div id="visor" ref={fromRef}></div>
