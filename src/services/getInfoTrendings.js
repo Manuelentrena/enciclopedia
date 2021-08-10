@@ -3,7 +3,7 @@ import { prot, path, format, cors } from "services/settings";
 
 export default function getInfoTrendings({ canonical, language, views }) {
   const URL = `${prot}://${language}.${path[2]}/${canonical}?${format}&${cors}`;
-  /* console.log(URL); */
+
   return fetch(URL, {
     method: "GET",
     headers: {
