@@ -1,12 +1,12 @@
 import React from "react";
 import { IconStart, IconView, IconMore } from "components";
 
-const TrendingCard = ({ description, img = "", views, title }) => {
+const TrendingCard = ({ description, img, views, title }) => {
   return (
     <>
-      <div className="trendingCard">
+      <div className={img ? "trendingCard" : "trendingCard cardNoImg"}>
         <picture className="trendingCard__picture">
-          <img className="trendingCard__img" src={img} alt={title} />
+          {img && <img className="trendingCard__img" src={img} alt={title} />}
         </picture>
         <div className="trendingCard__opacity"></div>
 

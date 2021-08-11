@@ -5,6 +5,11 @@ import getInfoTrendings from "services/getInfoTrendings";
 import getTrendings from "services/getTrendings";
 import { useGlobal } from "hooks";
 
+const especialArticles = {
+  en: ["Main_Page", "Special:Search"],
+  es: ["Wikipedia:Portada", "Especial:Buscar"],
+};
+
 export const useTrending = () => {
   /* Context Global */
   const { trending, setTrending, language } = useGlobal();
@@ -50,7 +55,6 @@ export const useTrending = () => {
       ) {
         const canonical = listTrendings[i].canonical;
         const views = listTrendings[i].views;
-        console.log({ canonical });
         listPromise.push(getInfoTrendings({ language, canonical, views }));
       }
 
@@ -71,10 +75,25 @@ export const useTrending = () => {
 
   function getFirstBlock() {
     let block = [];
-    for (let i = 0; i < numArticlesByBlock - 2; i++) {
+    for (let i = 0; i < numArticlesByBlock; i++) {
       listTrendings[i] && block.push(listTrendings[i]);
     }
     return block;
+  }
+
+  function filterTrendingCard({ trendingCard }) {
+    if (trendingCard?.id === undefined) return false;
+    if (
+      trendingCard?.description === "" ||
+      trendingCard?.description === undefined
+    )
+      return false;
+    if (
+      trendingCard.canonical === especialArticles[language][0] ||
+      trendingCard.canonical === especialArticles[language][1]
+    )
+      return false;
+    return true;
   }
 
   return {
@@ -85,5 +104,6 @@ export const useTrending = () => {
     addBlock,
     getFirstBlock,
     loading: loadingTrending,
+    filterTrendingCard,
   };
 };

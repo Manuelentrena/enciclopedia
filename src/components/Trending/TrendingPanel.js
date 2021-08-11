@@ -2,7 +2,7 @@ import { useTrending } from "hooks";
 import { TrendingCard, Spinner } from "components";
 
 export default function TrendingPanel() {
-  const { getFirstBlock, loading } = useTrending();
+  const { getFirstBlock, loading, filterTrendingCard } = useTrending();
 
   return (
     <>
@@ -10,14 +10,19 @@ export default function TrendingPanel() {
         <Spinner />
       ) : (
         <div className="trendingPanel">
-          {getFirstBlock().map((trendingCard) => (
-            <TrendingCard
-              key={trendingCard.id}
-              description={trendingCard.description}
-              views={trendingCard.views}
-              img={trendingCard.img}
-            />
-          ))}
+          {getFirstBlock().map((trendingCard) => {
+            if (filterTrendingCard({ trendingCard })) {
+              return (
+                <TrendingCard
+                  key={trendingCard.canonical}
+                  description={trendingCard.description}
+                  img={trendingCard.img}
+                  views={trendingCard.views}
+                  title={trendingCard.title}
+                />
+              );
+            }
+          })}
         </div>
       )}
     </>

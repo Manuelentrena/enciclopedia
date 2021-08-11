@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 
 .trendingCard__opacity {
@@ -42,7 +42,6 @@
 
 .trendingCard__header {
   position: relative;
-  display: flex;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,7 +98,6 @@
   background: var(--cCardTrend-degr);
 }
 .trendingCard__bodyRel {
-  height: 290px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -108,7 +106,6 @@
 }
 
 .trendingCard:hover .trendingCard__body {
-  height: 290px;
   padding-top: 3.8rem;
   transition: all 0.5s ease-out;
 }
