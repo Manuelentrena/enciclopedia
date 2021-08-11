@@ -28,4 +28,9 @@
 
   /* Altura de linea */
   --line-height: 1.5;
+
+  /* LAYOUT */
+  --Layout-column: 220px;
+  --Layout-rows: 300px;
+  --Layout-gap: 1rem;
 }
