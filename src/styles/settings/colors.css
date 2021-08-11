@@ -107,6 +107,7 @@
   --cModalIten-title: var(--light, var(--blue8)) var(--dark, var(--white));
   --cModalIten-desc: var(--light, var(--blue12)) var(--dark, var(--white));
   --cModalIten-border: var(--light, var(--blue12)) var(--dark, var(--white));
+  --cMotalIten-termSearch: var(--light, var(--blue2)) var(--dark, var(--blue10));
 
   /* MENU MOBIL */
   --cMenuMobil-bg: var(--light, var(--blue1)) var(--dark, var(--blue13));

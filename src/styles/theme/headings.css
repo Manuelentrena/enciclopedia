@@ -24,6 +24,7 @@ h3 {
   font: normal var(--bold) var(--fs-h3) / var(--line-height) "Myriad Pro Bold",
     sans-serif;
   margin: 0rem;
+  line-height: 2.1rem;
 }
 
 span {
@@ -32,7 +33,7 @@ span {
       "Myriad Pro Light",
     sans-serif;
   margin: 0rem;
-  display: block;
+  background-color: var(--cMotalIten-termSearch);
 }
 
 p {
