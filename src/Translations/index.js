@@ -11,9 +11,14 @@ const Lang = {
       theme: "Theme",
       typeTheme: { dark: "Dark", light: "Light" },
     },
-    category: {
+    trending: {
       top_tendencies: "TOP TRENDINGS",
       tendencies: "TRENDINGS",
+      link: "See All >",
+    },
+    events: {
+      onthisday: "ON THIS DAY",
+      events: "EVENTS",
       link: "See All >",
     },
   },
@@ -29,9 +34,14 @@ const Lang = {
       language: "Lenguaje",
       typeTheme: { dark: "Oscuro", light: "Claro" },
     },
-    category: {
+    trending: {
       top_tendencies: "TOP TENDENCIAS",
       tendencies: "TENDENCIAS",
+      link: "Ver Todo >",
+    },
+    events: {
+      onthisday: "EN ESTE DÍA",
+      events: "EVENTOS",
       link: "Ver Todo >",
     },
   },

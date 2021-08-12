@@ -21,3 +21,14 @@
     height: 2px;
   }
 }
+
+/* CARDS NO IMG */
+
+.trendingPanel .cardNoImg .trendingCard__body {
+  height: var(--Layout-rows) !important;
+  padding-top: 3.8rem;
+}
+
+.trendingPanel .cardNoImg .trendingCard__opacityEnd {
+  height: 130px;
+}

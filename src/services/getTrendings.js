@@ -1,7 +1,15 @@
-import { prot, path, format, cors, year, month, day } from "services/settings";
+import {
+  prot,
+  path,
+  format,
+  cors,
+  year,
+  yesterdayMonth,
+  yesterday,
+} from "services/settings";
 
 export default function getTrendings({ language }) {
-  const URL = `${prot}://${path[1]}/${language}.wikipedia/all-access/${year}/${month}/${day}?${format}&${cors}`;
+  const URL = `${prot}://${path[1]}/${language}.wikipedia/all-access/${year}/${yesterdayMonth}/${yesterday}?${format}&${cors}`;
 
   return fetch(URL, {
     method: "GET",

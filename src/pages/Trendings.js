@@ -11,7 +11,7 @@ const Trendings = () => {
       <SearchForm />
       <div className="quickpedia__body">
         <Category
-          title={Lang[fx].category.tendencies}
+          title={Lang[fx].trending.tendencies}
           date={new Date().toLocaleDateString()}
           showLink={false}
         />

@@ -40,6 +40,7 @@ const TrendingLayout = () => {
                   />
                 );
               }
+              return null;
             })}
           </div>
           <div id="visor" ref={fromRef}></div>

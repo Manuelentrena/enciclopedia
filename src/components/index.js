@@ -1,3 +1,6 @@
+/* EVENT OF DAY */
+export { default as EventsOfDayList } from "components/EventsOfDay/EventsOfDayList";
+
 /* TRENDING */
 export { default as TrendingPanel } from "components/Trending/TrendingPanel";
 export { default as TrendingCard } from "components/Trending/TrendingCard";

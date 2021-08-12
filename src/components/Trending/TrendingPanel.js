@@ -22,6 +22,7 @@ export default function TrendingPanel() {
                 />
               );
             }
+            return null;
           })}
         </div>
       )}

@@ -4,7 +4,7 @@
   backdrop-filter: blur(3px);
   position: fixed;
   bottom: 0;
-  top: 14.5rem;
+  top: 14.6rem;
   left: 0;
   right: 0;
   z-index: 2;
@@ -24,6 +24,6 @@
 
 @media (max-width: 768px) {
   .modal {
-    top: 10.7rem;
+    top: 11.2rem;
   }
 }

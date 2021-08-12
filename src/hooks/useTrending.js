@@ -55,7 +55,8 @@ export const useTrending = () => {
       ) {
         const canonical = listTrendings[i].canonical;
         const views = listTrendings[i].views;
-        listPromise.push(getInfoTrendings({ language, canonical, views }));
+        canonical !== undefined &&
+          listPromise.push(getInfoTrendings({ language, canonical, views }));
       }
 
       Promise.all(listPromise).then((res) => {

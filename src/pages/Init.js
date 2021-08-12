@@ -1,5 +1,11 @@
 import React from "react";
-import { SearchForm, Header, Category, TrendingLazy } from "components";
+import {
+  SearchForm,
+  Header,
+  Category,
+  TrendingLazy,
+  EventsOfDayList,
+} from "components";
 import { useGlobal } from "hooks";
 import Lang from "Translations";
 
@@ -10,13 +16,21 @@ const Init = () => {
     <>
       <Header />
       <SearchForm />
-      <Category
-        title={Lang[fx].category.top_tendencies}
-        link={Lang[fx].category.link}
-        showLink={true}
-      />
       <div className="quickpedia__body">
+        <Category
+          title={Lang[fx].trending.top_tendencies}
+          link={Lang[fx].trending.link}
+          showLink={true}
+          path={"trendings"}
+        />
         <TrendingLazy />
+        <Category
+          title={Lang[fx].events.onthisday}
+          link={Lang[fx].events.link}
+          showLink={true}
+          path={"events"}
+        />
+        <EventsOfDayList />
       </div>
     </>
   );

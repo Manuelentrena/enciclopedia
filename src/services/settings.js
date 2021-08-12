@@ -3,6 +3,7 @@ export const path = [
   "wikipedia.org/w/api.php",
   "wikimedia.org/api/rest_v1/metrics/pageviews/top",
   "wikipedia.org/api/rest_v1/page/summary",
+  "wikipedia.org/api/rest_v1/feed/onthisday/events",
 ];
 export const action = ["action=opensearch", "action=query"];
 export const format = "format=json";
@@ -14,8 +15,10 @@ export const pag = "sroffset";
 export const limit = "srlimit=100";
 export const find = "list=search";
 export const year = new Date().getFullYear();
-export const month = calcMonth();
-export const day = calcDay();
+export const yesterdayMonth = calcMonth();
+export const yesterday = calcDay();
+export const month = new Date().getMonth() + 1;
+export const day = new Date().getDate();
 
 function fechaDeAyer() {
   let hoy = new Date();

@@ -47,8 +47,8 @@ function createNewBlock(newTrendings, initialPosition, numArticlesByBlock) {
 
   for (let i = initialPosition; i < numArticlesByBlock + initialPosition; i++) {
     newBlock.push({
-      canonical: newTrendings[i].article,
-      views: newTrendings[i].views,
+      canonical: newTrendings[i]?.article || undefined,
+      views: newTrendings[i]?.views || undefined,
     });
   }
   return newBlock;
