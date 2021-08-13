@@ -21,31 +21,27 @@ const TrendingLayout = () => {
     isNearScreen && debounceNextPage();
   }, [isNearScreen, debounceNextPage]);
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <>
-          <div className="trendingLayout">
-            {listTrendings.map((trendingCard) => {
-              if (filterTrendingCard({ trendingCard })) {
-                return (
-                  <TrendingCard
-                    key={trendingCard.canonical}
-                    description={trendingCard.description}
-                    img={trendingCard.img}
-                    views={trendingCard.views}
-                    title={trendingCard.title}
-                  />
-                );
-              }
-              return null;
-            })}
-          </div>
-          <div id="visor" ref={fromRef}></div>
-        </>
-      )}
+      <div className="trendingLayout">
+        {listTrendings.map((trendingCard) => {
+          if (filterTrendingCard({ trendingCard })) {
+            return (
+              <TrendingCard
+                key={trendingCard.canonical}
+                description={trendingCard.description}
+                img={trendingCard.img}
+                views={trendingCard.views}
+                title={trendingCard.title}
+              />
+            );
+          }
+          return null;
+        })}
+      </div>
+      <div id="visor" ref={fromRef}></div>
     </>
   );
 };

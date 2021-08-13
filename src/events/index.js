@@ -11,3 +11,7 @@ export const TRENDING_ACTIONS = {
   CLEAN_LIST: "CLEAN_LIST",
   ADD_INFO: "ADD_INFO",
 };
+
+export const EVENTS_ACTIONS = {
+  ADD_EVENTS: "ADD_EVENTS",
+};

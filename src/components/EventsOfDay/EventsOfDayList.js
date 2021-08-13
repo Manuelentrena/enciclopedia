@@ -1,17 +1,18 @@
-import React, { useEffect } from "react";
-import getEventsOfDay from "services/EventOfDay/getEventsOfDay";
-import { useGlobal } from "hooks";
+import React from "react";
+
+import { useEventsOfDay } from "hooks";
+import { EventsOfDayItem, Spinner } from "components";
 
 export default function EventsOfDayList() {
-  const { language } = useGlobal();
+  const { randonEvents, loading } = useEventsOfDay();
 
-  useEffect(() => {
-    async function getEvents() {
-      const data = await getEventsOfDay({ language });
-      console.log(data);
-    }
-    getEvents();
-  }, [language]);
-
-  return <div>COMPONENTE</div>;
+  return loading ? (
+    <Spinner />
+  ) : (
+    <div className="eventsOfDay__list">
+      {randonEvents.map((event) => (
+        <EventsOfDayItem key={event.idEvent} event={event} />
+      ))}
+    </div>
+  );
 }
