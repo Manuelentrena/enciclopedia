@@ -5,7 +5,7 @@ import getInfoTrendings from "services/getInfoTrendings";
 import getTrendings from "services/getTrendings";
 import { useGlobal } from "hooks";
 
-const especialArticles = {
+const espArt = {
   en: ["Main_Page", "Special:Search"],
   es: ["Wikipedia:Portada", "Especial:Buscar"],
 };
@@ -35,7 +35,10 @@ export const useTrending = () => {
       async function loadData() {
         cleanListTrendings();
         const dataTrendings = await getTrendings({ language });
-        setSearchTrending(dataTrendings);
+        const filterTrendings = dataTrendings.filter(
+          ({ article }) => article !== espArt[language][1]
+        );
+        setSearchTrending(filterTrendings);
         addBlockTrending(language);
         setTrending(false);
         setLoadCards(true);
@@ -89,11 +92,7 @@ export const useTrending = () => {
       trendingCard?.description === undefined
     )
       return false;
-    if (
-      trendingCard.canonical === especialArticles[language][0] ||
-      trendingCard.canonical === especialArticles[language][1]
-    )
-      return false;
+    if (trendingCard.canonical === espArt[language][0]) return false;
     return true;
   }
 
