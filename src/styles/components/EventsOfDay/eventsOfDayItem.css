@@ -1,7 +1,7 @@
 .eventsOfDay {
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: flex-start;
   background-color: var(--cEvent-bg);
   border-radius: 5px;
   box-shadow: var(--box-shadow);
@@ -26,7 +26,13 @@
   font-size: 1.5rem;
 }
 .eventsOfDay__body {
-  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 1px solid var(--cEvent-div);
+  height: 100%;
+  width: 100%;
+  background-color: var(--cEvent-bgSubBody);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .eventsOfDay__text {
   color: var(--cEvent-text);

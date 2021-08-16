@@ -1,5 +1,5 @@
 .iconStar__ext {
-  fill: var(--cCardTrend-header);
+  fill: var(--cCardTrend-star);
 }
 
 .iconStar__int {
@@ -7,5 +7,5 @@
 }
 
 .iconStar__click {
-  fill: var(--cCardTrend-header);
+  fill: var(--cCardTrend-star);
 }

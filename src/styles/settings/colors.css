@@ -7,9 +7,9 @@
     rgba(68, 82, 104, 1) 100%
   );
   --blue15Opa: rgba(45, 77, 87, 0.5);
+  --blue15: #304158;
   --blue14: #0077c721;
   --blue13: #282d38;
-  --blue12: #0096c7;
   --blue11: #1a212a;
   --blue11Opa: rgba(16, 32, 54, 0.2);
   --blue10: #445268;
@@ -21,10 +21,12 @@
     rgba(3, 4, 94, 0.75) 100%
   );
   --blue9Opa: rgba(3, 4, 94, 0.85);
+  --blue9NOTpa: #32337c;
   --blue9: #03045e;
   --blue8: #023e8a;
   --blue7: #0077b6;
-  --blue6: #0096c7;
+
+  /* --actionBlue: #0096c7; */
   --blue5: #00b4d8;
   --blue4: #48cae4;
   --blue3: #90e0ef;
@@ -39,6 +41,10 @@
   --box-shadow-white: 1px 1px 5px #aaaedd;
   --box-shadow-black: 1px 1px 5px #777880;
 
+  /* ACTION */
+
+  --action: #e48c19;
+  --actionLight: #f5bc72;
   /* CHECK */
   --check: #00ffff;
 
@@ -57,19 +63,22 @@
   --c-li: var(--light, var(--blue9)) var(--dark, var(--white));
 
   /* LOGO */
-  --cLogo-gradient1: var(--light, var(--blue9)) var(--dark, var(--blue12));
-  --cLogo-gradient2: var(--light, var(--blue6)) var(--dark, var(--white));
-  --cLogo-text1: var(--light, var(--blue8)) var(--dark, var(--blue12));
-  --cLogo-text2: var(--light, var(--blue7)) var(--dark, var(--white));
+  --cLogo-gradient1: var(--light, var(--action)) var(--dark, var(--action));
+  --cLogo-gradient2: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
+  --cLogo-text1: var(--light, var(--action)) var(--dark, var(--action));
+  --cLogo-text2: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
 
   /* TOGLE */
   --cTogle-bg: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cTogle-circle-hover: var(--light, var(--blue5)) var(--dark, var(--blue6));
-  --cTogle-circle: var(--light, var(--blue6)) var(--dark, var(--blue5));
+  --cTogle-circle-hover: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
+  --cTogle-circle: var(--light, var(--action)) var(--dark, var(--action));
 
   /* LANGUAGE */
   --cLang-bg: var(--light, var(--blue9)) var(--dark, var(--white));
-  --cLang-text-hover: var(--light, var(--white)) var(--dark, var(--blue12));
+  --cLang-text-hover: var(--light, var(--white)) var(--dark, var(--action));
   --cLang-text: var(--light, var(--white)) var(--dark, var(--blue10));
   --cLang-option-bg: var(--light, var(--blue9)) var(--dark, var(--white));
 
@@ -82,9 +91,10 @@
   --cSearch-close: var(--light, var(--blue9)) var(--dark, var(--blue13));
 
   /* BUTTON PRIMARY */
-  --cbutton-bg: var(--light, var(--blue6)) var(--dark, var(--blue12));
-  --cbutton-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
-  --cbutton-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
+  --cbutton-bg: var(--light, var(--action)) var(--dark, var(--action));
+  --cbutton-hover: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
+  --cbutton-border: var(--light, var(--action)) var(--dark, var(--action));
   --cbutton-text: var(--light, var(--white)) var(--dark, var(--white));
 
   /* BUTTON SECOND */
@@ -105,9 +115,10 @@
   /* MODAL ITEM */
   --cModalIten-gb-hover: var(--light, var(--blue3)) var(--dark, var(--blue10));
   --cModalIten-title: var(--light, var(--blue8)) var(--dark, var(--white));
-  --cModalIten-desc: var(--light, var(--blue12)) var(--dark, var(--white));
-  --cModalIten-border: var(--light, var(--blue12)) var(--dark, var(--white));
-  --cMotalIten-termSearch: var(--light, var(--blue2)) var(--dark, var(--blue10));
+  --cModalIten-desc: var(--light, var(--action)) var(--dark, var(--white));
+  --cModalIten-border: var(--light, var(--blue8)) var(--dark, var(--white));
+  --cMotalIten-termSearch: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
 
   /* MENU MOBIL */
   --cMenuMobil-bg: var(--light, var(--blue1)) var(--dark, var(--blue13));
@@ -117,7 +128,8 @@
   --cMenuMobil-item: var(--light, var(--blue1)) var(--dark, var(--blue13));
   --cMenuMobil-selected: var(--light, var(--blue1-1)) var(--dark, var(--blue14));
   --cMenuMobil-border: var(--light, var(--blue3)) var(--dark, var(--blue10));
-  --cMenuMobil-check: var(--light, var(--check)) var(--dark, var(--blue12));
+  --cMenuMobil-check: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
   --cMenuMobil-nocheck: var(--light, var(--blue9)) var(--dark, var(--white));
   --cMenuMobil-top: var(--light, var(--blue1-1)) var(--dark, var(--blue13));
 
@@ -129,21 +141,26 @@
   --cCardTrend-degr: var(--light, var(--blue9Degr)) var(--dark, var(--blueDegr));
   --cCardTrend-header: var(--light, var(--white)) var(--dark, var(--white));
   --cCardTrend-scroll: var(--light, var(--blue9Opa)) var(--dark, var(--blue10));
-  --cCardTrend-btnSvg: var(--light, var(--blue6)) var(--dark, var(--blue12));
+  --cCardTrend-btnSvg: var(--light, var(--action)) var(--dark, var(--action));
   --cCardTrend-btnBg: var(--light, var(--white)) var(--dark, var(--white));
+  --cCardTrend-star: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
 
   /* CATEGORY */
-  --cCategory-link-hover: var(--light, var(--blue3)) var(--dark, var(--blue12));
+  --cCategory-link-hover: var(--light, var(--action)) var(--dark, var(--action));
 
   /* EVETNS */
-  --cEvent-bg: var(--light, var(--blue9Opa)) var(--dark, var(--blue10));
+  --cEvent-bg: var(--light, var(--blue9)) var(--dark, var(--blue15));
   --cEvent-bgYear: var(--light, var(--white)) var(--dark, var(--white));
   --cEvent-sd: var(--light, var(--box-shadow)) var(--dark, var(--box-shadow));
   --cEvent-yearText: var(--light, var(--blue9)) var(--dark, var(--blue10));
-  --cEvent-bgLink: var(--light, var(--blue6)) var(--dark, var(--blue12));
+  --cEvent-bgLink: var(--light, var(--action)) var(--dark, var(--action));
   --cEvent-textLink: var(--light, var(--white)) var(--dark, var(--white));
   --cEvent-text: var(--light, var(--white)) var(--dark, var(--white));
-  --cEvent-bgLink-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
+  --cEvent-bgLink-hover: var(--light, var(--actionLight))
+    var(--dark, var(--actionLight));
+  --cEvent-div: var(--light, var(--white)) var(--dark, var(--white));
+  --cEvent-bgSubBody: var(--light, var(--blue9NOTpa)) var(--dark, var(--blue10));
 }
 /* TITLES */
 /*   --c-h1: var(--text-primary);
