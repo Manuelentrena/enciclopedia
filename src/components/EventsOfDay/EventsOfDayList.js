@@ -9,7 +9,7 @@ export default function EventsOfDayList() {
   return loading ? (
     <Spinner />
   ) : (
-    <div className="eventsOfDay__list">
+    <div className="eventsOfDay__layout">
       {randonEvents.map((event) => (
         <EventsOfDayItem key={event.idEvent} event={event} />
       ))}

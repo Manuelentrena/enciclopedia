@@ -23,14 +23,27 @@ export const useEventsOfDay = () => {
   /* IF CHANGE DE EVENTS, CREATE NEW STATE RANDON EVENTS */
   useEffect(() => {
     if (events.length) {
-      const eventsRandon = [];
-      for (let i = 0; i < 4; i++) {
-        eventsRandon.push(events[numRandom()]);
-      }
+      const eventsRandon = loadEvents();
       setRandonEvents(eventsRandon);
       setloading(false);
     }
   }, [events]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function loadEvents() {
+    const eventsRandon = [];
+    const idsRandon = [];
+    let newNum = 0;
+    for (let i = 0; i < 6; i++) {
+      newNum = numRandom();
+      if (!idsRandon.includes(newNum)) {
+        eventsRandon.push(events[newNum]);
+        idsRandon.push(newNum);
+      } else {
+        i--;
+      }
+    }
+    return eventsRandon;
+  }
 
   function numRandom() {
     return Math.floor(Math.random() * events.length);

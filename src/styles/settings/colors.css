@@ -20,7 +20,7 @@
     rgba(3, 4, 94, 0.75) 85%,
     rgba(3, 4, 94, 0.75) 100%
   );
-  --blue9Opa: rgba(3, 4, 94, 0.75);
+  --blue9Opa: rgba(3, 4, 94, 0.85);
   --blue9: #03045e;
   --blue8: #023e8a;
   --blue7: #0077b6;
@@ -135,9 +135,18 @@
   /* CATEGORY */
   --cCategory-link-hover: var(--light, var(--blue3)) var(--dark, var(--blue12));
 
-  /* TITLES */
-  /*   --c-h1: var(--text-primary);
+  /* EVETNS */
+  --cEvent-bg: var(--light, var(--blue9Opa)) var(--dark, var(--blue10));
+  --cEvent-bgYear: var(--light, var(--white)) var(--dark, var(--white));
+  --cEvent-sd: var(--light, var(--box-shadow)) var(--dark, var(--box-shadow));
+  --cEvent-yearText: var(--light, var(--blue9)) var(--dark, var(--blue10));
+  --cEvent-bgLink: var(--light, var(--blue6)) var(--dark, var(--blue12));
+  --cEvent-textLink: var(--light, var(--white)) var(--dark, var(--white));
+  --cEvent-text: var(--light, var(--white)) var(--dark, var(--white));
+  --cEvent-bgLink-hover: var(--light, var(--blue5)) var(--dark, var(--blue7));
+}
+/* TITLES */
+/*   --c-h1: var(--text-primary);
   --c-h2: var(--text-primary);
   --c-p: var(--text-primary);
   --c-small: var(--text-secundary); */
-}
