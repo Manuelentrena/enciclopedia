@@ -16,5 +16,12 @@
     "titleBar.inactiveForeground": "#15202b99"
   },
   "peacock.remoteColor": "#96bbff",
-  "peacock.color": "#96bbff"
+  "peacock.color": "#96bbff",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
 }

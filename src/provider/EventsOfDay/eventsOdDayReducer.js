@@ -1,4 +1,4 @@
-import { EVENTS_ACTIONS } from "events/index";
+import { EVENTS_ACTIONS } from 'events/index';
 
 export const eventsOfDayReducer = (state, action) => {
   switch (action.type) {

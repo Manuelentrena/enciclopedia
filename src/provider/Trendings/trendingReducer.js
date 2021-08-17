@@ -1,4 +1,16 @@
-import { TRENDING_ACTIONS } from "events/index";
+import { TRENDING_ACTIONS } from 'events/index';
+
+function createNewBlock(newTrendings, initialPosition, numArticlesByBlock) {
+  const newBlock = [];
+
+  for (let i = initialPosition; i < numArticlesByBlock + initialPosition; i++) {
+    newBlock.push({
+      canonical: newTrendings[i]?.article || undefined,
+      views: newTrendings[i]?.views || undefined,
+    });
+  }
+  return newBlock;
+}
 
 export const trendingReducer = (state, action) => {
   switch (action.type) {
@@ -7,22 +19,26 @@ export const trendingReducer = (state, action) => {
     case TRENDING_ACTIONS.ADD_INFO:
       return {
         ...state,
-        listTrendings: state.listTrendings.map((card) =>
-          card.canonical === action.payload.canonical ? action.payload : card
-        ),
+        listTrendings: state.listTrendings.map((card) => {
+          if (card.canonical === action.payload.canonical) {
+            return action.payload;
+          }
+          return card;
+        }),
       };
-    case TRENDING_ACTIONS.ADD_BLOCK:
+    case TRENDING_ACTIONS.ADD_BLOCK: {
       const { newTrendings, initialPosition, numArticlesByBlock } = state;
       const block = createNewBlock(
         newTrendings,
         initialPosition,
-        numArticlesByBlock
+        numArticlesByBlock,
       );
       return {
         ...state,
         listTrendings: [...state.listTrendings, ...block],
         initialPosition: initialPosition + numArticlesByBlock,
       };
+    }
     case TRENDING_ACTIONS.CLEAN_LIST:
       return {
         ...state,
@@ -41,15 +57,3 @@ export const inicialState = {
   numArticlesByBlock: 15,
   listTrendings: [],
 };
-
-function createNewBlock(newTrendings, initialPosition, numArticlesByBlock) {
-  let newBlock = [];
-
-  for (let i = initialPosition; i < numArticlesByBlock + initialPosition; i++) {
-    newBlock.push({
-      canonical: newTrendings[i]?.article || undefined,
-      views: newTrendings[i]?.views || undefined,
-    });
-  }
-  return newBlock;
-}

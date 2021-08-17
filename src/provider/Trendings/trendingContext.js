@@ -1,17 +1,18 @@
-import { useReducer, createContext, useCallback } from "react";
-import { TRENDING_ACTIONS } from "events/index";
-import { trendingReducer, inicialState } from "./trendingReducer";
+import React, { useReducer, createContext, useCallback } from 'react';
+import { TRENDING_ACTIONS } from 'events/index';
+import { trendingReducer, inicialState } from './trendingReducer';
 
 const TrendingContext = createContext({});
 
 export function TrendingStateProvider({ children }) {
   const [trendingState, trendingDispatch] = useReducer(
     trendingReducer,
-    inicialState
+    inicialState,
   );
 
-  const { newTrendings, initialPosition, numArticlesByBlock, listTrendings } =
-    trendingState;
+  const {
+    newTrendings, initialPosition, numArticlesByBlock, listTrendings,
+  } = trendingState;
 
   const setSearchTrending = useCallback(
     (dataTrendings) => {
@@ -20,7 +21,7 @@ export function TrendingStateProvider({ children }) {
         payload: dataTrendings,
       });
     },
-    [trendingDispatch]
+    [trendingDispatch],
   );
 
   const addInfoCard = useCallback(
@@ -30,7 +31,7 @@ export function TrendingStateProvider({ children }) {
         payload: dataInfo,
       });
     },
-    [trendingDispatch]
+    [trendingDispatch],
   );
 
   const addBlockTrending = useCallback(() => {

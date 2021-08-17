@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   SearchModal,
   SearchList,
   Button,
   IconClose,
   IconLens,
-} from "components";
-import { useSearch } from "hooks/useSearch";
-import Lang from "Translations";
+} from 'components';
+import { useSearch } from 'hooks/useSearch';
+import Lang from 'Translations';
 
-import debounce from "just-debounce-it";
-import { useGlobal } from "hooks/useGlobal";
+import debounce from 'just-debounce-it';
+import { useGlobal } from 'hooks/useGlobal';
 
 const SearchForm = () => {
   const { language: fx, noScroll } = useGlobal();
   const { search, setTextGlobal, textGlobal } = useSearch();
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [page, setPage] = useState(0);
   const [ids, setIds] = useState([]);
   const [selected, setSelected] = useState(0);
@@ -35,16 +35,15 @@ const SearchForm = () => {
   }, [text]);
 
   useEffect(() => {
-    text === "" && setTextGlobal("");
+    text === '' && setTextGlobal('');
   }, [textGlobal, text, setTextGlobal]);
 
   const handleChange = (e) => {
     setText(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    handleClose(e);
+  const handleFocus = () => {
+    text && setShowModal(true);
   };
 
   const handleClose = (e) => {
@@ -53,8 +52,9 @@ const SearchForm = () => {
     e.stopPropagation();
   };
 
-  const handleFocus = (e) => {
-    text && setShowModal(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    handleClose(e);
   };
 
   const handleDown = (e) => {
@@ -84,7 +84,7 @@ const SearchForm = () => {
             onChange={handleChange}
             onFocus={handleFocus}
             onKeyDown={handleDown}
-          ></input>
+          />
           <div className="searchClose">
             <IconClose handleClose={handleClose} />
           </div>
@@ -93,12 +93,14 @@ const SearchForm = () => {
             className="buttonPrimary buttonSearch"
             text={Lang[fx].search.searchButton}
             type="submit"
+            action={handleSubmit}
           />
           {/* Mobile */}
           <Button
             className="buttonPrimary buttonLens"
             type="submit"
             text={<IconLens />}
+            action={handleSubmit}
           />
         </div>
       </form>

@@ -1,4 +1,4 @@
-import { GLOBAL_ACTIONS } from "events/index";
+import { GLOBAL_ACTIONS } from 'events/index';
 
 export const globalReducer = (state, action) => {
   switch (action.type) {
@@ -16,31 +16,30 @@ export const globalReducer = (state, action) => {
 const LanguageSystem = () => {
   const { pathname } = window.location;
   const Lng = pathname.slice(1, 3);
-  if (Lng === "es" || Lng === "en") {
+  if (Lng === 'es' || Lng === 'en') {
     return pathname.slice(1, 3);
   }
-  return navigator.language?.substr(0, 2) ?? "en";
+  return navigator.language?.substr(0, 2) ?? 'en';
 };
 
 const colorSchemeSystem = () => {
-  const tagHtml = document.getElementsByTagName("html")[0];
-  const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const tagHtml = document.getElementsByTagName('html')[0];
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (isDark) {
-    tagHtml.classList.add("dark");
-    return "dark";
-  } else {
-    tagHtml.classList.add("light");
-    return "light";
+    tagHtml.classList.add('dark');
+    return 'dark';
   }
+  tagHtml.classList.add('light');
+  return 'light';
 };
 
 export const inicialState = {
   language: LanguageSystem(),
   switchLanguage: false,
   theme: colorSchemeSystem(),
-  lastSearch: "",
+  lastSearch: '',
   token: null,
-  userName: "userName",
+  userName: 'userName',
   trending: true,
 };

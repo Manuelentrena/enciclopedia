@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useGlobal } from "hooks/useGlobal";
+import React, { useEffect, useState } from 'react';
+import { useGlobal } from 'hooks/useGlobal';
 
 const Togle = () => {
   const { theme, setTheme, changeTheme } = useGlobal();
@@ -11,15 +11,15 @@ const Togle = () => {
   }, [theme, changeTheme]);
 
   const handleClick = () => {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
+    theme === 'dark' ? setTheme({ theme: 'light' }) : setTheme({ theme: 'dark' });
   };
 
   return (
     <div className="togle">
       <div className="togle__icon" onClick={handleClick}>
         <div
-          className={`togle__subicon ${togle === "dark" ? "iconMove" : null}`}
-        ></div>
+          className={`togle__subicon ${togle === 'dark' && 'iconMove'}`}
+        />
       </div>
     </div>
   );

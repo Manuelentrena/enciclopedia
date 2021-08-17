@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useImages } from "hooks/useImages";
-import { useSearch } from "hooks/useSearch";
-import { IconImageNotFound } from "components";
+import React, { useEffect, useState } from 'react';
+import { useImages } from 'hooks/useImages';
+import { useSearch } from 'hooks/useSearch';
+import { IconImageNotFound } from 'components';
 
 const SearchItemImg = ({ id, title }) => {
   const { getImageHeader } = useImages();
@@ -11,25 +11,21 @@ const SearchItemImg = ({ id, title }) => {
   useEffect(() => {
     let mounted = true;
     const { signal, abortController } = stopFecth();
-    async function getImg(signal) {
-      const newUrl = await getImageHeader({ id, large: 50, signal });
+    async function getImg({ signal: sing }) {
+      const newUrl = await getImageHeader({ id, large: 50, sing });
       newUrl && mounted ? setUrl(newUrl) : setUrl(null);
     }
-    getImg(signal);
+    getImg({ signal });
     return () => {
       mounted = false;
       abortController.abort();
     };
-  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [id]);
 
-  return (
-    <>
-      {url ? (
-        <img className="oneResult__url" src={url} alt={title} />
-      ) : (
-        <IconImageNotFound />
-      )}
-    </>
+  return url ? (
+    <img className="oneResult__url" src={url} alt={title} />
+  ) : (
+    <IconImageNotFound />
   );
 };
 

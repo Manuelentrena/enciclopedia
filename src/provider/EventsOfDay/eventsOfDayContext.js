@@ -1,25 +1,25 @@
-import { createContext, useCallback, useReducer } from "react";
-import { eventsOfDayReducer, inicialState } from "./eventsOdDayReducer";
-import { EVENTS_ACTIONS } from "events/index";
+import React, { createContext, useCallback, useReducer } from 'react';
+import { EVENTS_ACTIONS } from 'events/index';
+import { eventsOfDayReducer, inicialState } from './eventsOdDayReducer';
 
 const EventsOfDayContext = createContext({});
 
 export function EventsOfDayProvider({ children }) {
   const [eventsOfDayState, eventsOfDayDispatch] = useReducer(
     eventsOfDayReducer,
-    inicialState
+    inicialState,
   );
 
   const { events } = eventsOfDayState;
 
   const setEvents = useCallback(
-    (events) => {
+    ({ events: event }) => {
       eventsOfDayDispatch({
         type: EVENTS_ACTIONS.ADD_EVENTS,
-        payload: events,
+        payload: event,
       });
     },
-    [eventsOfDayDispatch]
+    [eventsOfDayDispatch],
   );
 
   return (

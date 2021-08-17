@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import GlobalContext from "provider/global/globalContext";
+import { useContext } from 'react';
+import GlobalContext from 'provider/global/globalContext';
 
 export const useGlobal = () => {
   /* Context Global */
@@ -14,15 +14,15 @@ export const useGlobal = () => {
   } = useContext(GlobalContext);
 
   function changeTheme() {
-    const tagHtml = document.getElementsByTagName("html")[0];
-    tagHtml.className = "";
+    const tagHtml = document.getElementsByTagName('html')[0];
+    tagHtml.className = '';
     tagHtml.classList.add(theme);
   }
 
   function noScroll(scrollStop) {
     scrollStop
-      ? document.getElementById("body").classList.add("noScroll")
-      : document.getElementById("body").classList.remove("noScroll");
+      ? document.getElementById('body').classList.add('noScroll')
+      : document.getElementById('body').classList.remove('noScroll');
   }
 
   return {

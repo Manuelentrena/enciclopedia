@@ -1,20 +1,20 @@
-import { useEffect, useCallback } from "react";
-import { useNearScreen, useTrending } from "hooks";
-import { TrendingCard } from "components";
-import { Spinner } from "components";
-import debounce from "just-debounce-it";
+import React, { useEffect, useCallback } from 'react';
+import { useNearScreen, useTrending } from 'hooks';
+import { TrendingCard, Spinner } from 'components';
+import debounce from 'just-debounce-it';
 
 const TrendingLayout = () => {
-  const { listTrendings, addBlock, loading, filterTrendingCard } =
-    useTrending();
+  const {
+    listTrendings, addBlock, loading, filterTrendingCard,
+  } = useTrending();
   const { isNearScreen, fromRef } = useNearScreen({
     keepWatch: true,
-    distance: "500px",
+    distance: '500px',
   });
 
   const debounceNextPage = useCallback(
     debounce(() => addBlock(), 300),
-    []
+    [],
   );
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const TrendingLayout = () => {
           return null;
         })}
       </div>
-      <div id="visor" ref={fromRef}></div>
+      <div id="visor" ref={fromRef} />
     </>
   );
 };

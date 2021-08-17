@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
-import getlistOfSearch from "services/getlistOfSearch";
-import SearchContext from "provider/SearchContext";
+import { useContext, useState } from 'react';
+import getlistOfSearch from 'services/getlistOfSearch';
+import SearchContext from 'provider/SearchContext';
 
 export const useSearch = () => {
   /* Context Search */
@@ -18,9 +18,8 @@ export const useSearch = () => {
   function isEmpty() {
     if (search?.length === 0) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   function numIds() {
@@ -42,10 +41,12 @@ export const useSearch = () => {
     return { signal, abortController };
   }
 
-  async function setState({ search, signal, mounted, page, language }) {
+  async function setState({
+    search: text, signal, mounted, page, language,
+  }) {
     setIsLoading(true);
-    if (search) {
-      const searchURI = encodeURI(search);
+    if (text) {
+      const searchURI = encodeURI(text);
       const data = await getlistOfSearch({
         search: searchURI,
         page,

@@ -6,18 +6,18 @@ import {
   year,
   yesterdayMonth,
   yesterday,
-} from "services/settings";
+} from 'services/settings';
 
 export default function getTrendings({ language }) {
   const URL = `${prot}://${path[1]}/${language}.wikipedia/all-access/${year}/${yesterdayMonth}/${yesterday}?${format}&${cors}`;
 
   return fetch(URL, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "User-Agent": "someone",
+      'User-Agent': 'someone',
     },
   })
     .then((res) => res.json())
     .then((data) => data?.items[0]?.articles)
-    .catch((err) => console.log("Error: " + err));
+    .catch((err) => console.error(`Error: ${err}`));
 }

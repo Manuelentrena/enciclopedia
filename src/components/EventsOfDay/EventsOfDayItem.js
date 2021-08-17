@@ -1,11 +1,15 @@
-import React from "react";
+import React from 'react';
 
 export default function EventsOfDayItem({ event }) {
   const { text, year, pages } = event;
 
-  const handleClick = (e) => {
+  /*   const handleClick = (e) => {
     console.log(e.target.id);
-  };
+  }; */
+
+  const showTextCapital = () => text.charAt(0).toUpperCase() + text.slice(1);
+
+  const linkWithOutTag = ({ title = '' }) => title.replace('</i>', '').replace('<i>', '');
 
   return (
     <div className="eventsOfDay">
@@ -14,14 +18,12 @@ export default function EventsOfDayItem({ event }) {
         <p className="eventsOfDay__numYear">{year}</p>
       </div>
       <div className="eventsOfDay__body">
-        <p className="eventsOfDay__text">
-          {text.charAt(0).toUpperCase() + text.slice(1)}
-        </p>
+        <p className="eventsOfDay__text">{showTextCapital()}</p>
         <div className="eventsOfDay__list">
           {pages.map(({ title, id }) => (
-            <div className="eventsOfDay__link" onClick={handleClick} key={id}>
+            <div className="eventsOfDay__link" key={id}>
               <p className="eventsOfDay__textLink" id={id}>
-                {title.replace("</i>", "").replace("<i>", "")}
+                {linkWithOutTag({ title })}
               </p>
             </div>
           ))}

@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
-import { useContext } from "react";
-import TrendingContext from "provider/Trendings/trendingContext";
-import getInfoTrendings from "services/getInfoTrendings";
-import getTrendings from "services/getTrendings";
-import { useGlobal } from "hooks";
+import { useEffect, useState, useContext } from 'react';
+import TrendingContext from 'provider/Trendings/trendingContext';
+import getInfoTrendings from 'services/getInfoTrendings';
+import getTrendings from 'services/getTrendings';
+import { useGlobal } from 'hooks';
 
 const espArt = {
-  en: ["Main_Page", "Special:Search"],
-  es: ["Wikipedia:Portada", "Especial:Buscar"],
+  en: ['Main_Page', 'Special:Search'],
+  es: ['Wikipedia:Portada', 'Especial:Buscar'],
 };
 
 export const useTrending = () => {
@@ -30,36 +29,37 @@ export const useTrending = () => {
 
   /* CARGAR TRENDINGS */
   useEffect(() => {
+    async function loadData() {
+      cleanListTrendings();
+      const dataTrendings = await getTrendings({ language });
+      const filterTrendings = dataTrendings.filter(
+        ({ article }) => article !== espArt[language][1],
+      );
+      setSearchTrending(filterTrendings);
+      addBlockTrending(language);
+      setTrending(false);
+      setLoadCards(true);
+      return true;
+    }
+
     if (trending) {
       setLoadingTrending(true);
-      async function loadData() {
-        cleanListTrendings();
-        const dataTrendings = await getTrendings({ language });
-        const filterTrendings = dataTrendings.filter(
-          ({ article }) => article !== espArt[language][1]
-        );
-        setSearchTrending(filterTrendings);
-        addBlockTrending(language);
-        setTrending(false);
-        setLoadCards(true);
-        return true;
-      }
       loadData();
     }
-  }, [trending]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [trending]);
 
   useEffect(() => {
-    let listPromise = [];
+    const listPromise = [];
     if (loadCards) {
       for (
         let i = initialPosition - numArticlesByBlock;
         i < listTrendings.length;
         i++
       ) {
-        const canonical = listTrendings[i].canonical;
-        const views = listTrendings[i].views;
-        canonical !== undefined &&
-          listPromise.push(getInfoTrendings({ language, canonical, views }));
+        const { canonical } = listTrendings[i];
+        const { views } = listTrendings[i];
+        canonical !== undefined
+          && listPromise.push(getInfoTrendings({ language, canonical, views }));
       }
 
       Promise.all(listPromise).then((res) => {
@@ -70,7 +70,7 @@ export const useTrending = () => {
         setLoadingTrending(false);
       });
     }
-  }, [loadCards]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [loadCards]);
 
   function addBlock() {
     addBlockTrending();
@@ -78,7 +78,7 @@ export const useTrending = () => {
   }
 
   function getFirstBlock() {
-    let block = [];
+    const block = [];
     for (let i = 0; i < numArticlesByBlock; i++) {
       listTrendings[i] && block.push(listTrendings[i]);
     }
@@ -88,10 +88,9 @@ export const useTrending = () => {
   function filterTrendingCard({ trendingCard }) {
     if (trendingCard?.id === undefined) return false;
     if (
-      trendingCard?.description === "" ||
-      trendingCard?.description === undefined
-    )
-      return false;
+      trendingCard?.description === ''
+      || trendingCard?.description === undefined
+    ) return false;
     if (trendingCard.canonical === espArt[language][0]) return false;
     return true;
   }

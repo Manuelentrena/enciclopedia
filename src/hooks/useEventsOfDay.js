@@ -1,7 +1,7 @@
-import { useContext, useState, useEffect } from "react";
-import EventsOfDayContext from "provider/EventsOfDay/eventsOfDayContext";
-import getEventsOfDay from "services/EventOfDay/getEventsOfDay";
-import { useGlobal } from "hooks";
+import { useContext, useState, useEffect } from 'react';
+import EventsOfDayContext from 'provider/EventsOfDay/eventsOfDayContext';
+import getEventsOfDay from 'services/EventOfDay/getEventsOfDay';
+import { useGlobal } from 'hooks';
 
 export const useEventsOfDay = () => {
   const { language } = useGlobal();
@@ -14,20 +14,15 @@ export const useEventsOfDay = () => {
   useEffect(() => {
     async function getEvents() {
       const data = await getEventsOfDay({ language });
-      setEvents(data);
+      setEvents({ events: data });
     }
     setloading(true);
     getEvents();
   }, [language, setEvents]);
 
-  /* IF CHANGE DE EVENTS, CREATE NEW STATE RANDON EVENTS */
-  useEffect(() => {
-    if (events.length) {
-      const eventsRandon = loadEvents();
-      setRandonEvents(eventsRandon);
-      setloading(false);
-    }
-  }, [events]); // eslint-disable-line react-hooks/exhaustive-deps
+  function numRandom() {
+    return Math.floor(Math.random() * events.length);
+  }
 
   function loadEvents() {
     const eventsRandon = [];
@@ -45,9 +40,16 @@ export const useEventsOfDay = () => {
     return eventsRandon;
   }
 
-  function numRandom() {
-    return Math.floor(Math.random() * events.length);
-  }
+  /* IF CHANGE DE EVENTS, CREATE NEW STATE RANDON EVENTS */
+  useEffect(() => {
+    if (events.length) {
+      const eventsRandon = loadEvents();
+      setRandonEvents(eventsRandon);
+      setloading(false);
+    }
+  }, [events]);
 
-  return { setEvents, events, randonEvents, loading };
+  return {
+    setEvents, events, randonEvents, loading,
+  };
 };

@@ -1,31 +1,35 @@
-import { prot, path, format, cors, month, day } from "services/settings";
-import nextId from "react-id-generator";
+import {
+  prot, path, format, cors, month, day,
+} from 'services/settings';
+import nextId from 'react-id-generator';
 
 export default function getEventsOfDay({ language }) {
   const URL = `${prot}://${language}.${path[3]}/${month}/${day}?${format}&${cors}`;
 
   return fetch(URL, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "User-Agent": "someone",
+      'User-Agent': 'someone',
     },
   })
     .then((res) => res.json())
     .then((data) => {
       if (data) {
         const newdata = data.events.map((event) => {
-          const idEvent = nextId("0");
+          const idEvent = nextId('0');
           const { text, year } = event;
           const pages = event.pages.map((page) => {
             const id = page.pageid;
             const title = page.titles.display;
             return { title, id };
           });
-          return { text, year, pages, idEvent };
+          return {
+            text, year, pages, idEvent,
+          };
         });
         return newdata;
       }
       return [];
     })
-    .catch((err) => console.log("Error: " + err));
+    .catch((err) => console.error(`Error: ${err}`));
 }

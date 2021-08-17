@@ -1,14 +1,18 @@
-import { prot, path, action, format, cors, pag, find } from "services/settings";
+import {
+  prot, path, action, format, cors, pag, find,
+} from 'services/settings';
 
-export default function getlistOfSearch({ search, signal, page, language }) {
+export default function getlistOfSearch({
+  search, signal, page, language,
+}) {
   // "action=opensearch", protocol to GET search
   const URL = `${prot}://${language}.${path[0]}?${cors}&${format}&${action[1]}&${find}&srsearch=${search}&${pag}=${page}`;
 
   return fetch(URL, {
-    method: "GET",
-    signal: signal,
+    method: 'GET',
+    signal,
     headers: {
-      "User-Agent": "someone",
+      'User-Agent': 'someone',
     },
   })
     .then((res) => res.json())
@@ -16,22 +20,22 @@ export default function getlistOfSearch({ search, signal, page, language }) {
       const newSearch = data?.query?.search;
       if (!newSearch) return [];
 
-      newSearch.forEach((search) => {
-        delete search.ns;
-        delete search.size;
-        delete search.timestamp;
-        delete search.wordcount;
-        search.id = search.pageid;
-        delete search.pageid;
-        search.description = search.snippet;
-        delete search.snippet;
+      newSearch.forEach((searched) => {
+        delete searched.ns;
+        delete searched.size;
+        delete searched.timestamp;
+        delete searched.wordcount;
+        searched.id = searched.pageid;
+        delete searched.pageid;
+        searched.description = searched.snippet;
+        delete searched.snippet;
       });
 
       return newSearch;
     })
     .catch((error) => {
       if (!signal?.aborted) {
-        console.log(error);
+        console.error(error);
       }
       return [];
     });

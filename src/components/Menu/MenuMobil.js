@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { MenuMobilLanguage, MenuMobilTheme } from "components";
-import { useGlobal } from "hooks";
+import React, { useEffect } from 'react';
+import { MenuMobilLanguage, MenuMobilTheme } from 'components';
+import { useGlobal } from 'hooks';
 
 const MenuMobil = ({ isActiveMenu }) => {
   const { noScroll } = useGlobal();

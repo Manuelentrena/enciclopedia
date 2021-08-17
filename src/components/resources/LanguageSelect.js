@@ -1,13 +1,13 @@
-import React from "react";
-import { useGlobal } from "hooks/useGlobal";
+import React from 'react';
+import { useGlobal } from 'hooks/useGlobal';
 
-const languages = ["en", "es"];
+const languages = ['en', 'es'];
 
 const LanguageSelect = () => {
   const { language: fx, setLanguage, setTrending } = useGlobal();
 
   const handleChange = (e) => {
-    setLanguage(e.target.value);
+    setLanguage({ language: e.target.value });
     setTrending(true);
   };
 

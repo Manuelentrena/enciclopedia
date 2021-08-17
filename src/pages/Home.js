@@ -1,13 +1,11 @@
-import { SearchForm, Header, TrendingPanel } from "components";
+import React, { SearchForm, Header, TrendingPanel } from 'components';
 
-const Home = () => {
-  return (
-    <>
-      <Header />
-      <SearchForm />
-      <TrendingPanel />
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <Header />
+    <SearchForm />
+    <TrendingPanel />
+  </>
+);
 
 export default Home;

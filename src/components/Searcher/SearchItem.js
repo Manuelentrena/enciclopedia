@@ -1,18 +1,18 @@
-import React from "react";
-import parse from "html-react-parser";
-import { SearchItemImg } from "components";
+import React from 'react';
+import parse from 'html-react-parser';
+import { SearchItemImg } from 'components';
 
-const SearchItem = ({ description, title, id, selected }) => {
-  const handleClick = ({ e, id }) => {
-    /* getlistImages({ id }); */
-    console.log(id);
+const SearchItem = ({
+  description, title, id, selected,
+}) => {
+  const handleClick = ({ e }) => {
     e.stopPropagation();
   };
 
   return (
     <div
       id={id}
-      className={selected === id ? "oneResult selected" : "oneResult"}
+      className={selected === id ? 'oneResult selected' : 'oneResult'}
       onClick={(e) => handleClick({ e, id })}
     >
       <div className="oneResult__img">

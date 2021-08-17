@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const SearchContext = React.createContext({});
 
 export function SearchContextProvider({ children }) {
   const [search, setSearch] = useState([]);
-  const [textGlobal, setTextGlobal] = useState("");
+  const [textGlobal, setTextGlobal] = useState('');
   const [globalPage, setGlobalPage] = useState(0);
 
   return (

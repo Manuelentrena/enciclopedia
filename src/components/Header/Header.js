@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import { Logo, MiniLogo, Menu, IconBurguer } from "components";
+import React, { useState } from 'react';
+import {
+  Logo, MiniLogo, Menu, IconBurguer,
+} from 'components';
+
 const Header = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
 

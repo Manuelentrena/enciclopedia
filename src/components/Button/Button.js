@@ -1,6 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Button = ({ type = "", className = "", text = "", action = null }) => {
+const Button = ({
+  type = '', className = '', text = '', action = null,
+}) => {
   let handleClick = null;
 
   if (action) {

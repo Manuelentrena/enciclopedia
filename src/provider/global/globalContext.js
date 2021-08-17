@@ -1,6 +1,6 @@
-import { useReducer, createContext, useCallback } from "react";
-import { GLOBAL_ACTIONS } from "events/index";
-import { globalReducer, inicialState } from "./globalReducer";
+import React, { useReducer, createContext, useCallback } from 'react';
+import { GLOBAL_ACTIONS } from 'events/index';
+import { globalReducer, inicialState } from './globalReducer';
 
 const GlobalContext = createContext({});
 
@@ -18,23 +18,23 @@ export function GlobalStateProvider({ children }) {
   } = globalState;
 
   const setTheme = useCallback(
-    (theme) => {
+    ({ theme: the }) => {
       globalDispatch({
         type: GLOBAL_ACTIONS.CHANGE_THEME,
-        payload: theme,
+        payload: the,
       });
     },
-    [globalDispatch]
+    [globalDispatch],
   );
 
   const setLanguage = useCallback(
-    (language) => {
+    ({ language: fx }) => {
       globalDispatch({
         type: GLOBAL_ACTIONS.CHANGE_LANGUAGE,
-        payload: language,
+        payload: fx,
       });
     },
-    [globalDispatch]
+    [globalDispatch],
   );
 
   const setTrending = useCallback(
@@ -44,7 +44,7 @@ export function GlobalStateProvider({ children }) {
         payload: value,
       });
     },
-    [globalDispatch]
+    [globalDispatch],
   );
 
   return (

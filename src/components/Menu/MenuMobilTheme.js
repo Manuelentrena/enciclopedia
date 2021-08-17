@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Lang from "Translations";
-import { IconArrow, IconNoCheck, IconCheck } from "components";
-import { useGlobal } from "hooks/useGlobal";
+import React, { useState } from 'react';
+import Lang from 'Translations';
+import { IconArrow, IconNoCheck, IconCheck } from 'components';
+import { useGlobal } from 'hooks/useGlobal';
 
-const themes = ["dark", "light"];
+const themes = ['dark', 'light'];
 
 const MenuMobilTheme = () => {
   const { language: fx, setTheme, theme: globalTheme } = useGlobal();
@@ -15,7 +15,8 @@ const MenuMobilTheme = () => {
 
   const handleChange = (theme) => {
     if (globalTheme === theme) return false;
-    theme === "dark" ? setTheme("dark") : setTheme("light");
+    theme === 'dark' ? setTheme({ theme: 'dark' }) : setTheme({ theme: 'light' });
+    return true;
   };
 
   return (
@@ -27,27 +28,27 @@ const MenuMobilTheme = () => {
       <ul className="menuMobil__list">
         {arrowOn
           ? themes.map((theme) => (
-              <li
-                className={
+            <div
+              className={
                   theme === globalTheme
-                    ? "menuMobil__item menuMobil__item--selected"
-                    : "menuMobil__item"
+                    ? 'menuMobil__item menuMobil__item--selected'
+                    : 'menuMobil__item'
                 }
-                key={theme + "li"}
-                onClick={(e) => handleChange(e.target.id)}
-              >
-                {theme === globalTheme ? <IconCheck /> : <IconNoCheck />}
-                <p className="menuMobil__text">
-                  {Lang[fx].menu.typeTheme[theme]}
-                </p>
-                <div
-                  id={theme}
-                  key={theme}
-                  className="menuMobil__click"
-                  onClick={() => handleChange(theme)}
-                ></div>
-              </li>
-            ))
+              key={`${theme}li`}
+              onClick={(e) => handleChange(e.target.id)}
+            >
+              {theme === globalTheme ? <IconCheck /> : <IconNoCheck />}
+              <p className="menuMobil__text">
+                {Lang[fx].menu.typeTheme[theme]}
+              </p>
+              <div
+                id={theme}
+                key={theme}
+                className="menuMobil__click"
+                onClick={() => handleChange(theme)}
+              />
+            </div>
+          ))
           : null}
       </ul>
     </>

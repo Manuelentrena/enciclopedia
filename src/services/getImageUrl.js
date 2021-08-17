@@ -6,7 +6,7 @@ import {
   cors,
   urlImage,
   size,
-} from "services/settings";
+} from 'services/settings';
 
 export default function getImageUrl({ search, width, language }) {
   // "action=query", protocol to GET pages
@@ -17,9 +17,9 @@ export default function getImageUrl({ search, width, language }) {
   const URL = `${prot}://${language}.${path[0]}?${action[1]}&${format}&${cors}&${urlImage}&${size[1]}=${width}&titles=${search}`;
 
   return fetch(URL, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "User-Agent": "someone",
+      'User-Agent': 'someone',
     },
   })
     .then((res) => res.json())
@@ -31,5 +31,5 @@ export default function getImageUrl({ search, width, language }) {
       const indexUrl = Object.keys(data?.query?.pages[idPage]?.imageinfo);
       return data.query.pages[idPage].imageinfo[indexUrl].thumburl;
     })
-    .catch((err) => console.log("Error: " + err));
+    .catch((err) => console.error(`Error: ${err}`));
 }

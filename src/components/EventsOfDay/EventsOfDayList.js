@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { useEventsOfDay } from "hooks";
-import { EventsOfDayItem, Spinner } from "components";
+import { useEventsOfDay } from 'hooks';
+import { EventsOfDayItem, Spinner } from 'components';
 
 export default function EventsOfDayList() {
   const { randonEvents, loading } = useEventsOfDay();

@@ -1,8 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useGlobal } from "hooks";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useGlobal } from 'hooks';
 
-const Category = ({ title, date, link, showLink, path }) => {
+const Category = ({
+  title, date, link, showLink, path,
+}) => {
   const { language: fx } = useGlobal();
   return (
     <div className="category">

@@ -1,5 +1,5 @@
-import { useTrending } from "hooks";
-import { TrendingCard, Spinner } from "components";
+import React, { useTrending } from 'hooks';
+import { TrendingCard, Spinner } from 'components';
 
 export default function TrendingPanel() {
   const { getFirstBlock, loading, filterTrendingCard } = useTrending();

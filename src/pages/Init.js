@@ -1,17 +1,16 @@
-import React from "react";
+import React from 'react';
 import {
   SearchForm,
   Header,
   Category,
   TrendingLazy,
   EventsOfDayList,
-} from "components";
-import { useGlobal } from "hooks";
-import Lang from "Translations";
+} from 'components';
+import { useGlobal } from 'hooks';
+import Lang from 'Translations';
 
 const Init = () => {
   const { language: fx } = useGlobal();
-
   return (
     <>
       <Header />
@@ -20,15 +19,15 @@ const Init = () => {
         <Category
           title={Lang[fx].trending.top_tendencies}
           link={Lang[fx].trending.link}
-          showLink={true}
-          path={"trendings"}
+          showLink
+          path="trendings"
         />
         <TrendingLazy />
         <Category
           title={Lang[fx].events.onthisday}
           link={Lang[fx].events.link}
-          showLink={true}
-          path={"events"}
+          showLink
+          path="events"
         />
         <EventsOfDayList />
       </div>
