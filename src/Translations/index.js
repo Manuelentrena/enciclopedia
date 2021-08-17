@@ -1,48 +1,78 @@
 const Lang = {
-  en: {
-    search: {
-      searchInput: 'Search in Quickpedia...',
-      searchButton: 'SEARCH',
-      moreResultsButton: 'More Results for',
+  search: {
+    searchInput: {
+      es: 'Busca en Quickpedia...',
+      en: 'Search in Quickpedia...',
     },
-    menu: {
-      language: 'Language',
-      typeLang: { es: 'Spanish', en: 'English' },
-      theme: 'Theme',
-      typeTheme: { dark: 'Dark', light: 'Light' },
+    searchButton: {
+      es: 'BUSCAR',
+      en: 'SEARCH',
     },
-    trending: {
-      top_tendencies: 'TOP TRENDINGS',
-      tendencies: 'TRENDINGS',
-      link: 'See All >',
-    },
-    events: {
-      onthisday: 'ON THIS DAY',
-      events: 'EVENTS',
-      link: 'See All >',
+    moreResultsButton: {
+      es: 'Más Resultados para',
+      en: 'More Results for',
     },
   },
-  es: {
-    search: {
-      searchInput: 'Busca en Quickpedia...',
-      searchButton: 'BUSCAR',
-      moreResultsButton: 'Más Resultados para',
+  menu: {
+    language: {
+      es: 'Lenguaje',
+      en: 'Language',
     },
-    menu: {
-      theme: 'Tema',
-      typeLang: { es: 'Español', en: 'Inglés' },
-      language: 'Lenguaje',
-      typeTheme: { dark: 'Oscuro', light: 'Claro' },
+    typeLang: {
+      es: {
+        es: 'Español',
+        en: 'Spanish',
+      },
+      en: {
+        es: 'Inglés',
+        en: 'English',
+      },
     },
-    trending: {
-      top_tendencies: 'TOP TENDENCIAS',
-      tendencies: 'TENDENCIAS',
-      link: 'Ver Todo >',
+    theme: {
+      es: 'Tema',
+      en: 'Theme',
+    },
+    typeTheme: {
+      dark: {
+        es: 'Oscuro',
+        en: 'Dark',
+      },
+      light: {
+        es: 'Claro',
+        en: 'Light',
+      },
+    },
+  },
+  trending: {
+    top_tendencies: {
+      es: 'TOP TENDENCIAS',
+      en: 'TOP TRENDINGS',
+    },
+    tendencies: {
+      es: 'TENDENCIAS',
+      en: 'TRENDINGS',
+    },
+    link: {
+      es: 'Ver Todo >',
+      en: 'See All >',
+    },
+  },
+  events: {
+    onthisday: {
+      es: 'EN ESTE DÍA',
+      en: 'ON THIS DAY',
     },
     events: {
-      onthisday: 'EN ESTE DÍA',
-      events: 'EVENTOS',
-      link: 'Ver Todo >',
+      es: 'EVENTOS',
+      en: 'EVENTS',
+    },
+    link: {
+      es: 'Ver Todo >',
+      en: 'See All >',
+    },
+    year: {
+      es: 'AÑO',
+      en: 'YEAR',
     },
   },
 };

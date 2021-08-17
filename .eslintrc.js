@@ -36,6 +36,6 @@ module.exports = {
     'import/prefer-default-export': RULES.OFF,
     'no-plusplus': RULES.OFF,
     'no-param-reassign': RULES.OFF,
-    'no-console': ['error', { allow: ['error'] }],
+    'no-console': ['error', { allow: ['error', 'log'] }],
   },
 };

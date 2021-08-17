@@ -79,7 +79,7 @@ const SearchForm = () => {
           <input
             className="searchForm__input"
             id="search"
-            placeholder={Lang[fx].search.searchInput}
+            placeholder={Lang.search.searchInput[fx]}
             value={text}
             onChange={handleChange}
             onFocus={handleFocus}
@@ -91,7 +91,7 @@ const SearchForm = () => {
           {/* Desktop */}
           <Button
             className="buttonPrimary buttonSearch"
-            text={Lang[fx].search.searchButton}
+            text={Lang.search.searchButton[fx]}
             type="submit"
             action={handleSubmit}
           />

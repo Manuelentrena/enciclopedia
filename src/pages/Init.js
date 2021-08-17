@@ -17,15 +17,15 @@ const Init = () => {
       <SearchForm />
       <div className="quickpedia__body">
         <Category
-          title={Lang[fx].trending.top_tendencies}
-          link={Lang[fx].trending.link}
+          title={Lang.trending.top_tendencies[fx]}
+          link={Lang.trending.link[fx]}
           showLink
           path="trendings"
         />
         <TrendingLazy />
         <Category
-          title={Lang[fx].events.onthisday}
-          link={Lang[fx].events.link}
+          title={Lang.events.onthisday[fx]}
+          link={Lang.events.link[fx]}
           showLink
           path="events"
         />

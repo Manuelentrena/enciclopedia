@@ -1,7 +1,10 @@
 import React from 'react';
+import Lang from 'Translations';
+import { useGlobal } from 'hooks';
 
 export default function EventsOfDayItem({ event }) {
   const { text, year, pages } = event;
+  const { language: fx } = useGlobal();
 
   /*   const handleClick = (e) => {
     console.log(e.target.id);
@@ -14,7 +17,7 @@ export default function EventsOfDayItem({ event }) {
   return (
     <div className="eventsOfDay">
       <div className="eventsOfDay__year">
-        <p className="eventsOfDay__numYear">YEAR</p>
+        <p className="eventsOfDay__numYear">{Lang.events.year[fx]}</p>
         <p className="eventsOfDay__numYear">{year}</p>
       </div>
       <div className="eventsOfDay__body">

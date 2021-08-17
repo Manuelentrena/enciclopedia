@@ -25,7 +25,7 @@ const MenuMobilLanguage = () => {
   return (
     <>
       <div className="menuMobil__container" onClick={handleClick}>
-        <p className="menuMobil__title">{Lang[fx].menu.language}</p>
+        <p className="menuMobil__title">{Lang.menu.language[fx]}</p>
         <IconArrow arrowOn={arrowOn} />
       </div>
       <ul className="menuMobil__list">
@@ -44,7 +44,7 @@ const MenuMobilLanguage = () => {
                 {' '}
                 {`${language.toUpperCase()
                 } ${
-                  Lang[fx].menu.typeLang[language]}`}
+                  Lang.menu.typeLang[language][fx]}`}
               </p>
               <div
                 id={language}

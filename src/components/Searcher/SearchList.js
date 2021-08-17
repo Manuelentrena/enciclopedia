@@ -95,7 +95,7 @@ const SearchList = ({
 
   const hasItems = () => !isLoading && !isEmpty();
 
-  const showText = () => `${Lang[fx].search.moreResultsButton} '${textGlobal}'`;
+  const showText = () => `${Lang.search.moreResultsButton[fx]} '${textGlobal}'`;
 
   const ButtonSecond = (
     <Button className="buttonSecond" text={showText()} action={handleClick} />

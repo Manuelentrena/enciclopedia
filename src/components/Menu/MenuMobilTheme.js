@@ -22,7 +22,7 @@ const MenuMobilTheme = () => {
   return (
     <>
       <div className="menuMobil__container" onClick={handleClick}>
-        <p className="menuMobil__title">{Lang[fx].menu.theme}</p>
+        <p className="menuMobil__title">{Lang.menu.theme[fx]}</p>
         <IconArrow arrowOn={arrowOn} />
       </div>
       <ul className="menuMobil__list">
@@ -39,7 +39,7 @@ const MenuMobilTheme = () => {
             >
               {theme === globalTheme ? <IconCheck /> : <IconNoCheck />}
               <p className="menuMobil__text">
-                {Lang[fx].menu.typeTheme[theme]}
+                {Lang.menu.typeTheme[theme][fx]}
               </p>
               <div
                 id={theme}
