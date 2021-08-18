@@ -15,13 +15,15 @@ export default function getEventsOfDay({ language }) {
     .then((res) => res.json())
     .then((data) => {
       if (data) {
+        console.log(data);
         const newdata = data.events.map((event) => {
           const idEvent = nextId('0');
           const { text, year } = event;
           const pages = event.pages.map((page) => {
             const id = page.pageid;
             const title = page.titles.display;
-            return { title, id };
+            const img = page?.thumbnail?.source;
+            return { title, id, img };
           });
           return {
             text, year, pages, idEvent,

@@ -41,6 +41,10 @@
   --box-shadow-white: 1px 1px 5px #aaaedd;
   --box-shadow-black: 1px 1px 5px #777880;
 
+  /* EVENTS DEGRADATE */
+  --cDeg-Dark: linear-gradient(135deg,  rgba(67,82,103,1) 0%,rgba(67,82,103,1) 50%,rgba(255,255,255,0.25) 100%);
+  --cDeg-Light: linear-gradient(135deg,  rgba(51,51,125,1) 0%,rgba(51,51,125,1) 50%,rgba(0, 0, 0, 0.25) 100%);
+
   /* ACTION */
 
   --action: #e48c19;
@@ -161,6 +165,7 @@
     var(--dark, var(--actionLight));
   --cEvent-div: var(--light, var(--white)) var(--dark, var(--white));
   --cEvent-bgSubBody: var(--light, var(--blue9NOTpa)) var(--dark, var(--blue10));
+  --cEvent-over: var(--light, var(--cDeg-Light)) var(--dark, var(--cDeg-Dark)); 
 }
 /* TITLES */
 /*   --c-h1: var(--text-primary);

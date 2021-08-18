@@ -4,6 +4,7 @@ import { useGlobal } from 'hooks';
 
 export default function EventsOfDayItem({ event }) {
   const { text, year, pages } = event;
+  const { title: alt, img: src } = pages[0];
   const { language: fx } = useGlobal();
 
   /*   const handleClick = (e) => {
@@ -31,6 +32,10 @@ export default function EventsOfDayItem({ event }) {
             </div>
           ))}
         </div>
+        <div className="eventsOfDay__over" />
+        <picture className="eventsOfDay__picture">
+          <img className="eventsOfDay__img" src={src} alt={alt} />
+        </picture>
       </div>
     </div>
   );
