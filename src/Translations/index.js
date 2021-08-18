@@ -74,6 +74,10 @@ const Lang = {
       es: 'AÑO',
       en: 'YEAR',
     },
+    results: {
+      es: 'resultados',
+      en: 'results',
+    },
   },
 };
 

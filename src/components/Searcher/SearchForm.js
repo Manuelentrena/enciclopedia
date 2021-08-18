@@ -76,18 +76,21 @@ const SearchForm = () => {
         onSubmit={handleSubmit}
       >
         <div className="searchBody">
-          <input
-            className="searchForm__input"
-            id="search"
-            placeholder={Lang.search.searchInput[fx]}
-            value={text}
-            onChange={handleChange}
-            onFocus={handleFocus}
-            onKeyDown={handleDown}
-          />
-          <div className="searchClose">
-            <IconClose handleClose={handleClose} />
+          <div className="searchForm__myImput">
+            <input
+              className="searchForm__input"
+              id="search"
+              placeholder={Lang.search.searchInput[fx]}
+              value={text}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onKeyDown={handleDown}
+            />
+            <div className="searchClose">
+              <IconClose handleClose={handleClose} />
+            </div>
           </div>
+
           {/* Desktop */}
           <Button
             className="buttonPrimary buttonSearch"

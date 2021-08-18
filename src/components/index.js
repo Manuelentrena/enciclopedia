@@ -1,5 +1,6 @@
 /* EVENT OF DAY */
-export { default as EventsOfDayList } from 'components/EventsOfDay/EventsOfDayList';
+export { default as EventsOfDayLayout } from 'components/EventsOfDay/EventsOfDayLayout';
+export { default as EventsOfDayPanel } from 'components/EventsOfDay/EventsOfDayPanel';
 export { default as EventsOfDayItem } from 'components/EventsOfDay/EventsOfDayItem';
 
 /* TRENDING */

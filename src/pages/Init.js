@@ -4,7 +4,7 @@ import {
   Header,
   Category,
   TrendingLazy,
-  EventsOfDayList,
+  EventsOfDayPanel,
 } from 'components';
 import { useGlobal } from 'hooks';
 import Lang from 'Translations';
@@ -29,7 +29,7 @@ const Init = () => {
           showLink
           path="events"
         />
-        <EventsOfDayList />
+        <EventsOfDayPanel />
       </div>
     </>
   );

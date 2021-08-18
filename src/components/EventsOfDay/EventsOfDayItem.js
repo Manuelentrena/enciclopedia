@@ -7,10 +7,6 @@ export default function EventsOfDayItem({ event }) {
   const { title: alt, img: src } = pages[0];
   const { language: fx } = useGlobal();
 
-  /*   const handleClick = (e) => {
-    console.log(e.target.id);
-  }; */
-
   const showTextCapital = () => text.charAt(0).toUpperCase() + text.slice(1);
 
   const linkWithOutTag = ({ title = '' }) => title.replace('</i>', '').replace('<i>', '');

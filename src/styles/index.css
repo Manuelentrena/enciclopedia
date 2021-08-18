@@ -53,7 +53,8 @@
 @import "../styles/components/Category/category.css";
 
 @import "../styles/components/EventsOfDay/eventsOfDayItem.css";
-@import "../styles/components/EventsOfDay/eventsOfDayList.css";
+@import "../styles/components/EventsOfDay/eventsOfDayPanel.css";
+@import "../styles/components/EventsOfDay/eventsOfDayLayout.css";
 
 /* utils */
 @import "../styles/utils/relative.css";

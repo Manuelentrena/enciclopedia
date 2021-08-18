@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import { Home, Init, Trendings } from 'pages';
+import {
+  Home, Init, Trendings, Events,
+} from 'pages';
 import { GlobalStateProvider } from 'provider/global/globalContext';
 import { SearchContextProvider } from 'provider/SearchContext';
 import { TrendingStateProvider } from 'provider/Trendings/trendingContext';
@@ -29,6 +31,11 @@ function App() {
                   path="/:lng(en|es)?/trendings"
                   exact
                   component={Trendings}
+                />
+                <FixRoute
+                  path="/:lng(en|es)?/events"
+                  exact
+                  component={Events}
                 />
               </Switch>
             </Router>

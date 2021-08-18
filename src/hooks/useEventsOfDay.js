@@ -42,7 +42,7 @@ export const useEventsOfDay = () => {
 
   /* IF CHANGE DE EVENTS, CREATE NEW STATE RANDON EVENTS */
   useEffect(() => {
-    if (events.length) {
+    if (events?.length) {
       const eventsRandon = loadEvents();
       setRandonEvents(eventsRandon);
       setloading(false);

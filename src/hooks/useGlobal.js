@@ -25,6 +25,18 @@ export const useGlobal = () => {
       : document.getElementById('body').classList.remove('noScroll');
   }
 
+  function getDay() {
+    return new Date().getDate().toString();
+  }
+
+  function getMonth() {
+    return new Date().getMonth() + 1;
+  }
+
+  function getDate() {
+    return new Date().toLocaleDateString();
+  }
+
   return {
     theme,
     setTheme,
@@ -35,5 +47,8 @@ export const useGlobal = () => {
     noScroll,
     setTrending,
     trending,
+    getDay,
+    getMonth,
+    getDate,
   };
 };

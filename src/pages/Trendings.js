@@ -5,7 +5,7 @@ import React, { useGlobal } from 'hooks';
 import Lang from 'Translations';
 
 const Trendings = () => {
-  const { language: fx } = useGlobal();
+  const { language: fx, getDate } = useGlobal();
 
   return (
     <>
@@ -14,7 +14,7 @@ const Trendings = () => {
       <div className="quickpedia__body">
         <Category
           title={Lang.trending.tendencies[fx]}
-          date={new Date().toLocaleDateString()}
+          date={getDate()}
           showLink={false}
         />
         <TrendingLayout />
