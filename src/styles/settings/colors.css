@@ -49,6 +49,8 @@
 
   --action: #e48c19;
   --actionLight: #f5bc72;
+  --actionOPA: rgba(228, 140, 25,0.75);
+  --actionLightOPA: rgba(245, 188, 114,0.75);
   /* CHECK */
   --check: #00ffff;
 
@@ -160,11 +162,11 @@
   --cEvent-bgYear: var(--light, var(--white)) var(--dark, var(--white));
   --cEvent-sd: var(--light, var(--box-shadow)) var(--dark, var(--box-shadow));
   --cEvent-yearText: var(--light, var(--blue9)) var(--dark, var(--blue10));
-  --cEvent-bgLink: var(--light, var(--action)) var(--dark, var(--action));
+  --cEvent-bgLink: var(--light, var(--actionOPA)) var(--dark, var(--actionOPA));
   --cEvent-textLink: var(--light, var(--white)) var(--dark, var(--white));
   --cEvent-text: var(--light, var(--white)) var(--dark, var(--white));
-  --cEvent-bgLink-hover: var(--light, var(--actionLight))
-    var(--dark, var(--actionLight));
+  --cEvent-bgLink-hover: var(--light, var(--actionLightOPA))
+    var(--dark, var(--actionLightOPA));
   --cEvent-div: var(--light, var(--white)) var(--dark, var(--white));
   --cEvent-bgSubBody: var(--light, var(--blue9NOTpa)) var(--dark, var(--blue10));
   --cEvent-over: var(--light, var(--cDeg-Light)) var(--dark, var(--cDeg-Dark)); 

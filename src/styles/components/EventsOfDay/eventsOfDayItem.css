@@ -5,7 +5,7 @@
   background-color: var(--cEvent-bg);
   border-radius: 5px;
   box-shadow: var(--box-shadow);
-  height: fit-content;
+  height: auto;
   width: 100%;
 }
 .eventsOfDay__year {
@@ -32,7 +32,7 @@
   padding: 0.5rem 1rem;
   border-left: 1px solid var(--cEvent-div);
   height: 100%;
-  min-height: 10rem;
+  /* min-height: 10rem; */
   width: 100%;
   background-color: var(--cEvent-bgSubBody);
   border-top-right-radius: 5px;
