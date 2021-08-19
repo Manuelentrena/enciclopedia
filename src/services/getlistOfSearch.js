@@ -11,9 +11,9 @@ export default function getlistOfSearch({
   return fetch(URL, {
     method: 'GET',
     signal,
-    headers: {
+    /* headers: {
       'User-Agent': 'someone',
-    },
+    }, */
   })
     .then((res) => res.json())
     .then((data) => {

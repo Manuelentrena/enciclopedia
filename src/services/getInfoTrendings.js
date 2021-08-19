@@ -8,9 +8,9 @@ export default function getInfoTrendings({ canonical, language, views }) {
 
   return fetch(URL, {
     method: 'GET',
-    headers: {
+    /* headers: {
       'User-Agent': 'someone',
-    },
+    }, */
   })
     .then((res) => res.json())
     .then((data) => {

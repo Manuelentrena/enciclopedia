@@ -32,14 +32,17 @@ export const useTrending = () => {
     async function loadData() {
       cleanListTrendings();
       const dataTrendings = await getTrendings({ language });
-      const filterTrendings = dataTrendings.filter(
-        ({ article }) => article !== espArt[language][1],
-      );
-      setSearchTrending(filterTrendings);
-      addBlockTrending(language);
-      setTrending(false);
-      setLoadCards(true);
-      return true;
+      if (dataTrendings) {
+        const filterTrendings = dataTrendings.filter(
+          ({ article }) => article !== espArt[language][1],
+        );
+        setSearchTrending(filterTrendings);
+        addBlockTrending(language);
+        setTrending(false);
+        setLoadCards(true);
+        return true;
+      }
+      return false;
     }
 
     if (trending) {

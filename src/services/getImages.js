@@ -11,9 +11,9 @@ export default function getImages({ id, limit = 30 }) {
 
   return fetch(URL, {
     method: 'GET',
-    headers: {
+    /* headers: {
       'User-Agent': 'someone',
-    },
+    }, */
   })
     .then((res) => res.json())
     .then((data) => data)

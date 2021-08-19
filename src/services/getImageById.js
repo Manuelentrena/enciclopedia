@@ -19,9 +19,9 @@ export default function getImageById({
   return fetch(URL, {
     method: 'GET',
     signal,
-    headers: {
+    /* headers: {
       'User-Agent': 'someone',
-    },
+    }, */
   })
     .then((res) => res.json())
     .then((data) => data)

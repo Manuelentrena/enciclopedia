@@ -2,6 +2,7 @@
 export { default as EventsOfDayLayout } from 'components/EventsOfDay/EventsOfDayLayout';
 export { default as EventsOfDayPanel } from 'components/EventsOfDay/EventsOfDayPanel';
 export { default as EventsOfDayItem } from 'components/EventsOfDay/EventsOfDayItem';
+export { default as EventsOfDayLazy } from 'components/EventsOfDay/EventsOfDayLazy';
 
 /* TRENDING */
 export { default as TrendingPanel } from 'components/Trending/TrendingPanel';
