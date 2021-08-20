@@ -14,4 +14,5 @@ export const TRENDING_ACTIONS = {
 
 export const EVENTS_ACTIONS = {
   ADD_EVENTS: 'ADD_EVENTS',
+  ADD_IMAGEOFDAY: 'ADD_IMAGEOFDAY',
 };

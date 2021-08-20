@@ -15,12 +15,24 @@ function calcDay() {
   return day.substr(day.length - 2);
 }
 
+export function calcMonthToday() {
+  const month = `0${(new Date().getMonth() + 1).toString()}`;
+  return month.substr(month.length - 2);
+}
+
+export function formatTitleImg(title) {
+  if (!title) return undefined;
+  /* PUNTO DEBIL, NECESITO MAS IMAGENES DEL DIA PARA SABER QUE REEMPLAZAR */
+  return title.replace('File:', '').replace('.jpg', '');
+}
+
 export const prot = 'https';
 export const path = [
   'wikipedia.org/w/api.php',
   'wikimedia.org/api/rest_v1/metrics/pageviews/top',
   'wikipedia.org/api/rest_v1/page/summary',
   'wikipedia.org/api/rest_v1/feed/onthisday/events',
+  'api.wikimedia.org/feed/v1/wikipedia',
 ];
 export const action = ['action=opensearch', 'action=query'];
 export const format = 'format=json';

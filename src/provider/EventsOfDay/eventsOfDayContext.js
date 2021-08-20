@@ -10,7 +10,7 @@ export function EventsOfDayProvider({ children }) {
     inicialState,
   );
 
-  const { events } = eventsOfDayState;
+  const { events, imageOfDay } = eventsOfDayState;
 
   const setEvents = useCallback(
     ({ events: event }) => {
@@ -22,8 +22,21 @@ export function EventsOfDayProvider({ children }) {
     [eventsOfDayDispatch],
   );
 
+  const setImageOfDay = useCallback(
+    ({ imageOfDay: image }) => {
+      eventsOfDayDispatch({
+        type: EVENTS_ACTIONS.ADD_IMAGEOFDAY,
+        payload: image,
+      });
+    },
+    [eventsOfDayDispatch],
+  );
+
   return (
-    <EventsOfDayContext.Provider value={{ events, setEvents }}>
+    <EventsOfDayContext.Provider value={{
+      events, setEvents, imageOfDay, setImageOfDay,
+    }}
+    >
       {children}
     </EventsOfDayContext.Provider>
   );

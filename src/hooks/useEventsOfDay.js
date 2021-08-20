@@ -1,20 +1,23 @@
 import { useContext, useState, useEffect } from 'react';
 import EventsOfDayContext from 'provider/EventsOfDay/eventsOfDayContext';
 import getEventsOfDay from 'services/EventOfDay/getEventsOfDay';
+import getImageOfDay from 'services/EventOfDay/getImageOfDay';
 import { useGlobal } from 'hooks';
 
 export const useEventsOfDay = () => {
   const { language } = useGlobal();
-  const { setEvents, events } = useContext(EventsOfDayContext);
+  const {
+    setEvents, events, imageOfDay, setImageOfDay,
+  } = useContext(EventsOfDayContext);
   /* STATE, EVENTS RANDON */
   const [randonEvents, setRandonEvents] = useState([]);
   const [loading, setloading] = useState(false);
 
-  /* IF CHANGUE LANGUAGE, LOAD NEW EVENTS */
+  /* IF CHANGUE LANGUAGE, LOAD NEW EVENTS ANG IMAGEOFDAY */
   useEffect(() => {
     async function getEvents() {
-      const data = await getEventsOfDay({ language });
-      setEvents({ events: data });
+      getEventsOfDay({ language }).then((data) => setEvents({ events: data }));
+      getImageOfDay({ language }).then((data) => setImageOfDay({ imageOfDay: data }));
     }
     setloading(true);
     getEvents();
@@ -28,7 +31,7 @@ export const useEventsOfDay = () => {
     const eventsRandon = [];
     const idsRandon = [];
     let newNum = 0;
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       newNum = numRandom();
       if (!idsRandon.includes(newNum)) {
         eventsRandon.push(events[newNum]);
@@ -50,6 +53,6 @@ export const useEventsOfDay = () => {
   }, [events]);
 
   return {
-    setEvents, events, randonEvents, loading,
+    setEvents, events, randonEvents, loading, imageOfDay,
   };
 };

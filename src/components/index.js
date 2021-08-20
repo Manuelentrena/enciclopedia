@@ -1,3 +1,6 @@
+/* IMAGE OF DAY */
+export { default as ImageOfDay } from 'components/ImageOfDay/ImageOfDay';
+
 /* EVENT OF DAY */
 export { default as EventsOfDayLayout } from 'components/EventsOfDay/EventsOfDayLayout';
 export { default as EventsOfDayPanel } from 'components/EventsOfDay/EventsOfDayPanel';

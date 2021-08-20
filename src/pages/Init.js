@@ -11,6 +11,7 @@ import Lang from 'Translations';
 
 const Init = () => {
   const { language: fx } = useGlobal();
+
   return (
     <>
       <Header />
@@ -30,6 +31,7 @@ const Init = () => {
           path="events"
         />
         <EventsOfDayLazy />
+
       </div>
     </>
   );

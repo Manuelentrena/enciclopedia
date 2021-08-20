@@ -56,6 +56,8 @@
 @import "../styles/components/EventsOfDay/eventsOfDayPanel.css";
 @import "../styles/components/EventsOfDay/eventsOfDayLayout.css";
 
+@import "../styles/components/ImageOfDay/imageOfDay.css";
+
 /* utils */
 @import "../styles/utils/relative.css";
 @import "../styles/utils/noScroll.css";
