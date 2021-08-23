@@ -1,4 +1,4 @@
-.modal {
+.searchModal{
   padding: 0;
   background-color: var(--cModal-bg-ext);
   backdrop-filter: blur(3px);
@@ -10,7 +10,7 @@
   z-index: 2;
 }
 
-.modal__body {
+.searchModal__body {
   background-color: var(--cModal-bg-int);
   max-width: 55rem;
   padding: 2rem;
@@ -23,7 +23,7 @@
 }
 
 @media (max-width: 768px) {
-  .modal {
+  .searchModal {
     top: 11.2rem;
   }
 }

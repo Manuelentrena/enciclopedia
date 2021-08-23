@@ -1,5 +1,9 @@
+/* MODAL */
+export { default as Modal } from 'components/Modal/Modal';
+
 /* IMAGE OF DAY */
 export { default as ImageOfDay } from 'components/ImageOfDay/ImageOfDay';
+export { default as ImageOfDayContainer } from 'components/ImageOfDay/ImageOfDayContainer';
 
 /* EVENT OF DAY */
 export { default as EventsOfDayLayout } from 'components/EventsOfDay/EventsOfDayLayout';

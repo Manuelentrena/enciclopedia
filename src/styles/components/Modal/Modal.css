@@ -1,0 +1,41 @@
+.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--cModal-bg-ext);
+  backdrop-filter: blur(3px);
+  z-index: 4;
+  overflow-y: hidden;
+  height: 100vh;
+  max-height: 100vh;
+  
+}
+.modal__items{
+  height: 5rem;
+}
+
+.modal__body{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 0 5rem;
+  /* overflow-y: scroll; */
+}
+
+.modal__img{
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .modal__body{
+    padding: 1rem;
+  }
+}

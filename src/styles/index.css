@@ -60,6 +60,8 @@
 
 @import "../styles/components/ImageOfDay/imageOfDay.css";
 
+@import "../styles/components/Modal/Modal.css";
+
 /* utils */
 @import "../styles/utils/relative.css";
 @import "../styles/utils/noScroll.css";

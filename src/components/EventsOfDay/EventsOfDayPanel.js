@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useEventsOfDay } from 'hooks';
-import { EventsOfDayItem, Spinner, ImageOfDay } from 'components';
+import { EventsOfDayItem, Spinner, ImageOfDayContainer } from 'components';
 
 export default function EventsOfDayPanel() {
   const { randonEvents, loading } = useEventsOfDay();
@@ -10,7 +10,7 @@ export default function EventsOfDayPanel() {
     <Spinner />
   ) : (
     <div className="eventsOfDay__panel">
-      <ImageOfDay />
+      <ImageOfDayContainer />
       {randonEvents.map((event) => (
         <EventsOfDayItem key={event.idEvent} event={event} />
       ))}

@@ -8,7 +8,7 @@
   width: 100%;
   grid-row: span 2;
   overflow: hidden;
-  cursor: pointer
+  
 }
 .imageOfDay__picture{
   position: relative;
@@ -16,6 +16,7 @@
   height: 100%;
   min-height: 200px;
   display: block;
+  cursor: pointer
 }
 .imageOfDay__img{
   width: 100%;
