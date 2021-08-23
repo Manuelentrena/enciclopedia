@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  SearchForm,
   Header,
   Category,
   TrendingLazy,
@@ -15,7 +14,6 @@ const Init = () => {
   return (
     <>
       <Header />
-      <SearchForm />
       <div className="quickpedia__body">
         <Category
           title={Lang.trending.top_tendencies[fx]}

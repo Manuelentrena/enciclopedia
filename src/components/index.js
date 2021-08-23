@@ -38,6 +38,9 @@ export { default as Spinner } from 'components/resources/Spinner';
 /* HEADER */
 export { default as Header } from 'components/Header/Header';
 
+/* NAVBAR */
+export { default as NavBar } from 'components/NavBar/NavBar';
+
 /* SEARCHER */
 export { default as SearchForm } from 'components/Searcher/SearchForm';
 export { default as SearchList } from 'components/Searcher/SearchList';

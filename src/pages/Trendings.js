@@ -1,5 +1,5 @@
 import {
-  SearchForm, Header, Category, TrendingLayout,
+  Header, Category, TrendingLayout,
 } from 'components';
 import React, { useGlobal } from 'hooks';
 import Lang from 'Translations';
@@ -10,7 +10,6 @@ const Trendings = () => {
   return (
     <>
       <Header />
-      <SearchForm />
       <div className="quickpedia__body">
         <Category
           title={Lang.trending.tendencies[fx]}

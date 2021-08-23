@@ -1,0 +1,13 @@
+.navbar {
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--c-background);
+  width: 100%;
+}
+
+.navbar__picture {
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+}

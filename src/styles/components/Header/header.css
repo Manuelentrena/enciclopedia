@@ -1,12 +1,6 @@
-.header {
-  overflow-x: hidden;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--c-background);
+.header{
+  position: fixed;
   width: 100%;
-}
+  z-index: 3;
 
-.header__picture {
-  display: block;
-  width: fit-content;
 }

@@ -30,6 +30,8 @@
 @import "../styles/components/Icons/iconStar.css";
 @import "../styles/components/Icons/iconView.css";
 
+@import "../styles/components/NavBar/navbar.css";
+
 @import "../styles/components/Header/header.css";
 
 @import "../styles/components/Menu/menuDesktop.css";

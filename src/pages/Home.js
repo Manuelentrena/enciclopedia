@@ -1,9 +1,8 @@
-import React, { SearchForm, Header, TrendingPanel } from 'components';
+import React, { Header, TrendingPanel } from 'components';
 
 const Home = () => (
   <>
     <Header />
-    <SearchForm />
     <TrendingPanel />
   </>
 );

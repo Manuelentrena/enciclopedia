@@ -1,24 +1,11 @@
-import React, { useState } from 'react';
-import {
-  Logo, MiniLogo, Menu, IconBurguer,
-} from 'components';
+import React from 'react';
+import { NavBar, SearchForm } from 'components';
 
-const Header = () => {
-  const [isActiveMenu, setIsActiveMenu] = useState(false);
-
+export default function Header() {
   return (
-    <div className="header quickpedia__header">
-      <picture className="header__picture">
-        <Logo />
-        <MiniLogo />
-      </picture>
-      <Menu isActiveMenu={isActiveMenu} />
-      <IconBurguer
-        isActiveMenu={isActiveMenu}
-        setIsActiveMenu={setIsActiveMenu}
-      />
+    <div className="header">
+      <NavBar />
+      <SearchForm />
     </div>
   );
-};
-
-export default Header;
+}

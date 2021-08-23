@@ -4,7 +4,9 @@ import { useGlobal } from 'hooks';
 
 export default function EventsOfDayItem({ event }) {
   const { text, year, pages } = event;
-  const { title: alt, img: src } = pages[0];
+  const alt = pages[0]?.title;
+  const src = pages[0]?.img;
+
   const { language: fx } = useGlobal();
 
   const showTextCapital = () => text.charAt(0).toUpperCase() + text.slice(1);

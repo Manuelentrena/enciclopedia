@@ -11,6 +11,7 @@ body {
 
 .quickpedia__body {
   padding: 2rem;
+  padding-top: 14rem;
   display: flex;
   flex-direction: column;
 }
@@ -22,6 +23,7 @@ body {
 @media (max-width: 768px) {
   .quickpedia__body {
     padding: 1rem;
+    padding-top: 11rem;
   }
   .quickpedia__header {
     padding: 0.5rem 1rem;

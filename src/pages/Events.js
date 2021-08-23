@@ -1,5 +1,5 @@
 import {
-  SearchForm, Header, Category, EventsOfDayLayout,
+  Header, Category, EventsOfDayLayout,
 } from 'components';
 import React, { useGlobal, useEventsOfDay } from 'hooks';
 import Lang from 'Translations';
@@ -13,7 +13,6 @@ const Events = () => {
   return (
     <>
       <Header />
-      <SearchForm />
       <div className="quickpedia__body">
         <Category title={title} date={date} showLink={false} />
         <EventsOfDayLayout />
