@@ -78,6 +78,14 @@ const Lang = {
       es: 'resultados',
       en: 'results',
     },
+    imageDest: {
+      es: 'Imagen Del Día',
+      en: 'Image Of The Day',
+    },
+    author: {
+      es: 'Autor',
+      en: 'Author',
+    },
   },
 };
 
