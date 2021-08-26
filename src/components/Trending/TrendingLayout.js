@@ -35,6 +35,7 @@ const TrendingLayout = () => {
                 img={trendingCard.img}
                 views={trendingCard.views}
                 title={trendingCard.title}
+                id={trendingCard.id}
               />
             );
           }

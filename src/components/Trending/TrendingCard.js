@@ -1,11 +1,19 @@
 import React from 'react';
 import { IconStart, IconView, IconMore } from 'components';
+import { useHistory } from 'react-router';
+import { useGlobal } from 'hooks';
 
 const TrendingCard = ({
-  description, img, views, title,
-}) => (
-  <>
-    <div className={img ? 'trendingCard' : 'trendingCard cardNoImg'}>
+  description, img, views, title, id,
+}) => {
+  const history = useHistory();
+  const { language: fx } = useGlobal();
+  const handleClick = () => {
+    history.push(`/${fx}/page/${id}`);
+  };
+
+  return (
+    <div className={img ? 'trendingCard' : 'trendingCard cardNoImg'} onClick={handleClick}>
       <picture className="trendingCard__picture">
         {img && <img className="trendingCard__img" src={img} alt={title} />}
       </picture>
@@ -29,11 +37,7 @@ const TrendingCard = ({
         </div>
       </div>
     </div>
-  </>
-);
-
-/* export default React.memo(TrendingCard, (prevProps, nextProps) => {
-  return prevProps.id === nextProps.id;
-}); */
+  );
+};
 
 export default React.memo(TrendingCard);

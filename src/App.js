@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import {
-  Home, Init, Trendings, Events,
+  Home, Init, Trendings, Events, Page,
 } from 'pages';
 import { GlobalStateProvider } from 'provider/global/globalContext';
 import { SearchContextProvider } from 'provider/SearchContext';
@@ -36,6 +36,11 @@ function App() {
                   path="/:lng(en|es)?/events"
                   exact
                   component={Events}
+                />
+                <FixRoute
+                  path="/:lng(en|es)?/page/:id"
+                  exact
+                  component={Page}
                 />
               </Switch>
             </Router>

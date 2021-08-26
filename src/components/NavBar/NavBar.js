@@ -3,13 +3,15 @@ import { useHistory } from 'react-router';
 import {
   Logo, MiniLogo, Menu, IconBurguer,
 } from 'components';
+import { useGlobal } from 'hooks';
 
 const NavBar = () => {
   const history = useHistory();
+  const { language: fx } = useGlobal();
   const [isActiveMenu, setIsActiveMenu] = useState(false);
 
   const handleInit = () => {
-    history.push('/');
+    history.push(`/${fx}`);
   };
 
   return (
