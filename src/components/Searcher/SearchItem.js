@@ -1,11 +1,17 @@
 import React from 'react';
 import parse from 'html-react-parser';
 import { SearchItemImg } from 'components';
+import { useHistory } from 'react-router';
+import { useGlobal } from 'hooks';
 
 const SearchItem = ({
   description, title, id, selected,
 }) => {
-  const handleClick = ({ e }) => {
+  const history = useHistory();
+  const { language: fx } = useGlobal();
+
+  const handleClick = ({ e, id: idPage }) => {
+    history.push(`/${fx}/page/${idPage}`);
     e.stopPropagation();
   };
 
