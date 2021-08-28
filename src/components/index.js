@@ -1,3 +1,6 @@
+/* PAGEBACK */
+export { default as PageBack } from 'components/PageBack/PageBack';
+
 /* MODAL */
 export { default as Modal } from 'components/Modal/Modal';
 
@@ -31,6 +34,8 @@ export { default as IconImageNotFound } from 'components/Icons/IconImageNotFound
 export { default as IconBurguer } from 'components/Icons/IconBurguer';
 export { default as IconClose } from 'components/Icons/IconClose';
 export { default as IconLens } from 'components/Icons/IconLens';
+export { default as IconBack } from 'components/Icons/IconBack';
+export { default as IconShare } from 'components/Icons/IconShare';
 
 /* RESOURCES */
 export { default as LanguageSelect } from 'components/resources/LanguageSelect';

@@ -34,6 +34,29 @@
   background-color: var(--cbutton2-hover);
 }
 
+.buttonBack{
+  margin: 1rem;
+  background-color: var(--cbuttonBack);
+  border: none;
+  cursor: pointer;
+  /* min-width: fit-content; */
+}
+
+.buttonBack:hover svg{
+  fill: var(--cbuttonBack-hover);;
+}
+
+.buttonShare{
+  margin: 1rem;
+  background-color: var(--cbuttonShare);
+  border: none;
+  cursor: pointer;
+}
+
+.buttonShare:hover svg{
+  fill: var(--cbuttonShare-hover);;
+}
+
 .buttonSearch {
   margin-left: 0.5rem;
 }

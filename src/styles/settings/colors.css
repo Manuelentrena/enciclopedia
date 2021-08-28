@@ -62,6 +62,7 @@
   /* ELEMENTS */
   --c-a: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-H2: var(--light, var(--blue9)) var(--dark, var(--white));
+  --c-H1: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-span: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-H3: var(--light, var(--blue9)) var(--dark, var(--white));
   --c-p: var(--light, var(--blue9)) var(--dark, var(--white));
@@ -110,6 +111,12 @@
   --cbutton2-hover: var(--light, var(--blue3)) var(--dark, var(--blue1));
   --cbutton2-border: var(--light, var(--blue8)) var(--dark, var(--blue10));
   --cbutton2-text: var(--light, var(--blue8)) var(--dark, var(--blue10));
+
+  /* BUTTON BACK AND SHARE*/
+  --cbuttonBack: var(--light, var(--blue9)) var(--dark, var(--blue10));
+  --cbuttonBack-hover: var(--light, var(--action)) var(--dark, var(--action));
+  --cbuttonShare: var(--light, var(--actionLight)) var(--dark, var(--actionLight));
+  --cbuttonShare-hover: var(--light, var(--action)) var(--dark, var(--action));
 
   /* INPUT */
   --cInput-bg: var(--light, var(--white)) var(--dark, var(--white));
@@ -169,7 +176,11 @@
     var(--dark, var(--actionLightOPA));
   --cEvent-div: var(--light, var(--white)) var(--dark, var(--white));
   --cEvent-bgSubBody: var(--light, var(--blue9NOTpa)) var(--dark, var(--blue10));
-  --cEvent-over: var(--light, var(--cDeg-Light)) var(--dark, var(--cDeg-Dark)); 
+  --cEvent-over: var(--light, var(--cDeg-Light)) var(--dark, var(--cDeg-Dark));
+  
+  /* PAGE BACK */
+  --cPageBack-bg: var(--light, var(--blue9)) var(--dark, var(--blue10));
+  --cPageBack-sep: var(--light, var(--white)) var(--dark, var(--white));
 }
 /* TITLES */
 /*   --c-h1: var(--text-primary);

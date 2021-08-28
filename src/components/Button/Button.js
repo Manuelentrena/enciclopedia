@@ -12,7 +12,11 @@ const Button = ({
   }
 
   return (
-    <button className={className} type={type} onClick={(e) => handleClick(e)}>
+    <button
+      className={className}
+      type={type}
+      onClick={action ? (e) => handleClick(e) : null}
+    >
       {text}
     </button>
   );

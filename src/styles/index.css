@@ -62,6 +62,8 @@
 
 @import "../styles/components/Modal/Modal.css";
 
+@import "../styles/components/PageBack/pageBack.css";
+
 /* utils */
 @import "../styles/utils/relative.css";
 @import "../styles/utils/noScroll.css";

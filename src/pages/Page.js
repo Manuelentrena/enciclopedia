@@ -20,7 +20,7 @@ const Page = () => {
 
   return (
     <>
-      <Header />
+      <Header isPage />
       <div className="quickpedia__body">
         <img src={src} alt="" />
       </div>

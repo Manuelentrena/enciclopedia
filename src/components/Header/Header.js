@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavBar, SearchForm } from 'components';
+import { NavBar, SearchForm, PageBack } from 'components';
 
-export default function Header() {
+export default function Header({ isPage = false }) {
   return (
     <div className="header">
       <NavBar />
-      <SearchForm />
+      {isPage ? <PageBack /> : <SearchForm />}
     </div>
   );
 }
