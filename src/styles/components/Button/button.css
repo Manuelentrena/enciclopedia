@@ -35,11 +35,10 @@
 }
 
 .buttonBack{
-  margin: 1rem;
+  padding: 0;
   background-color: var(--cbuttonBack);
   border: none;
   cursor: pointer;
-  /* min-width: fit-content; */
 }
 
 .buttonBack:hover svg{
@@ -47,14 +46,19 @@
 }
 
 .buttonShare{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.7rem;
   margin: 1rem;
   background-color: var(--cbuttonShare);
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .buttonShare:hover svg{
-  fill: var(--cbuttonShare-hover);;
+  fill: var(--cbuttonShare-hover);
 }
 
 .buttonSearch {
@@ -74,5 +78,8 @@
   }
   .buttonLens {
     display: block;
+  }
+  .buttonShare{
+    margin: 0.5rem;
   }
 }

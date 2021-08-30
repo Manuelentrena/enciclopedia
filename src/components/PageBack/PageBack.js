@@ -14,10 +14,11 @@ export default function PageBack() {
     <div className="pageBack">
       <div className="pageback__block1">
         <Button type="button" className="buttonBack" text={<IconBack />} action={handleBack} />
-        <div className="pageBack__separator" />
-        <h1 className="pageBack__name">TITULO DE LA PÁGINA</h1>
+
+        <h1 className="pageBack__name">Titulo de la Página</h1>
       </div>
       <div className="pageback__block2">
+        <div className="pageBack__separator" />
         <Button type="button" className="buttonShare" text={<IconShare />} action={null} />
       </div>
     </div>

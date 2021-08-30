@@ -4,7 +4,10 @@
   display: flex;
   justify-content: space-between;
   height: 66px;
+  padding-left: 2rem;
+  padding-right: 1rem;
 }
+
 
 .pageback__block1{
   display: flex;
@@ -15,7 +18,6 @@
 
 .pageback__block2{
   display: flex;
-  background-color: var(--cbuttonShare);
 }
 
 .pageBack__separator{
@@ -36,7 +38,9 @@
 @media (max-width: 768px) {
   .pageBack{
     height: auto;
-  }
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    }
   .pageBack__separator{
     height: 56px;
   }
