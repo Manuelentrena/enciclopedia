@@ -14,7 +14,6 @@ export default function PageBack() {
     <div className="pageBack">
       <div className="pageback__block1">
         <Button type="button" className="buttonBack" text={<IconBack />} action={handleBack} />
-
         <h1 className="pageBack__name">Titulo de la Página</h1>
       </div>
       <div className="pageback__block2">

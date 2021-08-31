@@ -15,7 +15,8 @@
     "react-image-lightbox": "^5.1.4",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "1.1.2"
+    "web-vitals": "1.1.2",
+    "wtf_wikipedia": "^9.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

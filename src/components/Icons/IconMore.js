@@ -1,7 +1,7 @@
 import React from 'react';
 
-const IconMore = () => (
-  <div className="iconMore">
+const IconMore = ({ handleClick }) => (
+  <div className="iconMore" onClick={handleClick}>
     <svg width="29.2" height="29.2" overflow="visible">
       <path
         className="iconMore__svg"

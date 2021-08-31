@@ -13,7 +13,7 @@ const TrendingCard = ({
   };
 
   return (
-    <div className={img ? 'trendingCard' : 'trendingCard cardNoImg'} onClick={handleClick}>
+    <div className={img ? 'trendingCard' : 'trendingCard cardNoImg'}>
       <picture className="trendingCard__picture">
         {img && <img className="trendingCard__img" src={img} alt={title} />}
       </picture>
@@ -31,7 +31,7 @@ const TrendingCard = ({
           <p className="trendingCard__title">{title}</p>
           <p className="trendingCard__desc">{description}</p>
           <div className="trendingCard__bodyRel">
-            <IconMore />
+            <IconMore handleClick={handleClick} />
           </div>
           <div className="trendingCard__opacityEnd" />
         </div>
