@@ -1,9 +1,9 @@
 import {
-  prot, path, format, cors, day, calcMonthToday, year, formatTitleImg,
+  prot, path, format, cors, calcDayToday, calcMonthToday, year, formatTitleImg,
 } from 'services/settings';
 
 export default function getImageOfDay({ language }) {
-  const URL = `${prot}://${path[4]}/${language}/featured/${year}/${calcMonthToday()}/${day}?${format}&${cors}`;
+  const URL = `${prot}://${path[4]}/${language}/featured/${year}/${calcMonthToday()}/${calcDayToday()}?${format}&${cors}`;
   return fetch(URL, {
     method: 'GET',
   })

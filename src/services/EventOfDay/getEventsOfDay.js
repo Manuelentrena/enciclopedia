@@ -1,10 +1,10 @@
 import {
-  prot, path, format, cors, month, day,
+  prot, path, format, cors, month, calcDayToday,
 } from 'services/settings';
 import nextId from 'react-id-generator';
 
 export default function getEventsOfDay({ language }) {
-  const URL = `${prot}://${language}.${path[3]}/${month}/${day}?${format}&${cors}`;
+  const URL = `${prot}://${language}.${path[3]}/${month}/${calcDayToday()}?${format}&${cors}`;
 
   return fetch(URL, {
     method: 'GET',

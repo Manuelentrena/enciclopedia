@@ -20,6 +20,11 @@ export function calcMonthToday() {
   return month.substr(month.length - 2);
 }
 
+export function calcDayToday() {
+  const day = `0${new Date().getDate().toString()}`;
+  return day.substr(day.length - 2);
+}
+
 export function formatTitleImg(title) {
   if (!title) return undefined;
   /* PUNTO DEBIL, NECESITO MAS IMAGENES DEL DIA PARA SABER QUE REEMPLAZAR */
@@ -47,6 +52,3 @@ export const year = new Date().getFullYear();
 export const yesterdayMonth = calcMonth();
 export const yesterday = calcDay();
 export const month = new Date().getMonth() + 1;
-export const day = new Date().getDate();
-
-/* https://es.wikipedia.org/api/rest_v1/feed/onthisday/events/03/08 */
