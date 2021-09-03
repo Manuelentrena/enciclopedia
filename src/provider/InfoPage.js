@@ -7,6 +7,7 @@ const InfoPageContext = React.createContext({});
 export function InfoPageContextProvider({ children }) {
   const [paramPage, setParamPage] = useState(null);
   const [page, setPage] = useState(null);
+  const [otherTitle, setOtherTitle] = useState(null);
   const [loading, setLoaging] = useState(false);
   const { language: fx } = useGlobal();
 
@@ -23,7 +24,7 @@ export function InfoPageContextProvider({ children }) {
 
   return (
     <InfoPageContext.Provider value={{
-      paramPage, setParamPage, page, setPage, loading,
+      paramPage, setParamPage, page, setPage, loading, setOtherTitle, otherTitle,
     }}
     >
       {children}

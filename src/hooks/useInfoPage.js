@@ -1,14 +1,29 @@
 import { useContext, useEffect } from 'react';
 import InfoPageContext from 'provider/InfoPage';
 import { useParams } from 'react-router';
+import { useGlobal } from 'hooks';
+import getLinkLang from '../services/getLinkLang';
+
+const languages = { es: 'en', en: 'es' };
 
 export function useInfoPage() {
-  const { page: doc, setParamPage, loading } = useContext(InfoPageContext);
+  const {
+    page: doc, setParamPage, loading, setOtherTitle,
+  } = useContext(InfoPageContext);
   const { title } = useParams();
+  const { language: fx } = useGlobal();
 
   useEffect(() => {
     setParamPage(title);
   }, []);
+
+  useEffect(() => {
+    async function getAnotherLink() {
+      const otherTitle = await getLinkLang({ title, fx, lang: languages[fx] });
+      setOtherTitle(otherTitle);
+    }
+    getAnotherLink();
+  }, [title]);
 
   /*   useEffect(() => {
     async function getPage() {

@@ -48,6 +48,7 @@ export const urlImage = 'prop=imageinfo&iiprop=url';
 export const pag = 'sroffset';
 export const limit = 'srlimit=100';
 export const find = 'list=search';
+export const langlink = 'prop=langlinks';
 export const year = new Date().getFullYear();
 export const yesterdayMonth = calcMonth();
 export const yesterday = calcDay();
