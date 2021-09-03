@@ -17,7 +17,6 @@ export default function TrendingPanel() {
               img={trendingCard.img}
               views={trendingCard.views}
               title={trendingCard.title}
-              id={trendingCard.id}
             />
           );
         }

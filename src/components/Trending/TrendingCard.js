@@ -4,12 +4,13 @@ import { useHistory } from 'react-router';
 import { useGlobal } from 'hooks';
 
 const TrendingCard = ({
-  description, img, views, title, id,
+  description, img, views, title,
 }) => {
   const history = useHistory();
   const { language: fx } = useGlobal();
+
   const handleClick = () => {
-    history.push(`/${fx}/page/${id}`);
+    history.push(`/${fx}/page/${title.split(' ').join('_')}`);
   };
 
   return (

@@ -13,8 +13,8 @@ export default function EventsOfDayItem({ event }) {
   const { language: fx } = useGlobal();
   const history = useHistory();
 
-  const handleClick = (id) => {
-    history.push(`/${fx}/page/${id}`);
+  const handleClick = (title) => {
+    history.push(`/${fx}/page/${title.split(' ').join('_')}`);
   };
 
   const showTextCapital = () => text.charAt(0).toUpperCase() + text.slice(1);
@@ -31,7 +31,7 @@ export default function EventsOfDayItem({ event }) {
         <p className="eventsOfDay__text">{showTextCapital()}</p>
         <div className="eventsOfDay__list">
           {pages.map(({ title, id }) => (
-            <div className="eventsOfDay__link" key={id} onClick={() => handleClick(id)}>
+            <div className="eventsOfDay__link" key={id} onClick={() => handleClick(title)}>
               <p className="eventsOfDay__textLink">
                 {linkWithOutTag({ title })}
               </p>

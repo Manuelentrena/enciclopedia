@@ -4,3 +4,4 @@ export { useSearch } from 'hooks/useSearch';
 export { useTrending } from 'hooks/useTrending';
 export { useNearScreen } from 'hooks/useNearScreen';
 export { useEventsOfDay } from 'hooks/useEventsOfDay';
+export { useInfoPage } from 'hooks/useInfoPage';
