@@ -1,14 +1,18 @@
 import React from 'react';
 import { useGlobal } from 'hooks/useGlobal';
+import { useHistory, useLocation } from 'react-router';
 
 const languages = ['en', 'es'];
 
 const LanguageSelect = () => {
-  const { language: fx, setLanguage, setTrending } = useGlobal();
+  const { language: fx } = useGlobal();
+  const history = useHistory();
+  const { pathname } = useLocation();
 
   const handleChange = (e) => {
-    setLanguage({ language: e.target.value });
-    setTrending(true);
+    let options = {};
+    if (pathname === '/es' || pathname === '/en' || pathname === '/es/trendings' || pathname === '/en/trendings') options = { trendings: true };
+    history.push(pathname.replace(fx, e.target.value), options);
   };
 
   return (
