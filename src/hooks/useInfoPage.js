@@ -8,23 +8,27 @@ const languages = { es: 'en', en: 'es' };
 
 export function useInfoPage() {
   const {
-    page: doc, setParamPage, loading, setOtherTitle,
+    page: doc, setParamPage, loading, setOtherTitle, otherTitle,
   } = useContext(InfoPageContext);
   const { title } = useParams();
-  const { language: fx } = useGlobal();
+  const { language: fx, page, setPage } = useGlobal();
 
   useEffect(() => {
-    setParamPage(title);
-  }, []);
-
-  useEffect(() => {
+    page && setParamPage(title);
+    async function getAnotherLink() {
+      const newTitle = await getLinkLang({ title, fx, lang: languages[fx] });
+      setOtherTitle(newTitle);
+    }
+    setPage(false);
+    getAnotherLink();
+  }, [page]);
+  /* useEffect(() => {
     async function getAnotherLink() {
       const otherTitle = await getLinkLang({ title, fx, lang: languages[fx] });
       setOtherTitle(otherTitle);
     }
     getAnotherLink();
-  }, [title]);
-
+  }, [title]); */
   /*   useEffect(() => {
     async function getPage() {
       const numSections = page.sections().length;
@@ -42,6 +46,6 @@ export function useInfoPage() {
   }
 
   return {
-    getTitle, loading,
+    getTitle, loading, otherTitle,
   };
 }

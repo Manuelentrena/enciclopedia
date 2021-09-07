@@ -14,7 +14,8 @@ export default function EventsOfDayItem({ event }) {
   const history = useHistory();
 
   const handleClick = (title) => {
-    history.push(`/${fx}/page/${title.split(' ').join('_')}`);
+    const options = { page: true };
+    history.push(`/${fx}/page/${title.split(' ').join('_')}`, options);
   };
 
   const showTextCapital = () => text.charAt(0).toUpperCase() + text.slice(1);

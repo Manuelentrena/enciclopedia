@@ -11,7 +11,8 @@ const NavBar = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
 
   const handleInit = () => {
-    history.push(`/${fx}`);
+    const options = { trendings: true };
+    history.push(`/${fx}`, options);
   };
 
   return (

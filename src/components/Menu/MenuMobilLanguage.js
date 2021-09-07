@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import Lang from 'Translations';
-import { useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import { IconArrow, IconCheck, IconNoCheck } from 'components';
 import { useGlobal } from 'hooks/useGlobal';
+import { useInfoPage } from 'hooks';
 
 const languages = ['en', 'es'];
 
 const MenuMobilLanguage = () => {
   const { lng } = useParams();
-  const { language: fx, setLanguage, setTrending } = useGlobal();
+  const { language: fx } = useGlobal();
+  let { pathname } = useLocation();
+  const { title } = useParams();
+  const history = useHistory();
+  const { otherTitle } = useInfoPage();
   const [arrowOn, setArrowOn] = useState(false);
 
   const handleClick = () => {
@@ -17,8 +22,18 @@ const MenuMobilLanguage = () => {
 
   const handleChange = (value) => {
     if (lng === value) return false;
-    setLanguage({ language: value });
-    setTrending(true);
+    const options = {};
+    if (pathname === '/es'
+    || pathname === '/en'
+    || pathname === '/es/trendings'
+    || pathname === '/en/trendings') {
+      options.trendings = true;
+    }
+    if (pathname.startsWith('/es/page/') || pathname.startsWith('/en/page/')) {
+      options.page = true;
+      pathname = pathname.replace(title, otherTitle);
+    }
+    history.push(pathname.replace(fx, value), options);
     return true;
   };
 

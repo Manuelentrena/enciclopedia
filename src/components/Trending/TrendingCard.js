@@ -10,7 +10,8 @@ const TrendingCard = ({
   const { language: fx } = useGlobal();
 
   const handleClick = () => {
-    history.push(`/${fx}/page/${title.split(' ').join('_')}`);
+    const options = { page: true };
+    history.push(`/${fx}/page/${title.split(' ').join('_')}`, options);
   };
 
   return (

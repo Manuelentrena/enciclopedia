@@ -15,6 +15,7 @@ export function GlobalStateProvider({ children }) {
     userName,
     switchLanguage,
     trending,
+    page,
   } = globalState;
 
   const setTheme = useCallback(
@@ -47,6 +48,16 @@ export function GlobalStateProvider({ children }) {
     [globalDispatch],
   );
 
+  const setPage = useCallback(
+    (value) => {
+      globalDispatch({
+        type: GLOBAL_ACTIONS.CHANGE_PAGE,
+        payload: value,
+      });
+    },
+    [globalDispatch],
+  );
+
   return (
     <GlobalContext.Provider
       value={{
@@ -60,6 +71,8 @@ export function GlobalStateProvider({ children }) {
         userName,
         trending,
         setTrending,
+        page,
+        setPage,
       }}
     >
       {children}

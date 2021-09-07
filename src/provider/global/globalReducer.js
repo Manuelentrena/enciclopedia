@@ -8,6 +8,8 @@ export const globalReducer = (state, action) => {
       return { ...state, language: action.payload, switchLanguage: true };
     case GLOBAL_ACTIONS.CHANGE_TRENDING:
       return { ...state, trending: action.payload };
+    case GLOBAL_ACTIONS.CHANGE_PAGE:
+      return { ...state, page: action.payload };
     default:
       return state;
   }
@@ -42,4 +44,5 @@ export const inicialState = {
   token: null,
   userName: 'userName',
   trending: true,
+  page: true,
 };

@@ -7,7 +7,7 @@ const InfoPageContext = React.createContext({});
 export function InfoPageContextProvider({ children }) {
   const [paramPage, setParamPage] = useState(null);
   const [page, setPage] = useState(null);
-  const [otherTitle, setOtherTitle] = useState(null);
+  const [otherTitle, setOtherTitle] = useState('');
   const [loading, setLoaging] = useState(false);
   const { language: fx } = useGlobal();
 

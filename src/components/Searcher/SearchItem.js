@@ -10,8 +10,9 @@ const SearchItem = ({
   const history = useHistory();
   const { language: fx } = useGlobal();
 
-  const handleClick = ({ e, id: idPage }) => {
-    history.push(`/${fx}/page/${idPage}`);
+  const handleClick = ({ e, title: pathTitle }) => {
+    const options = { page: true };
+    history.push(`/${fx}/page/${pathTitle}`, options);
     e.stopPropagation();
   };
 
@@ -19,7 +20,7 @@ const SearchItem = ({
     <div
       id={id}
       className={selected === id ? 'oneResult selected' : 'oneResult'}
-      onClick={(e) => handleClick({ e, id })}
+      onClick={(e) => handleClick({ e, title })}
     >
       <div className="oneResult__img">
         <SearchItemImg title={title} id={id} />

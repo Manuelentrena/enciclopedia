@@ -1,17 +1,28 @@
 import React from 'react';
-import { useGlobal } from 'hooks/useGlobal';
-import { useHistory, useLocation } from 'react-router';
+import { useGlobal, useInfoPage } from 'hooks';
+import { useHistory, useLocation, useParams } from 'react-router';
 
 const languages = ['en', 'es'];
 
 const LanguageSelect = () => {
   const { language: fx } = useGlobal();
   const history = useHistory();
-  const { pathname } = useLocation();
+  const { title } = useParams();
+  let { pathname } = useLocation();
+  const { otherTitle } = useInfoPage();
 
   const handleChange = (e) => {
-    let options = {};
-    if (pathname === '/es' || pathname === '/en' || pathname === '/es/trendings' || pathname === '/en/trendings') options = { trendings: true };
+    const options = {};
+    if (pathname === '/es'
+    || pathname === '/en'
+    || pathname === '/es/trendings'
+    || pathname === '/en/trendings') {
+      options.trendings = true;
+    }
+    if (pathname.startsWith('/es/page/') || pathname.startsWith('/en/page/')) {
+      options.page = true;
+      pathname = pathname.replace(title, otherTitle);
+    }
     history.push(pathname.replace(fx, e.target.value), options);
   };
 

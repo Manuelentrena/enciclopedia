@@ -11,6 +11,8 @@ export const useGlobal = () => {
     switchLanguage,
     setTrending,
     trending,
+    page,
+    setPage,
   } = useContext(GlobalContext);
 
   function changeTheme() {
@@ -50,5 +52,7 @@ export const useGlobal = () => {
     getDay,
     getMonth,
     getDate,
+    page,
+    setPage,
   };
 };
