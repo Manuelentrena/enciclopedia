@@ -20,8 +20,12 @@ const LanguageSelect = () => {
       options.trendings = true;
     }
     if (pathname.startsWith('/es/page/') || pathname.startsWith('/en/page/')) {
-      options.page = true;
-      pathname = pathname.replace(title, otherTitle);
+      if (otherTitle) {
+        pathname = pathname.replace(title, otherTitle);
+        options.page = true;
+      } else {
+        pathname = pathname.replace(title, 'pageDontExit');
+      }
     }
     history.push(pathname.replace(fx, e.target.value), options);
   };

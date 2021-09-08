@@ -7,11 +7,11 @@ const Page = () => {
 
   return (
     <>
-      <Header isPage />
+      <Header isPage title={getTitle()} />
       <div className="quickpedia__body">
         { loading
           ? <Spinner />
-          : <h1>{getTitle()}</h1>}
+          : <h1>CUERPO</h1>}
       </div>
     </>
   );

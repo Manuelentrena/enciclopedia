@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import {
-  Home, Init, Trendings, Events, Page,
+  Home, Init, Trendings, Events, Page, PageDontExit,
 } from 'pages';
 import { GlobalStateProvider } from 'provider/global/globalContext';
 import { SearchContextProvider } from 'provider/SearchContext';
@@ -38,6 +38,11 @@ function App() {
                     path="/:lng(en|es)?/events"
                     exact
                     component={Events}
+                  />
+                  <FixRoute
+                    path="/:lng(en|es)?/page/pageDontExit"
+                    exact
+                    component={PageDontExit}
                   />
                   <FixRoute
                     path="/:lng(en|es)?/page/:title"

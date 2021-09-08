@@ -6,13 +6,14 @@ import { useGlobal } from 'hooks';
 
 const FixRoute = ({ component: Component, ...rest }) => {
   const {
-    language: fx, setLanguage, setTrending, setPage,
+    language: fx, setLanguage, setTrending, setTitlePage,
   } = useGlobal();
 
   const history = useHistory();
   const location = useLocation();
   const { pathname, state } = location;
   const Lng = pathname.slice(1, 3);
+  const partsURL = pathname.split('/');
 
   useEffect(() => {
     /* Verify langage in URL */
@@ -27,7 +28,12 @@ const FixRoute = ({ component: Component, ...rest }) => {
     }
     Lng !== fx && setLanguage({ language: Lng });
     state && state?.trendings && setTrending(true);
-    state && state?.page && setPage(true);
+
+    if (state?.page) {
+      setTitlePage(partsURL[3]);
+    } else if (partsURL[2] === 'page') {
+      setTitlePage(partsURL[3]);
+    }
   }, [pathname]);
 
   return (

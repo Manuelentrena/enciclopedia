@@ -15,7 +15,7 @@ export function GlobalStateProvider({ children }) {
     userName,
     switchLanguage,
     trending,
-    page,
+    titlePage,
   } = globalState;
 
   const setTheme = useCallback(
@@ -48,10 +48,10 @@ export function GlobalStateProvider({ children }) {
     [globalDispatch],
   );
 
-  const setPage = useCallback(
+  const setTitlePage = useCallback(
     (value) => {
       globalDispatch({
-        type: GLOBAL_ACTIONS.CHANGE_PAGE,
+        type: GLOBAL_ACTIONS.CHANGE_TITLEPAGE,
         payload: value,
       });
     },
@@ -71,8 +71,8 @@ export function GlobalStateProvider({ children }) {
         userName,
         trending,
         setTrending,
-        page,
-        setPage,
+        setTitlePage,
+        titlePage,
       }}
     >
       {children}
