@@ -30,9 +30,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 1rem;
-
+  color: var(--cPageBack-title);
 }
 
 @media (max-width: 768px) {
@@ -43,5 +43,9 @@
     }
   .pageBack__separator{
     height: 56px;
+  }
+  .pageBack__name{
+    font-size: 2rem;
+    margin: 1rem;
   }
 }

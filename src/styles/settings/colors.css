@@ -181,6 +181,7 @@
   /* PAGE BACK */
   --cPageBack-bg: var(--light, var(--blue9)) var(--dark, var(--blue10));
   --cPageBack-sep: var(--light, var(--white)) var(--dark, var(--white));
+  --cPageBack-title: var(--light, var(--white)) var(--dark, var(--white));
 }
 /* TITLES */
 /*   --c-h1: var(--text-primary);
