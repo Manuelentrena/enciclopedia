@@ -3,7 +3,9 @@ import { Header, Spinner } from 'components';
 import { useInfoPage } from 'hooks';
 
 const Page = () => {
-  const { getTitle, loading } = useInfoPage();
+  const {
+    getTitle, loading, getPageId, mainImg,
+  } = useInfoPage();
 
   return (
     <>
@@ -11,7 +13,12 @@ const Page = () => {
       <div className="quickpedia__body">
         { loading
           ? <Spinner />
-          : <h1>CUERPO</h1>}
+          : (
+            <>
+              <h1>{getPageId()}</h1>
+              <img src={mainImg} alt={getTitle()} />
+            </>
+          )}
       </div>
     </>
   );

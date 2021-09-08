@@ -5,7 +5,7 @@ import { useHistory, useLocation, useParams } from 'react-router';
 const languages = ['en', 'es'];
 
 const LanguageSelect = () => {
-  const { language: fx } = useGlobal();
+  const { language: fx, setTitlePage } = useGlobal();
   const history = useHistory();
   const { title } = useParams();
   let { pathname } = useLocation();
@@ -27,6 +27,7 @@ const LanguageSelect = () => {
         pathname = pathname.replace(title, 'pageDontExit');
       }
     }
+    setTitlePage(null);
     history.push(pathname.replace(fx, e.target.value), options);
   };
 

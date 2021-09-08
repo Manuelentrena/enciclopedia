@@ -9,7 +9,7 @@ const languages = ['en', 'es'];
 
 const MenuMobilLanguage = () => {
   const { lng } = useParams();
-  const { language: fx } = useGlobal();
+  const { language: fx, setTitlePage } = useGlobal();
   let { pathname } = useLocation();
   const { title } = useParams();
   const history = useHistory();
@@ -37,6 +37,7 @@ const MenuMobilLanguage = () => {
         pathname = pathname.replace(title, 'pageDontExit');
       }
     }
+    setTitlePage(null);
     history.push(pathname.replace(fx, value), options);
     return true;
   };
