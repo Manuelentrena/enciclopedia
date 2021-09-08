@@ -4,7 +4,6 @@ import {
 
 export default function getLinkLang({ title, fx, lang }) {
   const URL = `${prot}://${fx}.${path[0]}?${action[1]}&${format}&${cors}&${langlink}&lllang=${lang}&titles=${title}`;
-  console.log(URL);
   return fetch(URL, {
     method: 'GET',
   })

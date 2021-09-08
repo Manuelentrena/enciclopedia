@@ -14,7 +14,6 @@ export function InfoPageContextProvider({ children }) {
   const { language: fx, titlePage } = useGlobal();
 
   useEffect(() => {
-    console.log({ titlePage });
     async function getPage() {
       setDoc(null);
       setLoaging(true);
@@ -23,7 +22,6 @@ export function InfoPageContextProvider({ children }) {
         setLoaging(false);
       });
       const newTitle = await getLinkLang({ title: titlePage, fx, lang: languages[fx] });
-      console.log(typeof newTitle);
       if (newTitle === undefined) {
         setOtherTitle(null);
       } else {
