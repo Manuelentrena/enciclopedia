@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button, IconBack, IconShare } from 'components';
 import { useHistory } from 'react-router-dom';
+import { useGlobal } from 'hooks';
 
 export default function PageBack({ title }) {
   const history = useHistory();
+  const { language: fx } = useGlobal();
 
   const handleBack = () => {
-    history.goBack();
+    history.push(`/${fx}`, { trendings: true });
   };
 
   return (
